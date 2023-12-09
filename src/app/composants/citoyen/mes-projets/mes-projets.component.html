@@ -1,0 +1,456 @@
+<!-- Sidebar  -->
+<nav class="navbar sticky-top navbar-expand-lg bg-body shadow-sm">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#" routerLink="accueil"><img src="assets/Fichier 1.png" alt="Logo sama-gokh" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/accueil">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/projets">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/apropos">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" aria-current="page">Mes projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/annonces">Annonces</a>
+                </li>
+            
+            </ul>
+            <div class="profil">
+                <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Fin sidebar  -->
+
+<!-- Banierre  -->
+<div class="banierre">
+    <div class="containerBanner">
+    </div>
+    <div class="containerText text-left px-5">
+        <h1 class="fw-bold">SAMA GOKH</h1>
+        <h5 class="mb-3">Ensemble, Construisons l'Avenir <br>de Notre Commune.</h5>
+        <a href="#" class="btn btnAjotProjet px-4 py-1 rounded-0">Creer un projet</a>
+    </div>
+</div>
+<!-- Fin banierre  -->
+
+<!-- statistiques  -->
+<div class="containerStatistique">
+    <div class="container statistiqueRow">
+        <div class="row ">
+            <div class="col-md-4 mb-5">
+                <div class="statistique shadow p-3 d-flex justify-content-between">
+                    <div class="chiffre">
+                        <h2 class="fw-bold">25</h2>
+                        <p class="fw-bold">Projets sumis</p>
+                    </div>
+                    <div class="icone">
+                        <i class="bi bi-kanban-fill fs-2"></i> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="statistique shadow p-3 d-flex justify-content-between">
+                    <div class="chiffre">
+                        <h2 class="fw-bold">20</h2>
+                        <p class="fw-bold">Projets validés</p>
+                    </div>
+                    <div class="icone">
+                        <i class="bi bi-kanban-fill fs-2"></i> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="statistique shadow p-3 d-flex justify-content-between">
+                    <div class="chiffre">
+                        <h2 class="fw-bold">5</h2>
+                        <p class="fw-bold">Projets invalidés</p>
+                    </div>
+                    <div class="icone">
+                        <i class="bi bi-kanban-fill fs-2"></i> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contenu projets  -->
+<div class="container containerMesProjet">
+    <!-- Rechercher un projet  -->
+    <div class="recherche d-flex justify-content-end">
+        <div class="col-5">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Rechercher un projet..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu filtre pour le projet  -->
+    <div class="menuFiltre mt-5 my-3">
+        <button class="btn filtreActive fw-bold px-3" *ngIf="isSoumis">Soumis</button>
+        <button class="btn fw-bold px-3" *ngIf="!isSoumis" (click)="showSoumis()">Soumis</button>
+        
+        <button class="btn filtreActive fw-bold px-3" *ngIf="isValide">Valider</button>
+        <button class="btn fw-bold px-3" *ngIf="!isValide" (click)="showValide()">Valider</button>
+        
+        <button class="btn filtreActive fw-bold px-3" *ngIf="isInvalide">Invalider</button>
+        <button class="btn fw-bold px-3" *ngIf="!isInvalide" (click)="showInvalide()">Invalider</button>
+    </div>
+
+    <!-- Liste de tous les projets  -->
+    <div class="listeProjet mb-5" *ngIf="isSoumis">
+        <div class="row">
+            <!-- Ligne 1 -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Jardin partagé</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>En cours de vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone iconeInactive"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/thai-white-rice-jasmine-rice_45583-1033.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Autosuffisance</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>6.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>Voté</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/free-vector/vector-ripe-yellow-orange-red-whole-mango-leaves-hanging-branch-isolated-with-green-blur-background_1284-45466.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Mangue séché</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>En cours de vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ligne 2  -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/who-can-jump-highest-full-length-shot-young-couple-bonding-with-their-son-garden_590464-58322.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Une famille, une maison</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>En cours de vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone iconeInactive"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/feeling-positive-today-shot-young-businessman-working-computer-office_590464-31402.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Un jeune, un travail</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>Vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone iconeInactive"></i>
+                            <i class="bi bi-archive icone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/free-photo/building_1127-3120.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Ville propre</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>Voté</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liste des projets valider  -->
+    <div class="listeProjet projetValide mb-5" *ngIf="isValide">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/thai-white-rice-jasmine-rice_45583-1033.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Autosuffisance</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>6.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>Voté</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/free-vector/vector-ripe-yellow-orange-red-whole-mango-leaves-hanging-branch-isolated-with-green-blur-background_1284-45466.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Mangue séché</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>En cours de vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/feeling-positive-today-shot-young-businessman-working-computer-office_590464-31402.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Un jeune, un travail</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>Vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone iconeInactive"></i>
+                            <i class="bi bi-archive icone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liste des projets invalidés  -->
+    <div class="listeProjet projetInvalide mb-5" *ngIf="isInvalide">
+        <div class="row">
+            <!-- Ligne 1 -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/feeling-positive-today-shot-young-businessman-working-computer-office_590464-31402.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Un jeune, un travail</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>Vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone iconeInactive"></i>
+                            <i class="bi bi-archive icone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/free-photo/building_1127-3120.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Ville propre</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>Voté</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="https://img.freepik.com/free-vector/vector-ripe-yellow-orange-red-whole-mango-leaves-hanging-branch-isolated-with-green-blur-background_1284-45466.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title titre">Mangue séché</h5>
+                            <p class="date">03/12/2023</p>
+                        </div>
+                        <p><span class="titre">Coût: </span>12.000.000</p>
+                        <p><span class="titre">Délai: </span>3 mois</p>
+                        <p><span class="titre">Etat: </span>En cours de vote</p>
+                        <div class="action text-center d-flex justify-content-between px-5">  
+                            <i class="bi bi-eye-fill icone"></i> 
+                            <i class="bi bi-pencil-square icone"></i>                                                      
+                            <i class="bi bi-archive-fill icone"></i>
+                            <i class="bi bi-archive icone iconeInactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Formulaire de soumission d'un projet  -->
+    <div class="soumettreProjet">
+        <h3 class="titre text-center mb-4">Je soumets mon projet</h3>
+        <div class="row formAjoutProjet">
+            <div class="col-lg-5 soumettreProjetForm p-0">
+                <form action="" class="px-4 pt-5">
+                    <div class="mb-3">
+                        <label for="titreProjet" class="form-label">Titre du projet</label>
+                        <input type="text" name="titreProjet" class="form-control" id="titreProjet">
+                    </div>
+                    <div class="mb-3">
+                        <label for="descriptionProjet" class="form-label">Description</label>
+                        <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet">
+                    </div>
+                    <div class="mb-3">
+                        <label for="coutProjet" class="form-label">Coût</label>
+                        <input type="text" name="coutProjet" class="form-control" id="coutProjet">
+                    </div>
+                    <div class="mb-3">
+                        <label for="delaiProjet" class="form-label">Délai</label>
+                        <input type="text" name="delaiProjet" class="form-control" id="delaiProjet">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fileInput" class="form-label">Image
+                            <i class="bi bi-image-fill d-block imageProjet mt-3"></i>
+                        </label>
+                        <input type="file" name="imageProjet" id="fileInput" style="display: none;" />
+                    </div>
+                    <div class="mb-3 text-end">
+                        <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3">Annuler</button>
+                        <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3">Soumettre</button>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="col-lg-7 border p-0">
+                <div class="imageForm">
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+<!-- Footer  -->
+<div class="footer shadow-sm pt-5">
+    <div class="logoReseaux container mb-5">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="logo text-center">
+                    <a href="#" routerLink="/accueil"><img src="/assets/Fichier 1.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="reseaux">
+                    <h6 class="fw-bold mb-3">Suivez nous sur nos réseaux sociaux</h6>
+                    <p class="">
+                        <span class="iconeReseau me-2"> <i class="bi bi-facebook"></i> </span>
+                        <span class="iconeReseau mx-2"><i class="bi bi-instagram"></i></span> 
+                        <span class="iconeReseau mx-2"> <i class="bi bi-twitter"></i> </span> 
+                        <span class="iconeReseau mx-2"><i class="bi bi-linkedin rounded-circle"></i></span> 
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="ling container d-flex justify-content-between my-5">
+        <a href="#" routerLink="/accueil">Accueil</a>
+        <a href="#" routerLink="/projets">Projets</a>
+        <a href="#" routerLink="/apropos">A propos</a>
+        <a href="#" routerLink="/mesprojets">Mes projets</a>
+        <a href="#"routerLink="/annonces">Annonces</a>
+    </div>
+    <div class="copyright text-center">
+        <p class="mt-2"><i class="bi bi-c-circle"></i> 2023 Sama Gokh. Tous droits réservés</p>
+    </div>
+</div>
+<!-- Fin footer  -->
