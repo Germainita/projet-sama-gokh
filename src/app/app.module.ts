@@ -22,7 +22,7 @@ import { AnnonceComponent } from './composants/citoyen/annonce/annonce.component
     AppComponent,
     SideBarComponent,
     DashboardComponent,
-<<<<<<< HEAD
+
     GestionProjetMunicipalComponent,
     GestionAnnoncesComponent,
     DetailsAnnonceComponent
