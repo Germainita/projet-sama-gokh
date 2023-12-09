@@ -1,0 +1,87 @@
+.navbar-search input {
+    /* border: 3px solid blue !important; */
+    border-radius: 20px;
+    /* background: #000; */
+    background-color: #007A64;
+}
+.navbouton button{
+    background-color: #007A64;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+   
+}
+#accordionSidebar{
+    /* position: fixed; */
+    /* overflow-y:  auto; */
+}
+.navbar{
+    /* position: fixed; */
+    /* overflow-y:  auto;
+    z-index: 1; */
+}
+tr{
+    padding: 20px;
+}
+.modal-footer button:nth-child(1) {
+    background-color: #F09E4D;
+    border: 0;
+    
+}
+.modal-footer button:nth-child(2) {
+    background-color: #007A64;
+    color: white;
+    border: 0;
+
+    
+}
+.navbouton button:hover{
+cursor: pointer;
+background-color: white;
+border: 2px solid #007A64;
+color: #007A64;
+}
+
+#exampleModalLabel{
+    text-align: center;
+    color: #007A64;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.contentIcone{
+    font-size: 25px;
+    /* text-align: left; */
+    color: #007A64;
+}
+.contentIcone span:nth-child(4){
+   
+    color: #85b3aa6b;
+}
+
+#imageAnnonce{
+    height: 5vh;
+}
+
+.card-body img{
+    /* border: 1px solid maroon; */
+    height: 15rem;
+}
+.card-body {
+    /* border: 1px solid rgb(0, 9, 128); */
+    min-height: 25rem;
+}
+
+.scroll-to-top{
+    color: #007A64;
+}
+.scroll-to-top a{
+    background-color: #007A64;
+}
+
+@media screen and (max-width: 535px){
+    .navbouton button{
+        font-size: 14px;
+    }
+}
