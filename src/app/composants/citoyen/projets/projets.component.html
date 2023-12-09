@@ -1,0 +1,1063 @@
+<!-- Sidebar  -->
+<nav class="navbar sticky-top navbar-expand-lg bg-body shadow-sm">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#" routerLink="accueil"><img src="assets/Fichier 1.png" alt="Logo sama-gokh" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/accueil">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" aria-current="page">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/apropos">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/mesprojets">Mes projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/annonces">Annonces</a>
+                </li>
+            
+            </ul>
+            <div class="profil">
+                <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Fin sidebar  -->
+
+<!-- Banierre  -->
+<div class="banierre">
+    <div class="containerBanner">
+    </div>
+    <div class="containerText text-left px-5">
+        <h1 class="fw-bold">SAMA GOKH</h1>
+        <h5 class="mb-3">Ensemble, Construisons l'Avenir <br>de Notre Commune.</h5>
+        <a href="#" class="btn btnAjotProjet px-4 py-1 rounded-0">Creer un projet</a>
+    </div>
+</div>
+<!-- Fin banierre  -->
+
+<!-- Contenu projets  -->
+<div class="container containerProjet">
+    <!-- Projets municipaux  -->
+    <div class="projetMunicipal" *ngIf="isMunicipal">
+        <!-- Type projet  -->
+        <div class="typeProjet mb-5">
+            <button class="btn btnActive fw-bold px-3">Municipal</button>
+            <button class="btn shadow-sm fw-bold px-3" (click)="showCitoyen()">Citoyen</button>
+        </div>
+        <!-- Rechercher un projet  -->
+        <div class="recherche d-flex justify-content-end">
+            <div class="col-5">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recherchez un projet..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu filtre pour le projet  -->
+        <div class="menuFiltre my-3">
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isEncours">En cour de vote</button>
+            <button class="btn fw-bold px-3" *ngIf="!isEncours" (click)="showEncours()">En cour de vote</button>
+            
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isVote">Voté</button>
+            <button class="btn fw-bold px-3" *ngIf="!isVote" (click)="showVote()">Voté</button>
+            
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isValider">Valider</button>
+            <button class="btn fw-bold px-3" *ngIf="!isValider" (click)="showValider()">Valider</button>
+            
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isInvalider">Invalider</button>
+            <button class="btn fw-bold px-3" *ngIf="!isInvalider" (click)="showInvalider()">Invalider</button>
+        </div>
+
+        <!-- En cours de vote  -->
+        <div class="projetEncours" *ngIf="isMunicipal && isEncours">
+        
+            <!-- Contenu des projets en cours de vote -->
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Voté  -->
+        <div class="projetVoter" *ngIf="isMunicipal && isVote">
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/teacher-kids-school-learning-ecology-gardening_53876-53883.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/medium-shot-parents-kid_23-2148960560.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/greengrocer-preparing-organic-fresh-agricultural-product-farmer-market_53876-70120.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Valider  -->
+        <div class="projetValider" *ngIf="isMunicipal && isValider">
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/full-shot-women-working-together_23-2149894686.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/black-couple-buy-new-house_53876-20680.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/medium-shot-man-paying-product_23-2148761600.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Invalider  -->
+        <div class="projetInvalider" *ngIf="isMunicipal && isInvalider">
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/teacher-kids-school-learning-ecology-gardening_53876-18503.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/full-shot-couple-decorating-home_23-2150633320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/smiling-black-male-putting-glove-grocery-store-buy-bread_23-2148216038.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- Projets citoyens  -->
+    <div class="projetCitoyen" *ngIf="!isMunicipal">
+        <!-- Type projet  -->
+        <div class="typeProjet mb-5">
+            <button class="btn shadow-sm fw-bold px-3" (click)="showMunicipal()">Municipal</button>
+            <button class="btn btnActive  fw-bold px-3">Citoyen</button>
+        </div>
+        <!-- Rechercher un projet  -->
+        <div class="recherche d-flex justify-content-end">
+            <div class="col-5">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recherchez un projet..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu filtre pour le projet  -->
+        <div class="menuFiltre my-3">
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isEncours">En cour de vote</button>
+            <button class="btn fw-bold px-3" *ngIf="!isEncours" (click)="showEncours()">En cour de vote</button>
+            
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isVote">Voté</button>
+            <button class="btn fw-bold px-3" *ngIf="!isVote" (click)="showVote()">Voté</button>
+            
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isValider">Valider</button>
+            <button class="btn fw-bold px-3" *ngIf="!isValider" (click)="showValider()">Valider</button>
+            
+            <button class="btn filtreActive fw-bold px-3" *ngIf="isInvalider">Invalider</button>
+            <button class="btn fw-bold px-3" *ngIf="!isInvalider" (click)="showInvalider()">Invalider</button>
+        </div>
+
+        <!-- En cours de vote  -->
+        <div class="projetEncours" *ngIf="isCitoyen && isEncours">
+        
+            <!-- Contenu des projets en cours de vote -->
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/kid-garden-experience-idea_53876-87580.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/intercultural-friends-clap-their-hands-air_23-2148300896.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/young-beautiful-market-woman-feeling-excited-as-she-sells-her-foodstuffs-her-her-customer_216356-949.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Voté  -->
+        <div class="projetVoter" *ngIf="isCitoyen && isVote">
+        
+            <!-- Contenu des projets voté-->
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/closeup-diverse-hands-joined-together-as-teamwork_53876-10010.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Valider  -->
+        <div class="projetValider" *ngIf="isCitoyen && isValider">
+        
+            <!-- Contenu des projets valider -->
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/happy-young-couple-choosing-fresh-fruits-while-standing-by-display_274679-36896.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Invalider  -->
+        <div class="projetInvalider" *ngIf="isCitoyen && isInvalider">
+            <!-- Contenu des projets invalidé -->
+            <div class="projets">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                    <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par la mairie</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Cisse Khadijatou</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.freepik.com/free-photo/people-meeting-barter-event-exchange-goods_23-2150208160.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                        <div class="cardProjet mx-5">
+                            <div class="cardProjetContainer">
+                                <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
+                                <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                                    bons produits, bio et de saison et faisons découvrir à tous les
+                                   joies du jardinage.  <br>
+                                   <span class="auteurProjet">Par Soly Fatou Diop</span>
+                                </p>
+                                <a href="#" class="voirPlus">Voir plus</a>
+                                <div class="vote text-center mt-3">
+                                    <button class="btnDetail px-2 fw-bold py-1 mx-2 mb-2">Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer  -->
+<div class="footer shadow-sm pt-5">
+    <div class="logoReseaux container mb-5">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="logo text-center">
+                    <a href="#" routerLink="/accueil"><img src="/assets/Fichier 1.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="reseaux">
+                    <h6 class="fw-bold mb-3">Suivez nous sur nos réseaux sociaux</h6>
+                    <p class="">
+                        <span class="iconeReseau me-2"> <i class="bi bi-facebook"></i> </span>
+                        <span class="iconeReseau mx-2"><i class="bi bi-instagram"></i></span> 
+                        <span class="iconeReseau mx-2"> <i class="bi bi-twitter"></i> </span> 
+                        <span class="iconeReseau mx-2"><i class="bi bi-linkedin rounded-circle"></i></span> 
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="ling container d-flex justify-content-between my-5">
+        <a href="#" routerLink="/accueil">Accueil</a>
+        <a href="#" routerLink="/projets">Projets</a>
+        <a href="#" routerLink="/apropos">A propos</a>
+        <a href="#" routerLink="/mesprojets">Mes projets</a>
+        <a href="#"routerLink="/annonces">Annonces</a>
+    </div>
+    <div class="copyright text-center">
+        <p class="mt-2"><i class="bi bi-c-circle"></i> 2023 Sama Gokh. Tous droits réservés</p>
+    </div>
+</div>
+<!-- Fin footer  -->
