@@ -1,5 +1,5 @@
 export class Annonce {
-    _id!: number;
+    id!: number;
     titre!: string;
     description!: string;
     image!: File;

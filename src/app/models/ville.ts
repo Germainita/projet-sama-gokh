@@ -1,5 +1,5 @@
 export class Ville {
-    _id!: number;
+    id!: number;
     nom!: string;
     createdAt!:string;
     createdBy!:string;

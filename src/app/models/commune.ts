@@ -1,5 +1,5 @@
 export class Commune {
-    _id!: number;
+    id!: number;
     nom!: string;
     nbreCitoyen!: number;
     idVille!: number;    
