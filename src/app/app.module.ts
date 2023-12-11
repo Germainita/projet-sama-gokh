@@ -29,6 +29,7 @@ import { GestionProjetComponent } from './composants/superAdmin/gestion-projet/g
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule
 
   ],
