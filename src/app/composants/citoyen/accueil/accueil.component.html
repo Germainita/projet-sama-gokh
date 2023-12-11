@@ -275,7 +275,7 @@
                             <label for="fileInput" class="form-label">Image
                                 <i class="bi bi-image-fill d-block imageProjet mt-3"></i>
                             </label>
-                            <input type="file" name="imageProjet" id="fileInput" style="display: none;" accept="image/*" (change)="uploadFile($event)" [(ngModel)]="projet.image">
+                            <input type="file" name="imageProjet" id="fileInput" style="display: none;" accept="image/*" (change)="uploadFile($event)">
                         </div>
                         <div class="mb-3 text-end">
                             <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3">Annuler</button>
@@ -285,7 +285,7 @@
                     </form>
 
                     <!-- Test  -->
-                    <img [src]="image1" alt="">
+                    <!-- <img [src]="image" alt=""> -->
                 </div>
                 <div class="col-lg-7 border p-0">
                     <div class="imageForm">
