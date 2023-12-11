@@ -158,12 +158,13 @@
                                     <form>
                                         <div class="mb-3">
                                             <div class="col-sm-10" style="margin: 0 auto;">
-                                                <input type="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
+                                                <input type="text" name="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
                                             </div>
-                                            <input type="text" class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
+                                            
+                                            <input type="text" [(ngModel)]="newRoleName" class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
                                           <div class="col-auto d-flex justify-content-between mx-5 p-4">
                                              <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
-                                             <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
+                                             <button type="submit" class="btn btn-primary mb-3 fw-bold" (click)="add()" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
                                           </div>
                                         </div>
                                     </form>
@@ -177,19 +178,21 @@
                                    <table class="table table-striped">
                                        <thead>
                                            <tr class="">
-                                             <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 40px;">Rôles</th>
-                                             <th scope="col"  style="background-color: #007A64 !important; color: white;">Actions</th>
+                                             <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 40px;">Numéro</th>
+                                             <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 40px;">Nom</th>
+                                             <th scope="col"  style="background-color: #007A64 !important; color: white;">Action</th>
                        
                                            </tr>
                                          </thead>
                                          <tbody class="table-group-divider">
-                                           <tr>
-                                               <td class="" style="padding-left: 40px !important;">Maire</td>
+                                           <tr *ngFor="let role of roles">
+                                               <td class="" style="padding-left: 40px !important;">{{ role.id }}</td>
+                                               <td class="" style="padding-left: 40px !important;">{{ role.nom }}</td>
                                                <td>
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
                                            </tr>
-                                           <tr>
+                                           <!-- <tr>
                                                <td class="" style="padding-left: 40px !important;">Citoyen(ne)</td>
                                                <td>
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
@@ -206,7 +209,7 @@
                                                <td>
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
-                                           </tr>
+                                           </tr> -->
                                          </tbody>
                                    </table>
                                </div>

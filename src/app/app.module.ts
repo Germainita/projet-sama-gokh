@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
@@ -12,6 +12,7 @@ import { RolesComponent } from './composants/superAdmin/roles/roles.component';
 import { VilleComponent } from './composants/superAdmin/ville/ville.component';
 import { CommuneComponent } from './composants/superAdmin/commune/commune.component';
 import { GestionProjetComponent } from './composants/superAdmin/gestion-projet/gestion-projet.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   
@@ -29,7 +30,8 @@ import { GestionProjetComponent } from './composants/superAdmin/gestion-projet/g
   ],
   imports: [
     BrowserModule,
-
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule
 
   ],
