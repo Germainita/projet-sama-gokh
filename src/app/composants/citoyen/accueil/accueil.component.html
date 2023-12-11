@@ -257,32 +257,35 @@
                     <form action="" class="px-4 pt-5">
                         <div class="mb-3">
                             <label for="titreProjet" class="form-label">Titre du projet</label>
-                            <input type="text" name="titreProjet" class="form-control" id="titreProjet">
+                            <input type="text" name="titreProjet" class="form-control" id="titreProjet" [(ngModel)]="projet.titre">
                         </div>
                         <div class="mb-3">
                             <label for="descriptionProjet" class="form-label">Description</label>
-                            <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet">
+                            <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet" [(ngModel)]="projet.description">
                         </div>
                         <div class="mb-3">
                             <label for="coutProjet" class="form-label">Coût</label>
-                            <input type="text" name="coutProjet" class="form-control" id="coutProjet">
+                            <input type="text" name="coutProjet" class="form-control" id="coutProjet" [(ngModel)]="projet.cout">
                         </div>
                         <div class="mb-3">
                             <label for="delaiProjet" class="form-label">Délai</label>
-                            <input type="text" name="delaiProjet" class="form-control" id="delaiProjet">
+                            <input type="text" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="projet.delai">
                         </div>
                         <div class="mb-3">
                             <label for="fileInput" class="form-label">Image
                                 <i class="bi bi-image-fill d-block imageProjet mt-3"></i>
                             </label>
-                            <input type="file" name="imageProjet" id="fileInput" style="display: none;" />
+                            <input type="file" name="imageProjet" id="fileInput" style="display: none;" accept="image/*" (change)="uploadFile($event)" [(ngModel)]="projet.image">
                         </div>
                         <div class="mb-3 text-end">
                             <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3">Annuler</button>
-                            <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3">Soumettre</button>
+                            <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3" (click)="soumettreProjet()">Soumettre</button>
                         </div>
                         
                     </form>
+
+                    <!-- Test  -->
+                    <img [src]="image1" alt="">
                 </div>
                 <div class="col-lg-7 border p-0">
                     <div class="imageForm">
