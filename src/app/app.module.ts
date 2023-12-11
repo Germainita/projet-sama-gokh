@@ -14,6 +14,7 @@ import { FooterComponent } from './composants/citoyen/footer/footer.component';
 import { VisiteurComponent } from './composants/visiteur/visiteur/visiteur.component';
 import { PolitiqueComponent } from './composants/citoyen/politique/politique.component';
 import { ConditionComponent } from './composants/citoyen/condition/condition.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
