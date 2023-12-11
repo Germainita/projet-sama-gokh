@@ -1,5 +1,5 @@
 export class Commentaire {
-    id!: number;
+    _id!: number;
     contenu!: string;
     idUser!:number;
     idAnnonce!:number;

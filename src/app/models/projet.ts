@@ -1,8 +1,8 @@
 export class Projet {
-    id!: number;
+    _id!: number;
     titre!: string;
     description!: string;
-    image!: File;
+    image! : string
     etat!: boolean;
     delai!: Date ;
     cout!: number ;
@@ -13,4 +13,5 @@ export class Projet {
     createdBy!:string;
     updatedAt!:string;
     updatedBy!:string;
+titreProjet: any;
 }

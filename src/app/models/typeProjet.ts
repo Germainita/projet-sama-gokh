@@ -1,5 +1,5 @@
 export class TypeProjet {
-    id!: number;
+    _id!: number;
     nom!: string;
     createdAt!:string;
     createdBy!:string;

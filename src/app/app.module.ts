@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SideBarComponent } from './composants/side-bar/side-bar.component';
 import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
+
 
 import { GestionProjetMunicipalComponent } from './composants/adminCommune/gestion-projet-municipal/gestion-projet-municipal.component';
 import { GestionAnnoncesComponent } from './composants/adminCommune/gestion-annonces/gestion-annonces.component';
@@ -21,14 +22,13 @@ import { SignupComponent } from './composants/auth/signup/signup.component';
 import { DashboarMaireComponent } from './composants/maire/dashboar-maire/dashboar-maire.component';
 import { ProjetCommuneComponent } from './composants/adminCommune/projet-commune/projet-commune.component';
 import { GestionAdminCommuneComponent } from './composants/maire/gestion-admin-commune/gestion-admin-commune.component';
-import {FormsModule} from "@angular/forms";
+import { AccueilAdminCommuneComponent } from './composants/adminCommune/accueil-admin-commune/accueil-admin-commune.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent,
     DashboardComponent,
 
     GestionProjetMunicipalComponent,
@@ -45,6 +45,7 @@ import {FormsModule} from "@angular/forms";
     DashboarMaireComponent,
     ProjetCommuneComponent,
     GestionAdminCommuneComponent,
+    AccueilAdminCommuneComponent,
 
 
 

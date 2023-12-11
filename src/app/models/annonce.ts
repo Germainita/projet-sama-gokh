@@ -1,8 +1,8 @@
 export class Annonce {
-    id!: number;
+    _id!: number;
     titre!: string;
     description!: string;
-    image!: File;
+    image! : string
     etat!: boolean;
     idUser!:number;
     createdAt!:string;

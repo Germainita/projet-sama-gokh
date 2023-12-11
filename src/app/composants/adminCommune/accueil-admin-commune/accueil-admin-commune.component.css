@@ -1,0 +1,196 @@
+.table1{
+    /* border: 1px solid gray; */
+    text-align: center;
+  }
+  .table1 thead tr th{
+    background-color: #007A64;
+    color:white;
+  }
+  tbody tr td i{
+    /* background-color: #007A64; */
+    color:#007A64;
+  }
+  .btnStatut{
+    border:2px solid #F09E4D ;
+    color:#F09E4D; width:90px;
+    border-radius: 20px;
+    font-size: 12px;
+    height: 30px;
+  }
+  .navbouton button{
+    background-color: #007A64;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  
+  }
+  .sidebar-dark{
+    z-index: 3;
+  }
+  .navbar{
+    z-index: 1;
+  }
+  .nav-link span, i{
+    font-size: 20px !important;
+  }
+  .nav-item img{
+    width: 15vh;
+    /*border: 2px solid #1c294e;*/
+  
+  
+  }
+  
+  .sidebar-dark .nav-item.active .nav-link i {
+    color: #fff;
+  }
+  .navbar {
+  
+  }
+  .sidebar-dark{
+  
+  }
+  @media (max-width: 767.98px) {
+    .nav-link span{
+      display: none;
+    }
+    .nav-link i{
+      font-size: 30px !important;
+    }
+    .sidebar-dark{
+      z-index: 3;
+    }
+    .navbar{
+      z-index: 1;
+    }
+    #sidebarToggleTop{
+      display: none;
+  
+    }
+    .nav-item #logoSg{
+      width: 15vh !important;
+      margin-top: -20px !important;
+    }
+  }
+  input:focus, select:focus{
+    box-shadow: none !important;
+    border: 1px solid gray !important;
+    border-bottom:  3px solid #007A64 !important;
+    /*margin-bottom: 10px !important;*/
+    /*margin-top: 10px !important;*/
+  }
+  
+  
+  #mainForm{
+    height: 100vh;
+  }
+  
+  #imageForm{
+    background-image: url("src/assets/imgLogin.png");
+    background-repeat: no-repeat;
+    background-size: cover ;
+  
+  
+  }
+  #row{
+    height: 95%;
+  
+  }
+  
+  
+  #img-contain img{
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 3px solid #007A64;
+  }
+  .first-form{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+  
+  }
+  
+  
+  form input{
+    width: 50%;
+    border-bottom: 3px solid #007A64;
+    border-radius: 0;
+  
+  }
+  select{
+    border-bottom: 3px solid #007A64;
+    border-radius: 0;
+    /*width: 50%;*/
+  }
+  textarea{
+    border-bottom: 3px solid #007A64 !important;
+    border-radius: 0 !important;
+  
+  }
+  
+  
+  form,#description{
+    color: #007A64;
+  }
+  #seconde-part-contain{
+    border: 1px solid maroon;
+  
+  }
+  label{
+    font-weight: 700;
+  }
+  #description{
+    text-align: center;
+  
+  }
+  #form-seconde{
+    width: 25%;
+    height: 500px;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    top: -500px;
+    left: 12.5%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  
+  }
+  #inscription{
+    margin-right: 40%;
+  }
+  #btn-btn{
+    color: #007A64;
+  }
+  
+  .btn-submit{
+    background-color:#007A64 ;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 0 ;
+    border: none;
+  }
+  
+  @media screen and (max-width: 1238px) {
+    .first-form{
+      display: flex;
+      flex-direction: column;
+    }
+    #form-seconde {
+      width: 100%;
+      left: 0;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
