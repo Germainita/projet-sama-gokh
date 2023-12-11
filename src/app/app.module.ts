@@ -21,6 +21,7 @@ import { SignupComponent } from './composants/auth/signup/signup.component';
 import { DashboarMaireComponent } from './composants/maire/dashboar-maire/dashboar-maire.component';
 import { ProjetCommuneComponent } from './composants/adminCommune/projet-commune/projet-commune.component';
 import { GestionAdminCommuneComponent } from './composants/maire/gestion-admin-commune/gestion-admin-commune.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -51,7 +52,8 @@ import { GestionAdminCommuneComponent } from './composants/maire/gestion-admin-c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

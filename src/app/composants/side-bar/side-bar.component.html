@@ -340,33 +340,33 @@
                                             <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un projet dans la commune </h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body" >
                                                 <form>
                                                     <div class="mb-3">
-                                                      <label for="recipient-name" class="col-form-label">Titre</label>
-                                                      <input type="text" class="form-control" id="recipient-name">
+                                                      <label for="recipient-name1" class="col-form-label">Titre</label>
+                                                      <input type="text" class="form-control" name="titreProjet" id="recipient-name1"  [(ngModel)]="projet.titre">
                                                     </div>
                                                     <div class="mb-3">
                                                       <label for="message-text" class="col-form-label">Description</label>
-                                                      <textarea class="form-control" id="message-text"></textarea>
+                                                      <textarea class="form-control"  name="DesriptionProjet" id="message-text" [(ngModel)]="projet.description"></textarea>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="recipient-name" class="col-form-label">Cout</label>
-                                                        <input type="number" class="form-control" id="recipient-name">
+                                                        <label for="recipient-name2" class="col-form-label">Cout</label>
+                                                        <input type="number" class="form-control"  name="coutProjet" id="recipient-name2">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="recipient-name" class="col-form-label">Durée</label>
-                                                        <input type="date" class="form-control" id="recipient-name">
+                                                        <input type="date" class="form-control"   name="dureeprojet" id="recipient-name" [(ngModel)]="projet.delai">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="formFile" class="form-label">Image du projet</label>
-                                                        <input class="form-control" type="file" id="formFile">
+                                                        <input class="form-control" type="file"  name="imageProjet" id="formFile" [(ngModel)]="projet.image">
                                                     </div>
                                                   </form>
                                             </div>
                                             <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
-                                            <button type="button" class="btn ">Ajouter</button>
+                                            <button type="button" class="btn " (click)="afficherProjet()">Ajouter</button>
                                             </div>
                                         </div>
                                         </div>
@@ -375,7 +375,7 @@
                         <div class="row">
                                  <!-- debut Tableau projet -->
                             <div class="col-xl-6 col-lg-7">
-                                <div class="card  mb-4">
+                                <div class="card  mb-4" >
                                     <h5 class="m-2">Listes des projets </h5>
                                     <!-- tableau accueil admin comune-->
                                     <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
@@ -390,66 +390,19 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-group-divider">
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                                                <td  id="iconAction">
+                                            <tr  *ngFor="let projetItem of tabProjet">
+                                                <th>{{projetItem.image}}</th>
+                                                <td>{{projetItem.titre}}</td>
+                                                <td>{{projetItem.delai}}</td>
+                                                <td><div class="btn  btnStatut  fw-bolder" ></div></td>
+                                                <td  id="iconAction" {{projetItem.etat}}>
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
                                                     <i class="bi bi-archive " ></i>&nbsp;
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                                                <td  id="iconAction">
-                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
-                                                    <i class="bi bi-archive " ></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                                                <td  id="iconAction">
-                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
-                                                    <i class="bi bi-archive " ></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                                                <td  id="iconAction">
-                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
-                                                    <i class="bi bi-archive " ></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                                                <td  id="iconAction">
-                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
-                                                    <i class="bi bi-archive " ></i>&nbsp;
-                                                </td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -476,7 +429,7 @@
                                                 <td>Non à la consommation du tabac</td>
                                                 <td>Tout le monde est...</td>
                                                 <td> 17/12/2023  </td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -488,7 +441,7 @@
                                                 <td>Non à la consommation du tabac</td>
                                                 <td>Tout le monde est...</td>
                                                 <td> 17/12/2023  </td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -500,7 +453,7 @@
                                                 <td>Ma commune verte </td>
                                                 <td>le but est de favoriser...</td>
                                                 <td>22/12/2023 </td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -512,7 +465,7 @@
                                                 <td>consultation gratuite </td>
                                                 <td>le but est de favoriser...</td>
                                                 <td>22/12/2023 </td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -524,7 +477,7 @@
                                                 <td>consultation gratuite </td>
                                                 <td>le but est de favoriser...</td>
                                                 <td>22/12/2023 </td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -558,7 +511,7 @@
                                                 <td>Fatou</td>
                                                 <td>fatousygmail.com </td>
                                                 <td>+221 77 855 59 02</td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -572,7 +525,7 @@
                                                 <td>karim</td>
                                                 <td>karimgmail.com </td>
                                                 <td>+221 77 455 69 35 </td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -585,7 +538,7 @@
                                                 <td>Germaine</td>
                                                 <td>germainegmail.com </td>
                                                 <td>+221 78 065 79 14</td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -598,7 +551,7 @@
                                                 <td>Abdou</td>
                                                 <td>sammbgmail.com </td>
                                                 <td>+221 77 135 52 2</td>
-                                                <td  id="iconAction">
+                                                <td  >
                                                     <i class="bi bi-eye-fill " ></i>&nbsp;
                                                     <i class="bi bi-pencil-square " ></i> &nbsp;
                                                     <i class="bi bi-archive-fill " ></i>&nbsp;
@@ -627,12 +580,12 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel4">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
