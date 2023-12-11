@@ -8,4 +8,8 @@ export class Projet {
     idUser!:number;
     idTypeProjet!:number;
     idEtatProjet!:number;
+    createdAt!:string;
+    createdBy!:string;
+    updatedAt!:string;
+    updatedBy!:string;
 }

@@ -8,4 +8,8 @@ export class User {
     etat!: boolean;
     cni!:number;
     sexe!:string;
+    createdAt!:string;
+    createdBy!:string;
+    updatedAt!:string;
+    updatedBy!:string;
 }
