@@ -11,33 +11,33 @@ import { Commune } from "../models/commune";
 })
 
 export class CommuneService {
-    commentaires$ = new Subject<Commune[]>(); //var super globale
+    communes$ = new Subject<Commune[]>(); //var super globale
 
     constructor(private http: HttpClient) {}
     
       // Liste 
       getAlls() : Observable<any>{
-        return this.http.get<Commune[]>(`${url}/Communes`);
+        return this.http.get<Commune[]>(`${url}/communes`);
       }
     
       // geteById
       getById(id: number)
       {
-        return this.http.get<Commune>(`${url}/Communes/`+ id);
+        return this.http.get<Commune>(`${url}/communes/`+ id);
       }
       
       // Ajouter  
-      add(Commune : Commune) {
-        return this.http.post<{ message: string }>(`${url}/Communes`, Commune);
+      add(commune : Commune) {
+        return this.http.post<{ message: string }>(`${url}/communes`, commune);
       }
       
       // Edition 
-      edit(id: number, Commune : Commune) {
-        return this.http.put<{ message: string }>(`${url}/Communes/` + id, Commune);
+      edit(id: number, commune : Commune) {
+        return this.http.put<{ message: string }>(`${url}/communes/` + id, commune);
       }
       
       // Suppression
       delete(id: number) {
-        return this.http.delete<{ message: string }>(`${url}/Communes/` + id);
+        return this.http.delete<{ message: string }>(`${url}/communes/` + id);
       }
 }

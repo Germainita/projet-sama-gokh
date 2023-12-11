@@ -27,16 +27,16 @@ export class CommentaireService {
       
       // Ajouter  
       add(commentaire : Commentaire) {
-        return this.http.post<{ message: string }>(`${url}/commentaires`, commentaire);
+        return this.http.post(`${url}/commentaires`, commentaire);
       }
       
       // Edition 
       edit(id: number, commentaire : Commentaire) {
-        return this.http.put<{ message: string }>(`${url}/commentaires/` + id, commentaire);
+        return this.http.put(`${url}/commentaires/` + id, commentaire);
       }
       
       // Suppression
       delete(id: number) {
-        return this.http.delete<{ message: string }>(`${url}/commentaires/` + id);
+        return this.http.delete(`${url}/commentaires/` + id);
       }
 }

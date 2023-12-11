@@ -31,11 +31,11 @@ export class AnnonceService {
       
       // Edition 
       edit(id: number, annonce : Annonce) {
-        return this.http.put<{ message: string }>(`${url}/Annonce/` + id, annonce);
+        return this.http.put<{ message: string }>(`${url}/annonces/` + id, annonce);
       }
       
       // Suppression
       delete(id: number) {
-        return this.http.delete<{ message: string }>(`${url}/Annonce/` + id);
+        return this.http.delete<{ message: string }>(`${url}/annonces/` + id);
       }
 }
