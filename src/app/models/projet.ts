@@ -3,8 +3,9 @@ export class Projet {
     titre!: string;
     description!: string;
     image!: File;
-    delai!: number;
     etat!: boolean;
+    delai!: Date ;
+    cout!: number ;
     idUser!:number;
     idTypeProjet!:number;
     idEtatProjet!:number;

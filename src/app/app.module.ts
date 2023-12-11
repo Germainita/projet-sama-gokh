@@ -15,6 +15,7 @@ import { VisiteurComponent } from './composants/visiteur/visiteur/visiteur.compo
 import { PolitiqueComponent } from './composants/citoyen/politique/politique.component';
 import { ConditionComponent } from './composants/citoyen/condition/condition.component';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
