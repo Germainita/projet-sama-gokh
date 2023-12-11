@@ -32,7 +32,8 @@ import { ConditionComponent } from './composants/citoyen/condition/condition.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
