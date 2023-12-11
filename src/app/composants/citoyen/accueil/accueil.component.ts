@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit{
   // Déclaration des variables 
+  // un objet de type projet 
+  
 
   ngOnInit(): void {
     
