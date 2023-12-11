@@ -1,8 +1,8 @@
 export class Projet {
-    id!: number;
+    _id!: number;
     titre!: string;
     description!: string;
-    image!: File;
+    image! : string
     delai!: number;
     etat!: boolean;
     idUser!:number;
