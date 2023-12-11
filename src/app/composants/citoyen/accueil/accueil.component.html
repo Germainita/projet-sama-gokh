@@ -297,43 +297,49 @@
 <!-- Fin Contenu  -->
 
 <!-- Footer  -->
-<div class="footer shadow-sm pt-5">
-    <div class="logoReseaux container mb-5">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="logo text-center">
-                    <a href="#" routerLink="/accueil"><img src="/assets/Fichier 1.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="reseaux">
-                    <h6 class="fw-bold mb-3">Suivez nous sur nos réseaux sociaux</h6>
-                    <p class="">
-                        <span class="iconeReseau me-2"> <i class="bi bi-facebook"></i> </span>
-                        <span class="iconeReseau mx-2"><i class="bi bi-instagram"></i></span> 
-                        <span class="iconeReseau mx-2"> <i class="bi bi-twitter"></i> </span> 
-                        <span class="iconeReseau mx-2"><i class="bi bi-linkedin rounded-circle"></i></span> 
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-    <div class="ling container d-flex justify-content-between my-5">
-        <a href="#" routerLink="/accueil">Accueil</a>
-        <a href="#" routerLink="/projets">Projets</a>
-        <a href="#" routerLink="/apropos">A propos</a>
-        <a href="#" routerLink="/mesprojets">Mes projets</a>
-        <a href="#"routerLink="/annonces">Annonces</a>
-    </div>
-    <div class="copyright text-center">
-        <p class="mt-2"><i class="bi bi-c-circle"></i> 2023 Sama Gokh. Tous droits réservés</p>
-    </div>
-</div>
+<app-footer></app-footer>
 <!-- Fin footer  -->
 
 
+<!-- Détail d'un projet  -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Jardin partagé</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+          <div class="text-end">
+            <p>Créé le 10/12/2023</p>
+          </div>
+          <div class="descprojet">
+            <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
+                bons produits, bio et de saison et faisons découvrir à tous les
+               joies du jardinage. 
+            </p>
+            <div class="textCenter">
+                <p class="fw-bold"><span class="info">Coût: </span>1 600 000 FCFA</p>
+                <p class="fw-bold"><span class="info">Délai: </span>2 ans</p>
+                <p class="fw-bold"><span class="info">Statut: </span>En cours de vote</p>
+                <p class="fw-bold"><span class="info">Créé par: </span>Cisse Khadijatou</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
 
 
 <!-- Utilisation d'une icône et d'un lien simulé -->
@@ -343,6 +349,3 @@
       document.getElementById('fileInput').click();
     });
 </script>
-
-  <!-- Utilisation de la bibliothèque FontAwesome (ajoutez cette ligne à votre code si vous ne l'avez pas déjà) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>

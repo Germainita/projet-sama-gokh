@@ -10,6 +10,10 @@ import { ProjetsComponent } from './composants/citoyen/projets/projets.component
 import { AproposComponent } from './composants/citoyen/apropos/apropos.component';
 import { MesProjetsComponent } from './composants/citoyen/mes-projets/mes-projets.component';
 import { AnnonceComponent } from './composants/citoyen/annonce/annonce.component';
+import { FooterComponent } from './composants/citoyen/footer/footer.component';
+import { VisiteurComponent } from './composants/visiteur/visiteur/visiteur.component';
+import { PolitiqueComponent } from './composants/citoyen/politique/politique.component';
+import { ConditionComponent } from './composants/citoyen/condition/condition.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { AnnonceComponent } from './composants/citoyen/annonce/annonce.component
     ProjetsComponent,
     AproposComponent,
     MesProjetsComponent,
-    AnnonceComponent
+    AnnonceComponent,
+    FooterComponent,
+    VisiteurComponent,
+    PolitiqueComponent,
+    ConditionComponent
   ],
   imports: [
     BrowserModule,
