@@ -9,9 +9,9 @@ export class Projet {
     idUser!:number;
     idTypeProjet!:number;
     idEtatProjet!:number;
-    createdAt!:string;
+    createdAt!:Date;
     createdBy!:string;
-    updatedAt!:string;
+    updatedAt!:Date;
     updatedBy!:string;
 titreProjet: any;
 }
