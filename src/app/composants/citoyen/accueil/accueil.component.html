@@ -120,6 +120,32 @@
         <div class="projetsAVoter sectionAccueil">
             <h3 class="titre text-center mb-4">Projets en cours de vote</h3>
             <div class="row">
+                <div class="col-lg-4" *ngFor="let projetItem of  tabProjet">
+                    <img [src]="projetItem.image" alt="">
+                    <div class="cardProjet mx-5">
+                        <div class="cardProjetContainer">
+                            <h6 class="titreProjet fw-bold text-center">{{projetItem.titre}}</h6>
+                            <p>{{projetItem.description}} <br>
+                               <span class="auteurProjet">Par la mairie</span>
+                            </p>
+                            <a href="#" class="voirPlus">Voir plus</a>
+                            <div class="vote text-center mt-3">
+                                <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
+                                <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="explorer text-center">
+                <button class="btn btnExplorer explorerProjet px-4 fw-bold fs-5">Explorer plus de projets</button>
+            </div>
+        </div>
+        <!-- <div class="projetsAVoter sectionAccueil">
+            <h3 class="titre text-center mb-4">Projets en cours de vote</h3>
+            <div class="row">
                 <div class="col-lg-4">
                     <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
                     <div class="cardProjet mx-5">
@@ -179,7 +205,7 @@
             <div class="explorer text-center">
                 <button class="btn btnExplorer explorerProjet px-4 fw-bold fs-5">Explorer plus de projets</button>
             </div>
-        </div>
+        </div> -->
     
         <!-- Section dernières annonces  -->
         <div class="dernieresAnnonces sectionAccueil">
@@ -265,11 +291,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="coutProjet" class="form-label">Coût</label>
-                            <input type="text" name="coutProjet" class="form-control" id="coutProjet" [(ngModel)]="projet.cout">
+                            <input type="number" name="coutProjet" class="form-control" id="coutProjet" [(ngModel)]="projet.cout">
                         </div>
                         <div class="mb-3">
                             <label for="delaiProjet" class="form-label">Délai</label>
-                            <input type="text" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="projet.delai">
+                            <input type="date" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="projet.delai">
                         </div>
                         <div class="mb-3">
                             <label for="fileInput" class="form-label">Image

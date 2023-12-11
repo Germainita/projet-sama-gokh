@@ -1,5 +1,5 @@
 export class Projet {
-    _id!: number;
+    // _id!: number;
     titre!: string;
     description!: string;
     image! : string

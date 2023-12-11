@@ -20,6 +20,7 @@ export class AccueilComponent implements OnInit{
   constructor(private projetService: ProjetService){}
 
   ngOnInit(): void {
+    this.listeProjets();
   }
 
   // Methode pour uploader le fichier image 
@@ -41,6 +42,10 @@ export class AccueilComponent implements OnInit{
 
   // Methode pour soumettre un projet 
   soumettreProjet(){
+    console.log(typeof(this.projet.delai))
+    let delai = new Date(this.projet.delai)
+    console.log(typeof(delai));
+    // console.log(this.projet)
     // On vérifie s les informations ne sont pas vides 
     if(!this.projet.titre){
       this.verifierChamps("Impossible!", "Le titre est obligatoire", "Erreur")
@@ -56,8 +61,41 @@ export class AccueilComponent implements OnInit{
     }
 
     else {
-      this.projetService.add(this.projet).subscribe(data =>{
+      // let objetProjet = {
+      //   titre: this.projet.titre,
+      //   description: this.projet.description,
+      //   image: this.projet.image,
+      //   cout: 25,
+      //   delai: this.projet.delai,
+      //   etat: true,
+      //   idEtatProjet: 1,
+      //   idTypeProjet: 1,
+      //   idUser: 1,
+      //   createdAt: new Date(),
+      //   createdBy: "germaine",
+      //   updatedAt: new Date(),
+      //   updatedBy: "germaine"
+      // }
+
+      let objetTest = {
+        titre: this.projet.titre,
+        description: this.projet.description,
+        image: this.projet.image,
+        cout: this.projet.cout,
+        delai: new Date(this.projet.delai),
+        etat: true,
+        idEtatProjet: 1,
+        idTypeProjet: 1,
+        idUser: 1,
+        createdAt: new Date(),
+        createdBy: "gdgdggd",
+        updatedAt: new Date(),
+        updatedBy: "gdgdgdg"
+      }
+
+      this.projetService.add(objetTest).subscribe(data =>{
         console.log(data);
+        console.log("Ajouter")
       })
     }
         
@@ -72,6 +110,15 @@ export class AccueilComponent implements OnInit{
       text: text,
       icon: icon
     });
+  }
+
+  // Methode pour lister les projets 
+  listeProjets(){
+    this.projetService.getAlls().subscribe(data =>{
+      console.log(data);
+      this.tabProjet = data;
+      console.log (this.tabProjet)
+    })
   }
 
 
