@@ -1,0 +1,15 @@
+
+#userImage{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.commentList{
+    height: 570px !important;
+    overflow-y: auto;
+    box-shadow: 1px 1px 1px 1px #007A64;
+    padding: 10px !important;
+
+
+}
