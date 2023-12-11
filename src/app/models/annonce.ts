@@ -5,8 +5,8 @@ export class Annonce {
     image! : string
     etat!: boolean;
     idUser!:number;
-    createdAt!:string;
+    createdAt!:Date;
     createdBy!:string;
-    updatedAt!:string;
+    updatedAt!:Date;
     updatedBy!:string;
 }

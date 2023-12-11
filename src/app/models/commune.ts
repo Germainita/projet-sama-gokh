@@ -3,8 +3,8 @@ export class Commune {
     nom!: string;
     nbreCitoyen!: number;
     idVille!: number;    
-    createdAt!:string;
+    createdAt!:Date;
     createdBy!:string;
-    updatedAt!:string;
+    updatedAt!:Date;
     updatedBy!:string;
 }

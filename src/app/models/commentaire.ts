@@ -3,8 +3,8 @@ export class Commentaire {
     contenu!: string;
     idUser!:number;
     idAnnonce!:number;
-    createdAt!:string;
+    createdAt!:Date;
     createdBy!:string;
-    updatedAt!:string;
+    updatedAt!:Date;
     updatedBy!:string;
 }
