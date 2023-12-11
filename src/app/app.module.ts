@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './composants/side-bar/side-bar.component';
 import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { GestionProjetMunicipalComponent } from './composants/adminCommune/gestion-projet-municipal/gestion-projet-municipal.component';
 import { GestionAnnoncesComponent } from './composants/adminCommune/gestion-annonces/gestion-annonces.component';
@@ -49,7 +50,8 @@ import { GestionAdminCommuneComponent } from './composants/maire/gestion-admin-c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
