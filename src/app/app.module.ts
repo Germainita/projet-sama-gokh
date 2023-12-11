@@ -15,6 +15,11 @@ import { ProjetsComponent } from './composants/citoyen/projets/projets.component
 import { AproposComponent } from './composants/citoyen/apropos/apropos.component';
 import { MesProjetsComponent } from './composants/citoyen/mes-projets/mes-projets.component';
 import { AnnonceComponent } from './composants/citoyen/annonce/annonce.component';
+import { LoginComponent } from './composants/auth/login/login.component';
+import { SignupComponent } from './composants/auth/signup/signup.component';
+import { DashboarMaireComponent } from './composants/maire/dashboar-maire/dashboar-maire.component';
+import { ProjetCommuneComponent } from './composants/adminCommune/projet-commune/projet-commune.component';
+
 
 
 @NgModule({
@@ -25,13 +30,19 @@ import { AnnonceComponent } from './composants/citoyen/annonce/annonce.component
 
     GestionProjetMunicipalComponent,
     GestionAnnoncesComponent,
-    DetailsAnnonceComponent
+    DetailsAnnonceComponent,
 
     AccueilComponent,
     ProjetsComponent,
     AproposComponent,
     MesProjetsComponent,
-    AnnonceComponent
+    AnnonceComponent,
+    LoginComponent,
+    SignupComponent,
+    DashboarMaireComponent,
+    ProjetCommuneComponent,
+
+
 
   ],
   imports: [

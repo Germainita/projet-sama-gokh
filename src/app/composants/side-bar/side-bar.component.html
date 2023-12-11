@@ -2,47 +2,46 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
-        
         <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
-            <div class="nav-item  ">  <img class="mt-3 "  src="assets/Fichier 1.png" alt=""></div>
+            <div class="nav-item  ">
+              <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
+            </div>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active ">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#"  routerLink="/sideBar">
                     <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
                     <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
                 </a>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.html"  data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#"  routerLink="/projetMunicipal"  data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
-                    <span style="font-size: 30px; font-weight: 700;" class="text-success" >Utilisateur</span>
+                    <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.html"  data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
                     <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
-                </a> 
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.html"  data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
                     <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
                 </a>
             </li>
-
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
+            <li class="nav-item">
+                <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Déconnexion
+                </a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -59,20 +58,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-success" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -259,17 +244,9 @@
 
                   <div class="container-fluid">
                     <div class="container-fluid">
-
-                        <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Ajouter un projet</a>
-                        </div>
-    
                         <!-- Content Row -->
                         <div class="row " style="margin: 0 auto">
-    
+
                             <!-- card projet réalisés -->
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
@@ -278,7 +255,7 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
                                                     <h1>100</h1></div>
-                                                <div class="h5 mb-0 font-weight-bold text-black-800"> <h3>Projets réalisés</h3> </div>
+                                                <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Projets total</h5> </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="bi bi-kanban-fill text-success " style="font-size: 50px; "></i>
@@ -295,7 +272,7 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
                                                     <h1>238</h1></div>
-                                                <div class="h5 mb-0 font-weight-bold text-black-800"> <h3>Annonces publiés</h3> </div>
+                                                <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Projets validés</h5> </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="bi bi-megaphone-fill text-success " style="font-size: 50px; "></i>
@@ -312,7 +289,24 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
                                                     <h1>10200</h1></div>
-                                                <div class="h5 mb-0 font-weight-bold text-black-800"> <h3>Commentaires</h3> </div>
+                                                <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Propjets encours de vote</h5> </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="bi bi-chat-dots " style="font-size: 50px; "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card projet réalisés -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
+                                                    <h1>10200</h1></div>
+                                                <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Projets invalidé</h5> </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="bi bi-chat-dots " style="font-size: 50px; "></i>
@@ -322,158 +316,302 @@
                                 </div>
                             </div>
                         </div>
-    
-                        <!-- Content Row -->
-    
+                            <!-- forulaire de recherche -->
+
+                           <!-- Button trigger modal -->
+                                <div class="navbouton d-flex gap-3 mb-5 mt-5">
+                                    <!-- Button trigger modal -->
+                                <button type="button" class="btn " data-bs-toggle="modal">
+                                    Projet Citoyen
+                                </button>
+                                <button type="button" class="btn " data-bs-toggle="modal" >
+                                    Projets municipaux
+                                </button>
+                                <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                                    Ajouter un projet
+                                </button>
+                                </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un projet dans la commune </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Titre</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="message-text" class="col-form-label">Description</label>
+                                                      <textarea class="form-control" id="message-text"></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label">Cout</label>
+                                                        <input type="number" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label">Durée</label>
+                                                        <input type="date" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="formFile" class="form-label">Image du projet</label>
+                                                        <input class="form-control" type="file" id="formFile">
+                                                    </div>
+                                                  </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
+                                            <button type="button" class="btn ">Ajouter</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                        <!-- tableau gestion projet municipaux -->
                         <div class="row">
-    
-                            <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="card shadow mb-4">
+                                 <!-- debut Tableau projet -->
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="card  mb-4">
+                                    <h5 class="m-2">Listes des projets </h5>
                                     <!-- tableau accueil admin comune-->
-                                    <table class="table table-striped ">
-                                        <thead>
+                                    <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
+                                        <thead >
                                             <tr>
-                                              <th scope="col">image</th>
-                                              <th scope="col">Titre</th>
-                                              <th scope="col">Cout</th>
-                                              <th scope="col">Statut </th>
-                                              <th scope="col">Action </th>
+                                            <th scope="col" >image</th>
+                                            <th scope="col" >Titre</th>
+                                            <!-- <th scope="col" >Cout</th> -->
+                                            <th scope="col" >Durée </th>
+                                            <th scope="col" >Statut </th>
+                                            <th scope="col" >Action </th>
                                             </tr>
-                                          </thead>
-                                          <tbody class="table-group-divider">
+                                        </thead>
+                                        <tbody class="table-group-divider">
                                             <tr>
-                                                <th><i class="bi bi-card-image" style="font-size: 25px;"></i></th>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
                                                 <td>Auto-suffisance</td>
-                                                <td>1 600 000 FCFA</td>
-                                                <td><div class="btn btn-outline-success fw-bolder">Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-archive text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-eye-fill text-success" style="font-size: 25px;"></i>&nbsp;
+                                                <td>2 ans</td>
+                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th><i class="bi bi-card-image" style="font-size: 25px;"></i></th>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
                                                 <td>Auto-suffisance</td>
-                                                <td>1 600 000 FCFA</td>
-                                                <td><div class="btn btn-outline-success fw-bolder">Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-archive text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-eye-fill text-success" style="font-size: 25px;"></i>&nbsp;
+                                                <td>2 ans</td>
+                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th><i class="bi bi-card-image" style="font-size: 25px;"></i></th>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
                                                 <td>Auto-suffisance</td>
-                                                <td>1 600 000 FCFA</td>
-                                                <td><div class="btn btn-outline-success fw-bolder">Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-archive text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-eye-fill text-success" style="font-size: 25px;"></i>&nbsp;
+                                                <td>2 ans</td>
+                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th><i class="bi bi-card-image" style="font-size: 25px;"></i></th>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
                                                 <td>Auto-suffisance</td>
-                                                <td>1 600 000 FCFA</td>
-                                                <td><div class="btn btn-outline-success fw-bolder">Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-archive text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-eye-fill text-success" style="font-size: 25px;"></i>&nbsp;
+                                                <td>2 ans</td>
+                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th><i class="bi bi-card-image" style="font-size: 25px;"></i></th>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
                                                 <td>Auto-suffisance</td>
-                                                <td>1 600 000 FCFA</td>
-                                                <td><div class="btn btn-outline-success fw-bolder">Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-archive text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-eye-fill text-success" style="font-size: 25px;"></i>&nbsp;
+                                                <td>2 ans</td>
+                                                <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <th><i class="bi bi-card-image" style="font-size: 25px;"></i></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>1 600 000 FCFA</td>
-                                                <td><div class="btn btn-outline-success fw-bolder">Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-archive text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-eye-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th><i class="bi bi-card-image" style="font-size: 25px;"></i></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>1 600 000 FCFA</td>
-                                                <td><div class="btn btn-outline-success fw-bolder">Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-archive text-success" style="font-size: 25px;"></i>&nbsp;
-                                                    <i class="bi bi-eye-fill text-success" style="font-size: 25px;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                          </tbody>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
-    
-                            <!-- Pie Chart -->
-                            <div class="col-xl-4 col-lg-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-success">Ajouter un projet</h6>
-                                        <div class="dropdown no-arrow">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                            </a>
-                                            
-                                        </div>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="mt-4 text-center small">
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-primary"></i> Direct
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-success"></i> Social
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-info"></i> Referral
-                                            </span>
-                                        </div>
-                                    </div>
+
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="card  mb-4">
+                                    <h5 class="m-2">Listes des annonces publées </h5>
+                                    <!-- tableau accueil admin comune-->
+                                    <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
+                                        <thead >
+                                            <tr>
+                                            <th scope="col" >image</th>
+                                            <th scope="col" >Titre</th>
+                                            <!-- <th scope="col" >Cout</th> -->
+                                            <th scope="col" >description </th>
+                                            <th scope="col" >Date </th>
+                                            <th scope="col" >Action </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-group-divider">
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/assortiment-elements-jour-plat-sans-tabac_23-2148874832.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>Non à la consommation du tabac</td>
+                                                <td>Tout le monde est...</td>
+                                                <td> 17/12/2023  </td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/assortiment-elements-jour-plat-sans-tabac_23-2148874832.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>Non à la consommation du tabac</td>
+                                                <td>Tout le monde est...</td>
+                                                <td> 17/12/2023  </td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/route-arbres-autour_1127-2249.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>Ma commune verte </td>
+                                                <td>le but est de favoriser...</td>
+                                                <td>22/12/2023 </td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/vue-face-du-controle-medical-pour-concept-covid19_23-2148777436.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>consultation gratuite </td>
+                                                <td>le but est de favoriser...</td>
+                                                <td>22/12/2023 </td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/vue-face-du-controle-medical-pour-concept-covid19_23-2148777436.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>consultation gratuite </td>
+                                                <td>le but est de favoriser...</td>
+                                                <td>22/12/2023 </td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                        </div>
-    
-                        <!-- Content Row -->
-                        <div class="row">
-    
-                            <!-- Content Column -->
-                            <div class="col-lg-6 mb-4">
+
+                            <div class="">
+                                <div class="card  mb-4">
+                                    <h5 class="m-2">Listes des citoyens </h5>
+                                    <!-- tableau accueil admin comune-->
+                                    <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
+                                        <thead >
+                                            <tr>
+                                            <th scope="col" >image</th>
+                                            <th scope="col" >Nom </th>
+                                            <th scope="col" >Prénom </th>
+                                            <th scope="col" >Adresse email </th>
+                                            <th scope="col" >Téléphone </th>
+                                            <th scope="col" >Action </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-group-divider">
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/femme-affaires-africaine-confiante-souriante-portrait-gros-plan-pour-emploi-campagne-carriere_53876-143280.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>Sy</td>
+                                                <td>Fatou</td>
+                                                <td>fatousygmail.com </td>
+                                                <td>+221 77 855 59 02</td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/beau-jeune-homme-habille-dans-chemise_171337-16391.jpg?w=1060&t=st=1702221832~exp=1702222432~hmac=3e0457833df43a5553bd8cd80ddad56b5653fba1624772cc27729000888c9f26" alt=""></th>
+                                                <td>Diop</td>
+                                                <td>karim</td>
+                                                <td>karimgmail.com </td>
+                                                <td>+221 77 455 69 35 </td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/femme-portant-chemise-blanche-coup-moyen_23-2149345055.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>Diouf</td>
+                                                <td>Germaine</td>
+                                                <td>germainegmail.com </td>
+                                                <td>+221 78 065 79 14</td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/casual-jeune-homme-africain-souriant-isole-blanc_93675-128895.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                                                <td>Samb</td>
+                                                <td>Abdou</td>
+                                                <td>sammbgmail.com </td>
+                                                <td>+221 77 135 52 2</td>
+                                                <td  id="iconAction">
+                                                    <i class="bi bi-eye-fill " ></i>&nbsp;
+                                                    <i class="bi bi-pencil-square " ></i> &nbsp;
+                                                    <i class="bi bi-archive-fill " ></i>&nbsp;
+                                                    <i class="bi bi-archive " ></i>&nbsp;
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-    
-                           
+
                         </div>
-    
                     </div>
                   </div>
             </div>
@@ -508,8 +646,9 @@
         </div>
     </div>
 
- 
+
 
 </body>
+
 
 

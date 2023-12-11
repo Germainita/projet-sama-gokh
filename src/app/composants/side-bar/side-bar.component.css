@@ -1,0 +1,77 @@
+.table1{
+  /* border: 1px solid gray; */
+  text-align: center;
+}
+.table1 thead tr th{
+  background-color: #007A64;
+  color:white;
+}
+tbody tr td i{
+  /* background-color: #007A64; */
+  color:#007A64;
+}
+.btnStatut{
+  border:2px solid #F09E4D ;
+  color:#F09E4D; width:90px;
+  border-radius: 20px;
+  font-size: 12px;
+  height: 30px;
+}
+.navbouton button{
+  background-color: #007A64;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+.sidebar-dark{
+  z-index: 3;
+}
+.navbar{
+  z-index: 1;
+}
+.nav-link span, i{
+  font-size: 20px !important;
+}
+.nav-item img{
+  width: 15vh;
+  /*border: 2px solid #1c294e;*/
+
+
+}
+
+.sidebar-dark .nav-item.active .nav-link i {
+  color: #fff;
+}
+.navbar {
+
+}
+.sidebar-dark{
+
+}
+@media (max-width: 767.98px) {
+  .nav-link span{
+    display: none;
+  }
+  .nav-link i{
+   font-size: 30px !important;
+  }
+  .sidebar-dark{
+    z-index: 3;
+  }
+  .navbar{
+    z-index: 1;
+  }
+  #sidebarToggleTop{
+    display: none;
+
+  }
+  .nav-item #logoSg{
+    width: 15vh !important;
+margin-top: -20px !important;
+  }
+}
+
+
+

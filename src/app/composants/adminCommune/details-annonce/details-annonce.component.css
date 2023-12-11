@@ -80,6 +80,98 @@ color: #007A64;
     background-color: #007A64;
 }
 
+.rowComment{
+   /* background-color: #00a5f4; */
+   margin: 0 auto !important;
+   padding: 0 !important;
+}
+.com{
+    /* border: 1px solid maroon; */
+    margin: 0 auto !important;
+    overflow-y: auto; /* ou overflow-y: scroll; */
+    height: 72vh; /* spécifiez la hauteur de votre div ici */
+
+
+/* display: flex; */
+}
+.com1{
+    /* border: 1px solid rgb(23, 0, 128); */
+    padding: 0 !important;
+/* display: flex; */
+}
+.com1 img{
+   width: 100%;
+}
+
+/* commentaire */
+body{
+	background-color: #fff;
+}
+.container{
+	background-color: #eef2f5;
+	width: 400px;
+}
+.addtxt{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 13px;
+	width: 350px;
+	background-color: #e5e8ed;
+	font-weight: 500;
+}
+.form-control:focus{
+	color: #000;
+}
+.second{
+	width: 350px;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 2px 2px 4px #aaaaaa;
+}
+.text1{
+	font-size: 13px;
+    font-weight: 500;
+    color: #56575b;
+}
+.text2{
+	font-size: 13px;
+    font-weight: 500;
+    margin-left: 6px;
+    color: #56575b;
+}
+.text3{
+	font-size: 13px;
+    font-weight: 500;
+    margin-right: 4px;
+    color: #828386;
+}
+.text3o{
+	color: #00a5f4;
+
+}
+.text4{
+	font-size: 13px;
+    font-weight: 500;
+    color: #828386;
+}
+.text4i{
+	color: #00a5f4;
+}
+.text4o{
+	color: white;
+}
+.thumbup{
+	font-size: 13px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+.thumbupo{
+	color: #17a2b8;
+}
+/* commentaire */
+
+
 @media screen and (max-width: 535px){
     .navbouton button{
         font-size: 14px;
