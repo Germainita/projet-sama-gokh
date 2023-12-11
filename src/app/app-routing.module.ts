@@ -14,6 +14,7 @@ import { LoginComponent } from './composants/auth/login/login.component';
 import { SignupComponent } from './composants/auth/signup/signup.component';
 import {ProjetCommuneComponent} from "./composants/adminCommune/projet-commune/projet-commune.component";
 import {DashboarMaireComponent} from "./composants/maire/dashboar-maire/dashboar-maire.component";
+import {GestionAdminCommuneComponent} from "./composants/maire/gestion-admin-commune/gestion-admin-commune.component";
 
 const routes: Routes = [
   {path: "accueil", component:AccueilComponent},
@@ -27,8 +28,9 @@ const routes: Routes = [
   {path:"commentaire", component:DetailsAnnonceComponent},
   {path:"connexion", component:LoginComponent},
   {path:"inscription", component:SignupComponent},
-  {path:"ProjetCommune", component:ProjetCommuneComponent},
-  {path:"acceuil-maire", component:DashboarMaireComponent}
+  {path:"ProjetCommune ", component:ProjetCommuneComponent},
+  {path:"acceuil-maire", component:DashboarMaireComponent},
+  {path:"gestion-admin-commune", component:GestionAdminCommuneComponent},
 
 ];
 

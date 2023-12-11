@@ -272,7 +272,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
                         <h1>238</h1></div>
-                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Projets validés</h5> </div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5> Annonces</h5> </div>
                     </div>
                     <div class="col-auto">
                       <i class="bi bi-megaphone-fill text-success " style="font-size: 50px; "></i>
@@ -289,7 +289,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
                         <h1>10200</h1></div>
-                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Propjets encours de vote</h5> </div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Administrateurs</h5> </div>
                     </div>
                     <div class="col-auto">
                       <i class="bi bi-chat-dots " style="font-size: 50px; "></i>
@@ -321,60 +321,90 @@
           <!-- Button trigger modal -->
           <div class="navbouton d-flex gap-3 mb-5 mt-5">
             <!-- Button trigger modal -->
-            <button type="button" class="btn " data-bs-toggle="modal">
-              Projet Citoyen
-            </button>
-            <button type="button" class="btn " data-bs-toggle="modal" >
-              Projets municipaux
-            </button>
-            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" >
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal2" >
               Ajouter un projet
             </button>
-          </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un projet dans la commune </h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="">
-                      <label for="recipient-name" class="col-form-label w-100">Titre</label>
-                      <input type="text" class="form-control w-100 mx-0 my-0" id="recipient-name">
-                    </div>
-                    <div class="">
-                      <label for="message-text" class="col-form-label ">Description</label>
-                      <textarea class="form-control w-100" id="message-text"></textarea>
-                    </div>
-                    <div class="">
-                      <label for="recipient-name" class="col-form-label ">Cout</label>
-                      <input type="number" class="form-control w-100" id="recipient-name">
-                    </div>
-                    <div class="">
-                      <label for="recipient-name" class="col-form-label ">Durée</label>
-                      <input type="date" class="form-control w-100" id="recipient-name">
-                    </div>
-                    <div class="">
-                      <label for="formFile" class="form-label ">Image du projet</label>
-                      <input class="form-control w-100" type="file" id="formFile">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
-                  <button type="button" class="btn btn-success">Ajouter</button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Ajouter un projet dans la commune </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label w-100">Titre</label>
+                        <input type="text" class="form-control w-100 mx-0 my-0" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="message-text" class="col-form-label ">Description</label>
+                        <textarea class="form-control w-100" id="message-text"></textarea>
+                      </div>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label ">Cout</label>
+                        <input type="number" class="form-control w-100" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label ">Durée</label>
+                        <input type="date" class="form-control w-100" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="formFile" class="form-label ">Image du projet</label>
+                        <input class="form-control w-100" type="file" id="formFile">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
+                    <button type="button" class="btn btn-success">Ajouter</button>
+                  </div>
                 </div>
               </div>
             </div>
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal1" >
+              Ajouter une annonce
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel1">Ajouter une annonce </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label w-100">Titre de l'annonce </label>
+                        <input type="text" class="form-control w-100 mx-0 my-0" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="message-text" class="col-form-label ">Description</label>
+                        <textarea class="form-control w-100" id="message-text"></textarea>
+                      </div>
+                      <div class="">
+                        <label for="formFile" class="form-label ">Image</label>
+                        <input class="form-control w-100" type="file" id="formFile">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
+                    <button type="button" class="btn btn-success">Ajouter</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" >
+              Projets municipaux
+            </button>
           </div>
           <!-- tableau gestion projet municipaux -->
           <div class="row">
             <!-- debut Tableau projet -->
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-7 col-lg-5">
               <div class="card  mb-4">
                 <h5 class="m-2">Listes des projets </h5>
                 <!-- tableau accueil admin comune-->
@@ -491,7 +521,7 @@
               </div>
             </div>
 
-            <div class=" col-xl-4 col-lg-5">
+            <div class=" col-xl-5 col-lg-5">
               <div class="card  px-3 py-3 ">
                 <h5 class="m-2">Ajouter un projet pour la commune </h5>
                 <!-- tableau accueil admin comune-->
@@ -525,7 +555,97 @@
               </div>
             </div>
 
-
+            <div class="">
+              <div class="card  mb-4">
+                <h5 class="m-2">Listes des projets </h5>
+                <!-- tableau accueil admin comune-->
+                <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
+                  <thead >
+                  <tr>
+                    <th scope="col" >image</th>
+                    <th scope="col" >Titre</th>
+                    <th scope="col" >Description</th>
+                    <th scope="col" >Cout</th>
+                    <th scope="col" >Durée </th>
+                    <th scope="col" >Statut </th>
+                    <th scope="col" >Action </th>
+                  </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -564,3 +684,4 @@
 
 
 </body>
+

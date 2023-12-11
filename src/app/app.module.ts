@@ -19,6 +19,7 @@ import { LoginComponent } from './composants/auth/login/login.component';
 import { SignupComponent } from './composants/auth/signup/signup.component';
 import { DashboarMaireComponent } from './composants/maire/dashboar-maire/dashboar-maire.component';
 import { ProjetCommuneComponent } from './composants/adminCommune/projet-commune/projet-commune.component';
+import { GestionAdminCommuneComponent } from './composants/maire/gestion-admin-commune/gestion-admin-commune.component';
 
 
 
@@ -41,6 +42,7 @@ import { ProjetCommuneComponent } from './composants/adminCommune/projet-commune
     SignupComponent,
     DashboarMaireComponent,
     ProjetCommuneComponent,
+    GestionAdminCommuneComponent,
 
 
 
