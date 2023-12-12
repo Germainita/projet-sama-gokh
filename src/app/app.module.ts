@@ -13,6 +13,7 @@ import { VilleComponent } from './composants/superAdmin/ville/ville.component';
 import { CommuneComponent } from './composants/superAdmin/commune/commune.component';
 import { GestionProjetComponent } from './composants/superAdmin/gestion-projet/gestion-projet.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SuperAdminAccueilComponent } from './composants/superAdmin/super-admin-accueil/super-admin-accueil.component';
 
 @NgModule({
   
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     RolesComponent,
     VilleComponent,
     CommuneComponent,
-    GestionProjetComponent
+    GestionProjetComponent,
+    SuperAdminAccueilComponent
   ],
   imports: [
     BrowserModule,
