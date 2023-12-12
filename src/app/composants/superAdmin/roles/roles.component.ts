@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Role } from 'src/app/models/role';
 import { RoleService } from 'src/app/services/role-service';
 
 
 @Component({
   selector: 'app-roles',
-  templateUrl: './roles.component.html',
+  templateUrl:  './roles.component.html',
   styleUrls: ['./roles.component.css']
 })
 
 export class RolesComponent implements OnInit {
   roles: Role[] = [];
   nom: string = '';
-  newRoleName: string = ''; // Variable pour stocker le nom du nouveau
+  newRoleName: string= '' ; // Variable pour stocker le nom du nouveau
 
   
 
@@ -28,13 +29,20 @@ export class RolesComponent implements OnInit {
     });
   }
 
-  add(role : Role) {
+  add(form : NgForm) {
+    if (form.invalid){
+      return;
+    }
+    let role = new Role();
+    role.nom = this.newRoleName;
+    role.createdAt = new Date().toLocaleString();
+    role.createdBy = '1'
+    console.log('Ajouter role',role)
      this.roleService.add(role).subscribe(data => {
-      console.log('Ajouter role')
-     })
-
-
+    })
  }
+
+
 
 
 }

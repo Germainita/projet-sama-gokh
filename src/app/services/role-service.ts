@@ -27,7 +27,7 @@ export class RoleService {
       {
         return this.http.get<Role>(`${url}/roles/`+ id);
       }
-          
+
       // Ajouter  
       add(role : Role) {
         return this.http.post(`${url}/roles`, role);

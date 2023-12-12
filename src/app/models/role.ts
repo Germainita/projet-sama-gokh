@@ -1,8 +1,8 @@
 export class Role {
-    id!: number;
+    id?: number;
     nom!: string;
     createdAt!:string;
     createdBy!:string;
-    updatedAt!:string;
-    updatedBy!:string;
+    updatedAt?:string;
+    updatedBy?:string;
 }

@@ -155,16 +155,16 @@
                                 <div class="card shadow mb-4" style="">
                                     <!-- tableau accueil admin comune-->
                                     <h4 class="ps-4 text-center mt-4 mb-4" style="color: #F09E4D;">Ajouter un rôle</h4>
-                                    <form>
+                                    <form #roleForm="ngForm">
                                         <div class="mb-3">
                                             <div class="col-sm-10" style="margin: 0 auto;">
                                                 <input type="text" name="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
                                             </div>
-                                            
-                                            <input type="text" [(ngModel)]="newRoleName" class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
+                                
+                                            <input type="text" name="role" [(ngModel)]="newRoleName" required class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
                                           <div class="col-auto d-flex justify-content-between mx-5 p-4">
                                              <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
-                                             <button type="submit" class="btn btn-primary mb-3 fw-bold" (click)="add()" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
+                                             <button type="submit" class="btn btn-primary mb-3 fw-bold" (click)="add(roleForm)" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
                                           </div>
                                         </div>
                                     </form>
