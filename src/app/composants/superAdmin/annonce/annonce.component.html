@@ -1,0 +1,390 @@
+<!-- <p>accueil works!</p> -->
+
+<body id="page-top">
+    
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        
+        <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar" style=" width: 300px;">
+            <div class="nav-item">  <img class="mt-1" style="padding: 20px; margin-right: 10px;"  src="assets/Fichier 1.png" alt=""></div>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active ">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-grid-1x2-fill text-success" style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/accueil" >Dashboard</span>
+                </a> 
+            </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;" class="text-success" routerLink="/utilisateur" >Utilisateur</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="bi bi-kanban-fill text-success" style="font-size: 25px;  "></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;" class="text-success" id="dash1" routerLink="/projet" >Projets</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="bi bi-kanban-fill text-success" style="font-size: 25px;  "></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;" class="text-success" id="dash1" routerLink="/gestion-projet" >Gestion Projets</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-megaphone-fill " style="font-size: 25px; color: #F09E4D;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;  color: #F09E4D;"  class="" routerLink="/annonce">Annonces</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-person-fill-gear text-success " style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/roles">Rôles</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa-solid fa-city text-success " style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/ville">Villes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa-solid fa-building-user text-success " style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/commune">Communes</span>
+                </a>
+            </li>
+
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="d-sm-flex align-items-center justify-content-between my-4">
+                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" 
+                style="font-size: 20px; padding: 15px; margin: 20px; font-weight: bold;" >
+                <i class="bi bi-box-arrow-left text-white-100"></i>Déconnexion</a>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <!-- <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a> -->
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Rechercher..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn " type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Profl admin commune -->
+                        <li class="nav-item dropdown no-arrow" style="margin-right: 15px;">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img class="img-profile rounded-circle"
+                                    src="assets/img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                
+                <div class="annonceContent" *ngIf="!showComments">
+                         <div class="">
+                                           <h4 class="ms-3 mb-3" style="color: #007A64;">Récemment publiées</h4>
+                                             <div class="row" style="padding: 0 15px;">
+                         
+                             
+                                                 <!-- card projet réalisés -->
+                                                 <div class="col-xl-3 col-md-6 mb-4">
+                                                     <img src="https://img.freepik.com/photos-premium/gros-plan-femme-noire-donnant-du-sang-se-concentrant-main-tenant-boule-rouge-espace-copie-tube_236854-39697.jpg?w=740" id="annonceImg" alt="">
+                                                     <div class="imgCarte text-center" style="width: 250px; height: 50px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding-top: 10px;
+                                                       background-color: #F09E4D; opacity: 75%;  position: absolute; top: 100px !important; color: white; font-weight: bold; font-size: 15px;;">
+                                                       Journée Don de SANG
+                                                     </div>
+                                                 </div>
+                                                 <div class="col-xl-3 col-md-6 mb-4">
+                                                     <img src="https://img.freepik.com/vecteurs-premium/ordures-tri-dechets-alimentaires-verre-metal-papier-plastique_87689-243.jpg?w=740" id="annonceImg" alt="">
+                                                     <div class="imgCarte text-center" style="width: 250px; height: 50px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding-top: 10px;
+                                                       background-color: #F09E4D; opacity: 75%;  position: absolute; top: 100px !important; color: white; font-weight: bold; font-size: 15px;;">
+                                                       SETAL SA GOKH
+                                                     </div>
+                                                 </div>
+                                                 <div class="col-xl-3 col-md-6 mb-4">
+                                                     <img src="https://img.freepik.com/vecteurs-libre/ensemble-bannieres-retour-ecole_23-2147657817.jpg?w=740&t=st=1702093787~exp=1702094387~hmac=5fb882a5ac9ae5ae57107899b87427556b0920b05425db54d240cf485bc11af5" id="annonceImg" alt="">
+                                                     <div class="imgCarte text-center" style="width: 250px; height: 50px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding-top: 10px;
+                                                       background-color: #F09E4D; opacity: 75%;  position: absolute; top: 100px !important; color: white; font-weight: bold; font-size: 15px;;">
+                                                      Tous à l'école
+                                                     </div>
+                                                 </div>
+                                                 <div class="col-xl-3 col-md-6 mb-4">
+                                                     <img src="https://img.freepik.com/photos-premium/collegues-sceptiques-regardent-presentation-commerciale-du-projet-ecran-ordinateur-portable-pendant-reunion_236854-33091.jpg?w=740" id="annonceImg" alt="">
+                                                     <div class="imgCarte text-center" style="width: 250px; height: 50px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; padding-top: 10px;
+                                                       background-color: #F09E4D; opacity: 75%;  position: absolute; top: 100px !important; color: white; font-weight: bold; font-size: 15px;;">
+                                                       Un jeune, Un travail
+                                                     </div>
+                                                 </div>
+                                             </div>
+                         </div>
+                    
+                         <div class="mt-5 row p-5">
+                                    <div class="col-md-6">
+                                        <div class="col-xl-3 col-md-6 mb-4 mt-5 ms-4">
+                                            <div class="card shadow py-2 px-4" style="height:350px; width: 410px;">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="annonceImg col mr-2">
+                                                        <img src="https://img.freepik.com/photos-premium/
+                                                        arbre-deux-mains-environnements-tres-differents-jour-terre-journee-mondiale
+                                                        -environnement-rechauffement-climatique-pollution_34998-453.jpg?w=740" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="text"  style="margin-top: 70px !important;">
+                                                        <p class=""><span class="fw-bold text-success">Titre:</span> Campagne de reboisement</p>
+                                                        <p><Span class="fw-bold text-success">Description:</Span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum dolor excepturi, et voluptates 
+                                                            praesentium animi magni exercitationem, aliquam harum recusandae dolore impedit quaerat tenetur totam quisquam iste 
+                                                            nisi eos quidem!</p>
+                                                        <p class="d-flex justify-content-end"><a  (click)="showComments = true" style="cursor: pointer; color: #F09E4D !important;font-weight: bold ;">Commentaires</a></p>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-xl-3 col-md-6 mb-4 mt-5">
+                                            <div class="card shadow py-2 px-4" style="height:350px; width: 410px;">
+                                                <div class="card-body">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="annonceImg col mr-2">
+                                                        <img src="https://img.freepik.com/photos-gratuite/medecin-aide-humanitaire-afrique-prenant-soin-patient_23-2149117843.jpg?w=740&t=st=1702124366~exp=1702124966~hmac=d759978e2284be7259c20362ab0c0dcc0d3b3b9a5cf3614778764120c00ec196" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="text"  style="margin-top: 70px !important;">
+                                                        <p class=""><span class="fw-bold text-success">Titre:</span>Journée de consultation gratuite</p>
+                                                        <p><Span class="fw-bold text-success">Description:</Span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum dolor excepturi, et voluptates 
+                                                            praesentium animi magni exercitationem, aliquam harum recusandae dolore impedit quaerat tenetur totam quisquam iste 
+                                                            nisi eos quidem!</p>
+                                                        <p class="d-flex justify-content-end"><a (click)="showComments = true" style="cursor: pointer; color: #F09E4D !important;font-weight: bold ;">Commentaires</a></p>
+                    
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                        </div> 
+                                    </div>
+                            
+                            
+                         </div>
+                </div>
+
+                                 <!-- Section de commentaires associée à l'annonce 1 -->
+                            <div class="row row-cols-1 row-cols-md-2 g-2" *ngIf="showComments" id="commentaires">
+                                <div class="col col-md-6 ps-5">
+                                    <h5 class=" text-success fw-bold"><i class="bi bi-arrow-left"></i>Liste des commentaires</h5>
+                                    <img src="https://img.freepik.com/photos-gratuite/medecin-aide-humanitaire-afrique-prenant-soin-patient_23-2149117843.jpg?w=740&t=st=1702124366~exp=1702124966~hmac=d759978e2284be7259c20362ab0c0dcc0d3b3b9a5cf3614778764120c00ec196" 
+                                    class="card-img-top" style="height: 550px; border-radius: 10px;" alt="...">
+                                </div>
+                                <div class="commentList col col-md-6 container bg-white" >
+                                    <p class="mt-3 fs-6 text-center"><span class="text-success fw-bold">Détails-poste:</span>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                    <div class="card mb-3 mt-3" style="width: 23.3rem; height: 150px; box-shadow: 1px 1px 1px 1px #007A64;">
+                                        <div class="card-body d-flex justify-content-between">
+                                          <div class="IMG"><img src="https://img.freepik.com/photos-premium/dessin-anime-femme-portant-chapeau-chemise-rose_81048-13599.jpg?w=360" alt=""></div>
+                                          <div class="details ms-3">
+                                            <div class="top d-flex justify_content_between">
+                                                <div class="name"><h6 class="card-title text-success fw-bold">Ayou Diouf</h6></div>
+                                                <div class="para ms-5 ps-5"><p class="card-text" style="color: #F09E4D; font-size: 15px;">ad085@gmail.com</p></div>
+                                            </div>
+                                            <div class="comment" style="font-size: 12px;">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus temporibus magnam adipisci,
+                                                    necessitatibus ea doloribus earum ab libero</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3 mt-3" style="width: 23.3rem; height: 150px; box-shadow: 1px 1px 1px 1px #007A64;">
+                                        <div class="card-body d-flex justify-content-between">
+                                          <div class="IMG"><img src="https://img.freepik.com/photos-premium/dessin-anime-femme-portant-chapeau-chemise-rose_81048-13599.jpg?w=360" alt=""></div>
+                                          <div class="details ms-3">
+                                            <div class="top d-flex justify_content_between">
+                                                <div class="name"><h6 class="card-title text-success fw-bold">Ayou Diouf</h6></div>
+                                                <div class="para ms-5 ps-5"><p class="card-text" style="color: #F09E4D; font-size: 15px;">ad085@gmail.com</p></div>
+                                            </div>
+                                            <div class="comment" style="font-size: 12px;">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus temporibus magnam adipisci,
+                                                    necessitatibus ea doloribus earum ab libero</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3 mt-3" style="width: 23.3rem; height: 150px; box-shadow: 1px 1px 1px 1px #007A64;">
+                                        <div class="card-body d-flex justify-content-between">
+                                          <div class="IMG"><img src="https://img.freepik.com/photos-premium/dessin-anime-femme-portant-chapeau-chemise-rose_81048-13599.jpg?w=360" alt=""></div>
+                                          <div class="details ms-3">
+                                            <div class="top d-flex justify_content_between">
+                                                <div class="name"><h6 class="card-title text-success fw-bold">Ayou Diouf</h6></div>
+                                                <div class="para ms-5 ps-5"><p class="card-text" style="color: #F09E4D; font-size: 15px;">ad085@gmail.com</p></div>
+                                            </div>
+                                            <div class="comment" style="font-size: 12px;">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus temporibus magnam adipisci,
+                                                    necessitatibus ea doloribus earum ab libero</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3 mt-3" style="width: 23.3rem; height: 150px; box-shadow: 1px 1px 1px 1px #007A64;">
+                                        <div class="card-body d-flex justify-content-between">
+                                          <div class="IMG"><img src="https://img.freepik.com/photos-premium/dessin-anime-femme-portant-chapeau-chemise-rose_81048-13599.jpg?w=360" alt=""></div>
+                                          <div class="details ms-3">
+                                            <div class="top d-flex justify_content_between">
+                                                <div class="name"><h6 class="card-title text-success fw-bold">Ayou Diouf</h6></div>
+                                                <div class="para ms-5 ps-5"><p class="card-text" style="color: #F09E4D; font-size: 15px;">ad085@gmail.com</p></div>
+                                            </div>
+                                            <div class="comment" style="font-size: 12px;">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus temporibus magnam adipisci,
+                                                    necessitatibus ea doloribus earum ab libero</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3 mt-3" style="width: 23.3rem; height: 150px; box-shadow: 1px 1px 1px 1px #007A64;">
+                                        <div class="card-body d-flex justify-content-between">
+                                          <div class="IMG"><img src="https://img.freepik.com/photos-premium/dessin-anime-femme-portant-chapeau-chemise-rose_81048-13599.jpg?w=360" alt=""></div>
+                                          <div class="details ms-3">
+                                            <div class="top d-flex justify_content_between">
+                                                <div class="name"><h6 class="card-title text-success fw-bold">Ayou Diouf</h6></div>
+                                                <div class="para ms-5 ps-5"><p class="card-text" style="color: #F09E4D; font-size: 15px;">ad085@gmail.com</p></div>
+                                            </div>
+                                            <div class="comment" style="font-size: 12px;">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus temporibus magnam adipisci,
+                                                    necessitatibus ea doloribus earum ab libero</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-3 mt-3" style="width: 23.3rem; height: 150px; box-shadow: 1px 1px 1px 1px #007A64;">
+                                        <div class="card-body d-flex justify-content-between">
+                                          <div class="IMG"><img src="https://img.freepik.com/photos-premium/dessin-anime-femme-portant-chapeau-chemise-rose_81048-13599.jpg?w=360" alt=""></div>
+                                          <div class="details ms-3">
+                                            <div class="top d-flex justify_content_between">
+                                                <div class="name"><h6 class="card-title text-success fw-bold">Ayou Diouf</h6></div>
+                                                <div class="para ms-5 ps-5"><p class="card-text" style="color: #F09E4D; font-size: 15px;">ad085@gmail.com</p></div>
+                                            </div>
+                                            <div class="comment" style="font-size: 12px;">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus temporibus magnam adipisci,
+                                                    necessitatibus ea doloribus earum ab libero</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+            </div>
+       
+
+         </div>
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+ 
+
+</body>
+
+
+

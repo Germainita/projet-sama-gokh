@@ -1,0 +1,312 @@
+
+<!-- <p>accueil works!</p> -->
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        
+        <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar" style=" width: 300px;">
+            <div class="nav-item">  <img class="mt-1" style="padding: 20px; margin-right: 10px;"  src="assets/Fichier 1.png" alt=""></div>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active ">
+                <a class="nav-link">
+                    <i class="bi bi-grid-1x2-fill text-success" style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;" id="dash1" class="text-success" routerLink="/accueil" >Dashboard</span>
+                </a>
+            </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;" class="text-success" routerLink="/utilisateur" >Utilisateur</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/projet">Projets </span>
+                </a> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-kanban-fill" style="font-size: 25px; color: #F09E4D; "></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700; color: #F09E4D; "  class="" routerLink="/gestion-projet">Gestion Projets </span>
+                </a> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/annonce">Annonces</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="bi bi-person-fill-gear text-success" style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/roles">Rôles</span>
+
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa-solid fa-city text-success" style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/ville">Villes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed"  data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fa-solid fa-building-user text-success " style="font-size: 25px;"></i>
+                    <span style="cursor: pointer; font-size: 20px; font-weight: 700;"  class="text-success" routerLink="/commune">Communes</span>
+                </a>
+            </li>
+
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="d-sm-flex align-items-center justify-content-between my-4">
+                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" 
+                style="font-size: 20px; padding: 15px; margin: 20px; font-weight: bold;" >
+                <i class="bi bi-box-arrow-left text-white-100"></i>Déconnexion</a>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <!-- <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a> -->
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Rechercher..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn " type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Profl admin commune -->
+                        <li class="nav-item dropdown no-arrow" style="margin-right: 15px;">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img class="img-profile rounded-circle"
+                                    src="assets/img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+               <div class="container row">
+                    <div class="left col-md-6">
+                            <div class="col-xl-8 col-lg-7 container mt-3" style="width: 500px !important;">
+                                <div class="card shadow mb-4" style="">
+                                    <!-- tableau accueil admin comune-->
+                                    <h4 class="ps-4 text-center mt-4 mb-4" style="color: #F09E4D;">Ajouter un état de projet</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <div class="col-sm-10" style="margin: 0 auto;">
+                                                <input type="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
+                                            </div>
+                                            <input type="text" class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
+                                            <div class="col-auto d-flex justify-content-between mx-5 p-4">
+                                             <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
+                                             <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
+                                          </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Area Chart -->
+                            <div class="col-xl-8 col-lg-7 container mt-3" style="width: 500px !important;">
+                               <div class="card shadow mb-4" style="">
+                                   <!-- tableau accueil admin comune-->
+                                   <h4 class="text-center mt-4 mb-4" style="color: #F09E4D;">Les différents états projets</h4>
+                                   <div class="">
+                     </div>
+                                   <table class="table table-striped">
+                                       <thead>
+                                           <tr class="">
+                                             <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 40px;">Nom</th>
+                                             <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 40px;">Action</th>
+
+                                           </tr>
+                                         </thead>
+                                         <tbody class="table-group-divider">
+                                           <tr>
+                                               <td class="" style="padding-left: 40px !important;">Terminé</td>
+                                               <td class="" style="padding-left: 40px !important;">
+                                                <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
+                                               </td>
+                                           </tr>
+                                           <tr>
+                                               <td class="" style="padding-left: 40px !important;">En cours</td>
+                                               <td class="" style="padding-left: 40px !important;">
+                                                <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
+                                               </td>
+                                           </tr>
+                                           <tr>
+                                               <td class="" style="padding-left: 40px !important;">Validé</td>
+                                               <td class="" style="padding-left: 40px !important;">
+                                                <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
+                                               </td>
+                                           </tr>
+                                           <tr>
+                                               <td class="" style="padding-left: 40px !important;">Invalidé</td>
+                                               <td class="" style="padding-left: 40px !important;">
+                                                <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
+                                               </td>
+                                           </tr>
+                                         </tbody>
+                                   </table>
+                               </div>
+                           </div>
+                    </div>
+                    <div class="right col-md-6">
+                        <div class="col-xl-8 col-lg-7 container mt-3" style="width: 500px !important;">
+                            <div class="card shadow mb-4" style="">
+                                <!-- tableau accueil admin comune-->
+                                <h4 class="ps-4 text-center mt-4 mb-4" style="color: #F09E4D;">Ajouter un type de projet</h4>
+                                <form>
+                                    <div class="mb-3">
+                                        <div class="col-sm-10" style="margin: 0 auto;">
+                                            <input type="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
+                                        </div>
+                                        <input type="text" class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
+                                        <div class="col-auto d-flex justify-content-between mx-5 p-4">
+                                         <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
+                                         <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
+                                      </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7 container mt-3" style="width: 500px !important;">
+                           <div class="card shadow mb-4" style="">
+                               <!-- tableau accueil admin comune-->
+                               <h4 class="text-center mt-4 mb-4" style="color: #F09E4D;">Les types de projets</h4>
+                               <div class="">
+                 </div>
+                               <table class="table table-striped">
+                                   <thead>
+                                       <tr class="">
+                                         <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 40px;">Nom</th>
+                                         <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 40px;">Action</th>
+
+                                       </tr>
+                                     </thead>
+                                     <tbody class="table-group-divider">
+                                       <tr>
+                                           <td class="" style="padding-left: 40px !important;">Projet municipal</td>
+                                           <td class="" style="padding-left: 40px !important;">
+                                            <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td class="" style="padding-left: 40px !important;">Projet citoyen</td>
+                                           <td class="" style="padding-left: 40px !important;">
+                                            <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
+                                           </td>
+                                       </tr>
+                                     </tbody>
+                               </table>
+                           </div>
+                       </div>
+                    </div>
+               </div>
+            </div>
+        <!-- End of Content Wrapper -->
+
+         </div>
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+</body>
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+#userImage{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+#modalCardImg{
+    /* box-shadow: 2px 2px 2px 2px #F09E4D ; */
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 100%;
+    margin-top: 40px;
+}
+#exampleModal{
+    /* border:1px solid blueviolet; */
+    padding-right: 200px  !important ;
+    margin: 0 auto !important;
+}
+.cardImg{
+    box-shadow: 2px 1px 1px 2px #e6a667 ;
+    border-radius: 15px;
+}
