@@ -1,7 +1,8 @@
 export class Vote {
-    _id!: number;
+    id!: number;
     scrutin!: string;
     idUser!: number;
+    idProjet!: number;
     createdAt!:Date;
     createdBy!:string;
 }

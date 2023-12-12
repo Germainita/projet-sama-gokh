@@ -284,7 +284,11 @@
 }
 
 
-
+/* Profil  */
+.modal img{
+    width: 10vh;
+    height: 10vh;
+}
 
 /* Média queries  */
 @media screen and (max-width:760px){
