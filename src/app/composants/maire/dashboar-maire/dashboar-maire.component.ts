@@ -59,8 +59,7 @@ constructor(
         })
       }
 ajouterUser(){
-  // console.log(this.projet)
-  // On vérifie s les informations ne sont pas vides
+
   if(!this.user.nom){
     this.verifierChamps("Impossible!", "Le nom est obligatoire", "Erreur")
   }

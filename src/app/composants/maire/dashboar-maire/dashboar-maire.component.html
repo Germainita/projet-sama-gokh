@@ -372,7 +372,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel1">Ajouter administrateur </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" id="close-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <form>
@@ -382,21 +382,21 @@
                       </div>
                       <div class="">
                         <label for="message-text" class="col-form-label ">Prénom</label>
-                        <textarea class="form-control w-100" id="message-text" name="prenomUser" [(ngModel)]="user.prenom"></textarea>
+                        <textarea class="form-control w-100"  name="prenomUser" [(ngModel)]="user.prenom"></textarea>
                       </div>
                       <div class="">
                         <label for="formFile" class="form-label ">Téléphone</label>
-                        <input class="form-control w-100" type="file" id="formFile" name="telephoneUser" [(ngModel)]="user.telephone">
+                        <input class="form-control w-100" type="text"  name="telephoneUser" [(ngModel)]="user.telephone">
                       </div>
                       <div class="">
                         <label for="formFile" class="form-label ">Adresse email</label>
-                        <input class="form-control w-100" type="file" id="formFile" name="emailUser" [(ngModel)]="user.email">
+                        <input class="form-control w-100" type="text"  name="emailUser" [(ngModel)]="user.email">
                       </div>
                     </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
-                    <button type="button" class="btn btn-success" >Ajouter</button>
+                    <button type="button" class="btn btn-success"  (click)="ajouterUser()">Ajouter</button>
                   </div>
                 </div>
               </div>
@@ -408,7 +408,7 @@
           <!-- tableau gestion projet municipaux -->
           <div class="row">
             <!-- debut Tableau projet -->
-            <div class="col-xl-7 col-lg-5">
+            <div class="col-lg-12 col-lg-5">
               <div class="card  mb-4">
                 <h5 class="m-2">Listes des projets </h5>
                 <!-- tableau accueil admin comune-->
@@ -444,7 +444,7 @@
               </div>
             </div>
 
-            <div class=" col-xl-5 col-lg-5">
+            <div class=" col-lg-12 col-lg-5">
               <div class="card  mb-4">
                 <h5 class="m-2">Listes des Administrateurs </h5>
                 <!-- tableau accueil admin comune-->
@@ -476,7 +476,7 @@
               </div>
             </div>
 
-            <div class="">
+            <div class=" col-lg-12 col-lg-5">
               <div class="card  mb-4">
                 <h5 class="m-2">Listes des projets </h5>
                 <!-- tableau accueil admin comune-->

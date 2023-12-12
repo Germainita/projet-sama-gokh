@@ -4,7 +4,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
+// import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
 
 import { AccueilComponent } from './composants/citoyen/accueil/accueil.component';
 import { ProjetsComponent } from './composants/citoyen/projets/projets.component';
@@ -28,7 +28,7 @@ import {DashboarMaireComponent} from "./composants/maire/dashboar-maire/dashboar
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    // DashboardComponent,
     GestionProjetMunicipalComponent,
     GestionAnnoncesComponent,
     DetailsAnnonceComponent,
