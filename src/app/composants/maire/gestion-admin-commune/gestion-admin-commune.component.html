@@ -1,0 +1,687 @@
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
+    <div class="nav-item  ">
+      <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
+    </div>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active ">
+      <a class="nav-link" href="#"  routerLink="/sideBar">
+        <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
+        <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
+      </a>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#"  routerLink="/projetMunicipal"  data-target="#collapseTwo"
+         aria-expanded="true" aria-controls="collapseTwo">
+        <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
+        <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
+         aria-expanded="true" aria-controls="collapseTwo">
+        <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
+        <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
+         aria-expanded="true" aria-controls="collapseTwo">
+        <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
+        <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Déconnexion
+      </a>
+    </li>
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+
+          <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+          <li class="nav-item dropdown no-arrow d-sm-none">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <!-- Dropdown - Messages -->
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                 aria-labelledby="searchDropdown">
+              <form class="form-inline mr-auto w-100 navbar-search">
+                <div class="input-group">
+                  <input type="text" class="form-control bg-light border-0 small"
+                         placeholder="Rechercher..." aria-label="Search"
+                         aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn " type="button">
+                      <i class="fas fa-search fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </li>
+
+          <!-- Nav Item - Alerts -->
+          <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="bi bi-chat-dots text-success " style="font-size: 25px; font-weight: 700;"></i>
+              <!-- <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i> -->
+              <!-- Counter - Alerts -->
+              <span class="badge badge-danger badge-counter">3+</span>
+            </a>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                 aria-labelledby="alertsDropdown">
+              <h6 class="dropdown-header">
+                Alerts Center
+              </h6>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="mr-3">
+                  <div class="icon-circle bg-primary">
+                    <i class="bi-pin text-white"></i>
+                  </div>
+                </div>
+                <div>
+                  <div class="small text-gray-500">December 12, 2019</div>
+                  <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                </div>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="mr-3">
+                  <div class="icon-circle bg-success">
+                    <i class="fas fa-donate text-white"></i>
+                  </div>
+                </div>
+                <div>
+                  <div class="small text-gray-500">December 7, 2019</div>
+                  $290.29 has been deposited into your account!
+                </div>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="mr-3">
+                  <div class="icon-circle bg-warning">
+                    <i class="fas fa-exclamation-triangle text-white"></i>
+                  </div>
+                </div>
+                <div>
+                  <div class="small text-gray-500">December 2, 2019</div>
+                  Spending Alert: We've noticed unusually high spending for your account.
+                </div>
+              </a>
+              <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+            </div>
+          </li>
+
+          <!-- Nav Item - Messages -->
+          <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="bi-pin text-success" style="font-size: 25px; font-weight: 700;"></i>
+              <!-- Counter - Messages -->
+              <span class="badge badge-danger badge-counter">7</span>
+            </a>
+            <!-- Dropdown - Messages -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                 aria-labelledby="messagesDropdown">
+              <h6 class="dropdown-header">
+                Message Center
+              </h6>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="dropdown-list-image mr-3">
+                  <img class="rounded-circle" src="assets/img/undraw_profile_1.svg"
+                       alt="...">
+                  <div class="status-indicator bg-success"></div>
+                </div>
+                <div class="font-weight-bold">
+                  <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                    problem I've been having.</div>
+                  <div class="small text-gray-500">Emily Fowler · 58m</div>
+                </div>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="dropdown-list-image mr-3">
+                  <img class="rounded-circle" src="assets/img/undraw_profile_2.svg"
+                       alt="...">
+                  <div class="status-indicator"></div>
+                </div>
+                <div>
+                  <div class="text-truncate">I have the photos that you ordered last month, how
+                    would you like them sent to you?</div>
+                  <div class="small text-gray-500">Jae Chun · 1d</div>
+                </div>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="dropdown-list-image mr-3">
+                  <img class="rounded-circle" src="assets/img/undraw_profile_3.svg"
+                       alt="...">
+                  <div class="status-indicator bg-warning"></div>
+                </div>
+                <div>
+                  <div class="text-truncate">Last month's report looks great, I am very happy with
+                    the progress so far, keep up the good work!</div>
+                  <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                </div>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="dropdown-list-image mr-3">
+                  <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                       alt="...">
+                  <div class="status-indicator bg-success"></div>
+                </div>
+                <div>
+                  <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                    told me that people say this to all dogs, even if they aren't good...</div>
+                  <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                </div>
+              </a>
+              <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+            </div>
+          </li>
+
+          <div class="topbar-divider d-none d-sm-block"></div>
+
+          <!-- Profl admin commune -->
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Amadem Fall</span>
+              <img class="img-profile rounded-circle"
+                   src="assets/img/undraw_profile.svg">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                 aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Profile
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                Settings
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                Activity Log
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+
+        </ul>
+
+      </nav>
+      <!-- End of Topbar -->
+
+      <div class="container-fluid">
+        <div class="container-fluid">
+          <!-- Content Row -->
+          <div class="row " style="margin: 0 auto">
+
+            <!-- card projet réalisés -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
+                        <h1>100</h1></div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Projets total</h5> </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="bi bi-kanban-fill text-success " style="font-size: 50px; "></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- card projet réalisés -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
+                        <h1>238</h1></div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5> Annonces</h5> </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="bi bi-megaphone-fill text-success " style="font-size: 50px; "></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- card projet réalisés -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
+                        <h1>10200</h1></div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Administrateurs</h5> </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="bi bi-chat-dots " style="font-size: 50px; "></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- card projet réalisés -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
+                        <h1>10200</h1></div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Projets invalidé</h5> </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="bi bi-chat-dots " style="font-size: 50px; "></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- forulaire de recherche -->
+
+          <!-- Button trigger modal -->
+          <div class="navbouton d-flex gap-3 mb-5 mt-5">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal2" >
+              Ajouter un projet
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Ajouter un projet dans la commune </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label w-100">Titre</label>
+                        <input type="text" class="form-control w-100 mx-0 my-0" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="message-text" class="col-form-label ">Description</label>
+                        <textarea class="form-control w-100" id="message-text"></textarea>
+                      </div>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label ">Cout</label>
+                        <input type="number" class="form-control w-100" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label ">Durée</label>
+                        <input type="date" class="form-control w-100" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="formFile" class="form-label ">Image du projet</label>
+                        <input class="form-control w-100" type="file" id="formFile">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
+                    <button type="button" class="btn btn-success">Ajouter</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal1" >
+              Ajouter une annonce
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel1">Ajouter une annonce </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="">
+                        <label for="recipient-name" class="col-form-label w-100">Titre de l'annonce </label>
+                        <input type="text" class="form-control w-100 mx-0 my-0" id="recipient-name">
+                      </div>
+                      <div class="">
+                        <label for="message-text" class="col-form-label ">Description</label>
+                        <textarea class="form-control w-100" id="message-text"></textarea>
+                      </div>
+                      <div class="">
+                        <label for="formFile" class="form-label ">Image</label>
+                        <input class="form-control w-100" type="file" id="formFile">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
+                    <button type="button" class="btn btn-success">Ajouter</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" >
+              Projets municipaux
+            </button>
+          </div>
+          <!-- tableau gestion projet municipaux -->
+          <div class="row">
+            <!-- debut Tableau projet -->
+            <div class="col-xl-7 col-lg-5">
+              <div class="card  mb-4">
+                <h5 class="m-2">Listes des projets </h5>
+                <!-- tableau accueil admin comune-->
+                <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
+                  <thead >
+                  <tr>
+                    <th scope="col" >image</th>
+                    <th scope="col" >Titre</th>
+                    <!-- <th scope="col" >Cout</th> -->
+                    <th scope="col" >Durée </th>
+                    <th scope="col" >Statut </th>
+                    <th scope="col" >Action </th>
+                  </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class=" col-xl-5 col-lg-5">
+              <div class="card  px-3 py-3 ">
+                <h5 class="m-2">Ajouter un projet pour la commune </h5>
+                <!-- tableau accueil admin comune-->
+                <form >
+                  <div class="">
+                    <label for="nameInput1" class="form-label ">Nom</label>
+                    <input type="text" class="form-control w-100"  name="monChamp3" id="nameInput1" placeholder="Nom du projet">
+                  </div>
+                  <div class="">
+                    <label for="nameInput2" class="form-label ">Description</label>
+                    <input type="text" class="form-control w-100" name="monChamp4" id="nameInput2" placeholder="votre prenom">
+                  </div>
+                  <div class="">
+                    <label for="exampleFormControlInput1" class="form-label ">Durée</label>
+                    <input type="date" class="form-control w-100" name="monChamp5"  id="exampleFormControlInput1" >
+                  </div>
+
+                  <div class="">
+                    <label  class="form-label ">Cout</label>
+                    <input type="text" class="form-control w-100" name="monChamp6" placeholder="Cout du projet" >
+                  </div>
+                  <div class="">
+                    <label for="formFile" class="form-label">Image </label>
+                    <input class="form-control w-100" type="file" id="formFile" placeholder="Image du projet">
+                  </div>
+                  <div class="col-12 px-0 my-3 d-flex justify-content-end gap-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
+                    <button type="button" class="btn btn-success ">Ajouter</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="">
+              <div class="card  mb-4">
+                <h5 class="m-2">Listes des projets </h5>
+                <!-- tableau accueil admin comune-->
+                <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
+                  <thead >
+                  <tr>
+                    <th scope="col" >image</th>
+                    <th scope="col" >Titre</th>
+                    <th scope="col" >Description</th>
+                    <th scope="col" >Cout</th>
+                    <th scope="col" >Durée </th>
+                    <th scope="col" >Statut </th>
+                    <th scope="col" >Action </th>
+                  </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
+                    <td>Auto-suffisance</td>
+                    <td>le plus intéressant</td>
+                    <td>200 000 000 FCFA</td>
+                    <td>2 ans</td>
+                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
+                    <td  id="iconAction">
+                      <i class="bi bi-eye-fill " ></i>&nbsp;
+                      <i class="bi bi-pencil-square " ></i> &nbsp;
+                      <i class="bi bi-archive-fill " ></i>&nbsp;
+                      <i class="bi bi-archive " ></i>&nbsp;
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+

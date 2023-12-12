@@ -14,30 +14,32 @@ export class ProjetService {
     projets$ = new Subject<Projet[]>(); //var super globale
 
     constructor(private http: HttpClient) {}
-    
-      // Liste 
+
+      // Liste
       getAlls() : Observable<any>{
         return this.http.get<Projet[]>(`${url}/projets`);
       }
-    
+
       // geteById
       getById(id: number)
       {
         return this.http.get<Projet>(`${url}/projets/`+ id);
       }
-      
-      // Ajouter  
-      add(projet : Projet) {
+
+      // Ajouter
+  add(projet: { titre: string; description: string }) {
         return this.http.post(`${url}/projets`, projet);
       }
-      
-      // Edition 
+
+      // Edition
       edit(id: number, projet : Projet) {
         return this.http.put(`${url}/projets/` + id, projet);
       }
-      
+
       // Suppression
       delete(id: number) {
         return this.http.delete(`${url}/projets/` + id);
       }
+
+
 }

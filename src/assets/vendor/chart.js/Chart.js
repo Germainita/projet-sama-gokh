@@ -1528,7 +1528,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -14248,7 +14248,7 @@ function generate(scale, min, max, capacity) {
 		throw min + ' and ' + max + ' are too far apart with stepSize of ' + stepSize + ' ' + minor;
 	}
 
-	for (time = first; time < max; time = +adapter.add(time, stepSize, minor)) {
+	for (time = first; time < max; time = +adapter.add(time)) {
 		ticks.push(time);
 	}
 
@@ -14294,7 +14294,7 @@ function setMajorTicks(scale, ticks, map, majorUnit) {
 	var last = ticks[ticks.length - 1].value;
 	var major, index;
 
-	for (major = first; major <= last; major = +adapter.add(major, 1, majorUnit)) {
+	for (major = first; major <= last; major = +adapter.add(major)) {
 		index = map[major];
 		if (index >= 0) {
 			ticks[index].major = true;
@@ -14740,7 +14740,7 @@ core_adapters._date.override(typeof moment === 'function' ? {
 	},
 
 	add: function(time, amount, unit) {
-		return moment(time).add(amount, unit).valueOf();
+		return moment(time).add(amount).valueOf();
 	},
 
 	diff: function(max, min, unit) {
