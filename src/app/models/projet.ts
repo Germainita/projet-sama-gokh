@@ -1,5 +1,7 @@
+import { Vote } from "./vote";
+
 export class Projet {
-    // _id!: number;
+    id!: number;
     titre!: string;
     description!: string;
     image! : string
@@ -13,4 +15,5 @@ export class Projet {
     createdBy!:string;
     updatedAt!:Date;
     updatedBy!:string;
+    voted!: {};
 }

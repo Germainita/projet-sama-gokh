@@ -25,7 +25,7 @@
             
             </ul>
             <div class="profil">
-                <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+                <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="" data-bs-toggle="modal" data-bs-target="#modalProfil">
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@
         </div>
     
         <!-- Section projets en cours de vote  -->
-        <div class="projetsAVoter sectionAccueil">
+        <!-- <div class="projetsAVoter sectionAccueil">
             <h3 class="titre text-center mb-4">Projets en cours de vote</h3>
             <div class="row">
                 <div class="col-lg-4" *ngFor="let projetItem of  tabProjet">
@@ -142,29 +142,30 @@
             <div class="explorer text-center">
                 <button class="btn btnExplorer explorerProjet px-4 fw-bold fs-5">Explorer plus de projets</button>
             </div>
-        </div>
-        <!-- <div class="projetsAVoter sectionAccueil">
+        </div> -->
+        <div class="projetsAVoter sectionAccueil">
             <h3 class="titre text-center mb-4">Projets en cours de vote</h3>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4" *ngFor="let projet of tabProjet.reverse()">
                     <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
                     <div class="cardProjet mx-5">
                         <div class="cardProjetContainer">
-                            <h6 class="titreProjet fw-bold text-center">Jardin Partagés</h6>
-                            <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
-                                bons produits, bio et de saison et faisons découvrir à tous les
-                               joies du jardinage.  <br>
-                               <span class="auteurProjet">Par la mairie</span>
+                            <h6 class="titreProjet fw-bold text-center">{{projet.titre}}</h6>
+                            <p>{{projet.description}}  <br>
+                               <span class="auteurProjet">Par {{projet.createdBy}}</span>
                             </p>
                             <a href="#" class="voirPlus">Voir plus</a>
                             <div class="vote text-center mt-3">
-                                <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
-                                <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
+                                <button  *ngIf="disabledForUserAlredyVoted" hidden class="btnContre px-2 fw-bold py-1 mx-2 mb-2" (click)="voterContre(projet)">Je suis contre</button>
+                                <button  *ngIf="!disabledForUserAlredyVoted" class="btnContre px-2 fw-bold py-1 mx-2 mb-2" (click)="voterContre(projet)">Je suis contre</button>
+
+                                <button *ngIf="disabledForUserAlredyVoted" hidden class="btnPour px-2 fw-bold py-1 mx-2" (click)="voterPour(projet)">Je suis pour</button>
+                                <button *ngIf="!disabledForUserAlredyVoted" class="btnPour px-2 fw-bold py-1 mx-2" (click)="voterPour(projet)">Je suis pour</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
                     <div class="cardProjet mx-5">
                         <div class="cardProjetContainer">
@@ -199,29 +200,30 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
             </div>
             <div class="explorer text-center">
-                <button class="btn btnExplorer explorerProjet px-4 fw-bold fs-5">Explorer plus de projets</button>
+                <a href="#" routerLink="/projets" class="btn btnExplorer explorerProjet px-4 fw-bold fs-5">Explorer plus de projets</a>
             </div>
-        </div> -->
+        </div>
     
         <!-- Section dernières annonces  -->
         <div class="dernieresAnnonces sectionAccueil">
             <h3 class="titre text-center mb-4">Dernières annonces</h3>
             <div class="row">
-                <div class="col-lg-4">
-                    <img src="https://img.freepik.com/premium-photo/wildlife-volunteer-energetic-male-volunteer-using-garbage-bag-while-collecting-litter_259150-30531.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                <div class="col-lg-4" *ngFor="let annonce of tabAnnoncesPub">
+                    
+                    <img [src]="annonce.image" alt="">
                     <div class="cardAnnonce mx-2">
                         <div class="cardAnnonceContainer bg-body shadow px-5 py-2">
-                            <h5 class="titreAnnonce text-center fw-bold mt-3">Journée nettoyage</h5>
-                            <p>Néttoyage des cimetières le Mardi 12 Decembre 2023 à 10h</p>
+                            <h5 class="titreAnnonce text-center fw-bold mt-3">{{annonce.titre}}</h5>
+                            <p>{{annonce.description}}</p>
                             <p class="commentaire fw-bold">5 commentaires</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <img src="https://img.freepik.com/premium-photo/young-female-her-little-son-planting-tree-one-city-parks-summer-day_274679-27189.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
                     <div class="cardAnnonce mx-2">
                         <div class="cardAnnonceContainer bg-body shadow px-5 py-2">
@@ -240,10 +242,10 @@
                             <p class="commentaire fw-bold">5 commentaires</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="explorer text-center">
-                <button class="btn btnExplorer px-4 fw-bold fs-5">Explorer plus d'annonces</button>
+                <a href="#" class="btn btnExplorer px-4 fw-bold fs-5" routerLink="/annonces">Explorer plus d'annonces</a>
             </div>
         </div>
     </div>
@@ -298,11 +300,17 @@
                             <input type="date" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="projet.delai">
                         </div>
                         <div class="mb-3">
-                            <label for="fileInput" class="form-label">Image
-                                <i class="bi bi-image-fill d-block imageProjet mt-3"></i>
-                            </label>
-                            <input type="file" name="imageProjet" id="fileInput" style="display: none;" accept="image/*" (change)="uploadFile($event)">
+                            <label for="imageProjet" class="form-label">Url image</label>
+                            <input type="text" name="imageProjet" class="form-control" id="imageProjet" [(ngModel)]="projet.image">
                         </div>
+                        <!-- <div class="mb-3">
+                            <label for="inputImage" class="form-label">Url de l'image</label>
+                            <input type="text" name="imageProjet" id="inputImage" [(ngModel)]="projet.image">
+                        </div> -->
+                        <!-- <div class="mb-3">
+                            <label for="fileInput" class="form-label">ImageTest</label>
+                            <input type="file" name="imageProjet" id="fileInput" accept="image/*" (change)="onFileSelected($event)">
+                        </div> -->
                         <div class="mb-3 text-end">
                             <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3">Annuler</button>
                             <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3" (click)="soumettreProjet()">Soumettre</button>
@@ -332,9 +340,9 @@
 
 <!-- Détail d'un projet  -->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Launch demo modal
-  </button>
+  </button> -->
   
   <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -365,6 +373,31 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal profil  -->
+<div class="modal fade" id="modalProfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="text-center">
+                <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+                <!-- <i class="bi bi-person-circle fs-5"></i> -->
+            </div>
+            <div class="infoProfil">
+                <h1 class="fw-bold info text-center">{{userConnect.prenom}} {{userConnect.nom}}</h1>
+                <p class="fw-bold"><span class="info">Username: </span> {{userConnect.username}}</p>
+                <p class="fw-bold"><span class="info">Telephone: </span> {{userConnect.telephone}}</p>
+                <p class="fw-bold"><span class="info">Email: </span> {{userConnect.email}}</p>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btnSoumettre" data-bs-dismiss="modal" style="color: white;" (click)="deconnexion()">Se déconnecter</button>
+          <button type="button" class="btn btnAnnuler" style="color: white;">Editer</button>
         </div>
       </div>
     </div>

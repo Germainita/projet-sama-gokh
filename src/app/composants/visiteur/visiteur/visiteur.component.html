@@ -1,16 +1,16 @@
 <!-- Sidebar  -->
 <nav class="navbar sticky-top navbar-expand-lg bg-body shadow-sm">
     <div class="container-fluid px-4">
-        <a class="navbar-brand" href="#" routerLink="accueil"><img src="assets/Fichier 1.png" alt="Logo sama-gokh" class="logo"></a>
+        <a class="navbar-brand" href="#" routerLink="visiteur"><img src="assets/Fichier 1.png" alt="Logo sama-gokh" class="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" routerLink="/accueil">Accueil</a>
+                    <!-- <a class="nav-link" href="#" routerLink="/visiteur">Accueil</a> -->
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#" routerLink="/projets">Projets</a>
                 </li>
                 <li class="nav-item">
@@ -21,11 +21,13 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" routerLink="/annonces">Annonces</a>
-                </li>
+                </li> -->
             
             </ul>
-            <div class="profil">
-                <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+            <div class="auth">
+                <button class="btn btn-connexion mx-2" style="background-color: #F09E4D; color: white;">S'inscricre</button>
+                <button class="btn btn-inscription mx-2" style="background-color: #007A64; color: white;">Se connecter</button>
+                <!-- <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt=""> -->
             </div>
         </div>
     </div>
@@ -209,7 +211,7 @@
         <div class="row">
             <div class="col-lg-5 colLogo">
                 <div class="logo text-right">
-                    <a href="#" routerLink="/accueil"><img src="/assets/Fichier 1.png" alt=""></a>
+                    <a href="#" routerLink="/visiteur"><img src="/assets/Fichier 1.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-7">
@@ -230,11 +232,11 @@
     </div>
     <div class="ling container mb-5">
         <div class="row container">
-            <div class="col-md-2 text-center mb-3"><a href="#" routerLink="/accueil">Accueil</a></div>
-            <div class="col-md-2 text-center mb-3"><a href="#" routerLink="/projets">Projets</a></div>
-            <div class="col-md-2 text-center mb-3"><a href="#" routerLink="/apropos">A propos</a></div>
-            <div class="col-md-3 text-center mb-3"><a href="#" routerLink="/politique">Politique de confidentialité</a></div>
-            <div class="col-md-3 text-center mb-3"><a href="#"routerLink="/condition">Condition d'utilisation</a></div>
+            <div class="col-md-4 text-center mb-3"><a href="#" routerLink="/visiteur">Accueil</a></div>
+            <!-- <div class="col-md-2 text-center mb-3"><a href="#" routerLink="/projets">Projets</a></div>
+            <div class="col-md-2 text-center mb-3"><a href="#" routerLink="/apropos">A propos</a></div> -->
+            <div class="col-md-4 text-center mb-3"><a href="#" routerLink="/politique">Politique de confidentialité</a></div>
+            <div class="col-md-4 text-center mb-3"><a href="#"routerLink="/condition">Condition d'utilisation</a></div>
         </div>
           
     </div>
