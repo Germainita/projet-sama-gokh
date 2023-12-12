@@ -1,5 +1,5 @@
 export class User {
-    _id!: number;
+    id!: number;
     nom!: string;
     prenom!: string;
     username!: string;
@@ -12,4 +12,6 @@ export class User {
     createdBy!:string;
     updatedAt!:Date;
     updatedBy!:string;
+    projets!:[];
+    commentaires!:[];
 }

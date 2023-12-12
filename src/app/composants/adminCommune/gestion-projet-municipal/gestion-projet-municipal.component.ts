@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import { FormsModule } from "@angular/forms";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {AnnonceService} from "../../../services/annonce-service";
-import { Annonce } from 'src/app/models/annonce';
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -16,7 +15,6 @@ import {RouterLink} from "@angular/router";
 export class GestionProjetMunicipalComponent {
 
   projet = new Projet;
-  annonce : Annonce = new Annonce;
 
   // Attribut pour la pagination
   articlesParPage = 5; // Nombre d'articles par page
@@ -39,12 +37,8 @@ export class GestionProjetMunicipalComponent {
   itemsPerPage = 5;
   currentPage = 1;
 
-
-  tabAnnonce : Annonce[] = [];
-
   constructor(
     private projetService: ProjetService,
-    private annonceService: AnnonceService
   ) { }
 
   ngOnInit(): void {

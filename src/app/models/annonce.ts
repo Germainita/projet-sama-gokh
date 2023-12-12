@@ -1,5 +1,5 @@
 export class Annonce {
-    _id!: number;
+    id!: number;
     titre!: string;
     description!: string;
     image! : string
@@ -9,4 +9,5 @@ export class Annonce {
     createdBy!:string;
     updatedAt!:Date;
     updatedBy!:string;
+    commentaires!:[];
 }

@@ -16,7 +16,7 @@ export class UserService {
 
   // Liste
   getAlls() : Observable<any>{
-    return this.http.get<User[]>(`${url}/votes`);
+    return this.http.get<User[]>(`${url}/users`);
   }
 
   // geteById

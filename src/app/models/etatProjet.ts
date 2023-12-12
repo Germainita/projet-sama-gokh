@@ -1,5 +1,5 @@
 export class EtatProjet {
-    _id!: number;
+    id!: number;
     nom!: string;
     createdAt!:Date;
     createdBy!:string;

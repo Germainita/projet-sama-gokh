@@ -22,6 +22,7 @@ import { FooterComponent } from './composants/citoyen/footer/footer.component';
 import { ConditionComponent } from './composants/citoyen/condition/condition.component';
 import { PolitiqueComponent } from './composants/citoyen/politique/politique.component';
 import {ProjetCommuneComponent} from "./composants/adminCommune/projet-commune/projet-commune.component";
+import {DashboarMaireComponent} from "./composants/maire/dashboar-maire/dashboar-maire.component";
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {ProjetCommuneComponent} from "./composants/adminCommune/projet-commune/p
     ConditionComponent,
     PolitiqueComponent,
     AproposComponent,
-    ProjetCommuneComponent
+    ProjetCommuneComponent,
+    DashboarMaireComponent,
 
 
   ],
