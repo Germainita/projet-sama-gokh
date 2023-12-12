@@ -1,0 +1,211 @@
+<!-- Sidebar  -->
+<nav class="navbar sticky-top navbar-expand-lg bg-body shadow-sm">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#" routerLink="accueil"><img src="assets/Fichier 1.png" alt="Logo sama-gokh" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/accueil">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/projets">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/apropos" >A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/mesprojets">Mes projets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" aria-current="page">Annonces</a>
+                </li>
+            
+            </ul>
+            <div class="profil">
+                <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Fin sidebar  -->
+
+<div class="listAnnonces" *ngIf="isAnnonces">
+    <!-- Banierre  -->
+    <div class="banierre">
+        <div class="containerBanner">
+        </div>
+        <div class="containerText text-left px-5">
+            <h1 class="fw-bold">SAMA GOKH</h1>
+            <h5 class="mb-3">Ensemble, Construisons l'Avenir <br>de Notre Commune.</h5>
+            <a href="#" class="btn btnAjotProjet px-4 py-1 rounded-0">Creer un projet</a>
+        </div>
+    </div>
+    <!-- Fin banierre  -->
+    
+    <!-- Contenu annonce  -->
+    <div class="container containerAnnonce">
+        .
+        <!-- Section ma commune ma fierté  -->
+        <div class="maCommune">
+            <h3 class="titre text-center mb-4">Ma commune, ma fiérté</h3>
+            <div class="card mb-3 border-0">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <img src="assets/img/citoyen/mairie.png" class="img-fluid rounded-2" alt="...">
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card-body p-4">
+                        <div class="description py-5 px-4">
+                          <h5 class="card-title fw-bold">Ville de Kaolack <span class="commune">commune de Kahone</span></h5>
+                          <p class="card-text">La municipalité de Kahone est dirigée par Madame le Maire Fatou SENE DIOUF. </p>
+                          <p class="card-text"> Elle compte 356 habitants </p> 
+                          <p class="card-text"> Avec 200 comptes inscrits sur la plateforme Sama Gokh </p> 
+                          <p class="card-text"> Tous engagés pour l'avancement de la commune</p> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Section dernières annonces  -->
+        <div class="annonces sectionAnnonce">
+            <h3 class="titre text-center mb-4">Les annonces de la commune</h3>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="https://img.freepik.com/premium-photo/wildlife-volunteer-energetic-male-volunteer-using-garbage-bag-while-collecting-litter_259150-30531.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                    <div class="cardAnnonce mx-2">
+                        <div class="cardAnnonceContainer bg-body shadow px-5 py-2">
+                            <h5 class="titreAnnonce text-center fw-bold mt-3">Journée nettoyage</h5>
+                            <p>Néttoyage des cimetières le Mardi 12 Decembre 2023 à 10h</p>
+                            <p class="commentaire fw-bold" (click)="showCommentaires()">5 commentaires</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://img.freepik.com/premium-photo/young-female-her-little-son-planting-tree-one-city-parks-summer-day_274679-27189.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                    <div class="cardAnnonce mx-2">
+                        <div class="cardAnnonceContainer bg-body shadow px-5 py-2">
+                            <h5 class="titreAnnonce text-center fw-bold mt-3">Journée reboisement</h5>
+                            <p>Journée reboisement le Samedi 16 Decembre 2023 à 10h</p>
+                            <p class="commentaire fw-bold" (click)="showCommentaires()">5 commentaires</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://img.freepik.com/premium-photo/closeup-black-woman-donating-blood-focus-hand-holding-red-ball-with-tubing-copy-space_236854-39697.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                    <div class="cardAnnonce mx-2">
+                        <div class="cardAnnonceContainer bg-body shadow px-5 py-2">
+                            <h5 class="titreAnnonce text-center fw-bold mt-3">Journée don de sang</h5>
+                            <p>Don de sang le Dimanche  24 Décembre 2023</p>
+                            <p class="commentaire fw-bold" (click)="showCommentaires()">5 commentaires</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="commentairesAnnonce mt-5" *ngIf="!isAnnonces">
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+            <i class="bi bi-arrow-left-square-fill retour text-start" (click)="showCommentaires()"></i> 
+            </div>
+            <div class="col-11">
+                <h3 class="titreAnnonce text-center">Journée néttoyage</h3> 
+            </div>
+        </div>
+        
+        <img src="https://img.freepik.com/premium-photo/wildlife-volunteer-energetic-male-volunteer-using-garbage-bag-while-collecting-litter_259150-30531.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+
+        <div class="d-flex justify-content-between mb-5">
+            <p class="fs-3">Néttoyage des cimetières le Mardi 12 Decembre 2023 à 10h </p>
+            <p class="fw-bold fs-3">5 commentaires</p>
+        </div>
+        
+        <!-- laisser un commentaire  -->
+        <div class="ajoutComment mb-5">
+            <form action="">
+                <div class="mb-3 profil">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+                        </div>
+                        <div class="col-11">
+                            <input type="text" class="form-control shadow-sm mt-3" name="commentUser" id="titreProjet">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 text-end">
+                    <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3">Annuler</button>
+                    <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3">Soumettre</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- Liste des commentaires  -->
+        <div class="listeComment">
+            <div class="row">
+                <div class="col-1">
+                    <img src="assets/img/citoyen/profil-citoyen.png" class="nav-item dropdown" alt="">
+                </div>
+                <div class="col-11">
+                    <div class="d-flex">
+                        <h5 class="auteur fw-bod me-5">Benji</h5>
+                        <p class="ms-5">le 06/12/2023 à 19h</p>
+                    </div>
+                    <p>
+                        My wife is 8 months pregnant and as she was driving today, she got involved in a terrible head collision accident. 
+                        Her car was pushed 15 metres away while she was inside. She was displaced from the driving seat to the passenger seat. 
+                        I thank God she survived without any injuries except swellings. After checkups, the baby is 100% okay. God is great
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer  -->
+<div class="footer shadow-sm pt-5">
+    <div class="logoReseaux container mb-5">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="logo text-center">
+                    <a href="#" routerLink="/accueil"><img src="/assets/Fichier 1.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="reseaux">
+                    <h6 class="fw-bold mb-3">Suivez nous sur nos réseaux sociaux</h6>
+                    <p class="">
+                        <span class="iconeReseau me-2"> <i class="bi bi-facebook"></i> </span>
+                        <span class="iconeReseau mx-2"><i class="bi bi-instagram"></i></span> 
+                        <span class="iconeReseau mx-2"> <i class="bi bi-twitter"></i> </span> 
+                        <span class="iconeReseau mx-2"><i class="bi bi-linkedin rounded-circle"></i></span> 
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="ling container d-flex justify-content-between my-5">
+        <a href="#" routerLink="/accueil">Accueil</a>
+        <a href="#" routerLink="/projets">Projets</a>
+        <a href="#" routerLink="/apropos">A propos</a>
+        <a href="#" routerLink="/mesprojets">Mes projets</a>
+        <a href="#"routerLink="/annonces">Annonces</a>
+    </div>
+    <div class="copyright text-center">
+        <p class="mt-2"><i class="bi bi-c-circle"></i> 2023 Sama Gokh. Tous droits réservés</p>
+    </div>
+</div>
+<!-- Fin footer  -->
+
+<!-- Popup details annonces  -->

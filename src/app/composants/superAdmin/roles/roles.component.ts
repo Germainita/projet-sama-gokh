@@ -41,7 +41,7 @@ export class RolesComponent implements OnInit {
     }
     let role = new Role();
     role.nom = this.newRoleName;
-    role.createdAt = new Date().toLocaleString();
+    role.createdAt = new Date();
     role.createdBy = '1'
     console.log('Ajouter role',role)
      // Réinitialiser la variable de stockage du nom du rôle
