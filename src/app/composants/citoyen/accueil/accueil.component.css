@@ -142,6 +142,12 @@
     margin-top: -5vh;
 }
 
+.plusProjet{
+    box-shadow: 5px 3px 4px #F09E4D;
+    color: #007A64;
+    margin-top: -5vh;
+}
+
 .explorerProjet{
     margin-top: -10vh; 
 }
@@ -152,6 +158,11 @@
 }
 .info{
     color: #F09E4D;
+}
+
+.infoProjet img{
+    width: 100%!important;
+    height: 100%!important;
 }
 
 /* Les dernieres annonces  */

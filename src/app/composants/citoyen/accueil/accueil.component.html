@@ -116,95 +116,30 @@
             </div>
         </div>
     
-        <!-- Section projets en cours de vote  -->
-        <!-- <div class="projetsAVoter sectionAccueil">
-            <h3 class="titre text-center mb-4">Projets en cours de vote</h3>
-            <div class="row">
-                <div class="col-lg-4" *ngFor="let projetItem of  tabProjet">
-                    <img [src]="projetItem.image" alt="">
-                    <div class="cardProjet mx-5">
-                        <div class="cardProjetContainer">
-                            <h6 class="titreProjet fw-bold text-center">{{projetItem.titre}}</h6>
-                            <p>{{projetItem.description}} <br>
-                               <span class="auteurProjet">Par la mairie</span>
-                            </p>
-                            <a href="#" class="voirPlus">Voir plus</a>
-                            <div class="vote text-center mt-3">
-                                <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
-                                <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            </div>
-            <div class="explorer text-center">
-                <button class="btn btnExplorer explorerProjet px-4 fw-bold fs-5">Explorer plus de projets</button>
-            </div>
-        </div> -->
+        <!-- Section les projets à voter  -->
         <div class="projetsAVoter sectionAccueil">
             <h3 class="titre text-center mb-4">Projets en cours de vote</h3>
             <div class="row">
                 <div class="col-lg-4" *ngFor="let projet of tabProjet.reverse()">
-                    <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
+                    <img [src]="projet.image" alt="">
                     <div class="cardProjet mx-5">
                         <div class="cardProjetContainer">
                             <h6 class="titreProjet fw-bold text-center">{{projet.titre}}</h6>
                             <p>{{projet.description}}  <br>
                                <span class="auteurProjet">Par {{projet.createdBy}}</span>
                             </p>
-                            <a href="#" class="voirPlus">Voir plus</a>
+                            <a href="#" class="voirPlus" (click)="detailsProjet(projet)" data-bs-toggle="modal" data-bs-target="#modalDetailProjet">Voir plus</a>
                             <div class="vote text-center mt-3">
-                                <button  *ngIf="disabledForUserAlredyVoted" hidden class="btnContre px-2 fw-bold py-1 mx-2 mb-2" (click)="voterContre(projet)">Je suis contre</button>
-                                <button  *ngIf="!disabledForUserAlredyVoted" class="btnContre px-2 fw-bold py-1 mx-2 mb-2" (click)="voterContre(projet)">Je suis contre</button>
-
-                                <button *ngIf="disabledForUserAlredyVoted" hidden class="btnPour px-2 fw-bold py-1 mx-2" (click)="voterPour(projet)">Je suis pour</button>
-                                <button *ngIf="!disabledForUserAlredyVoted" class="btnPour px-2 fw-bold py-1 mx-2" (click)="voterPour(projet)">Je suis pour</button>
+                                <button   class="btnContre px-2 fw-bold py-1 mx-2 mb-2" [disabled]="projet.voted.isvoted ==true && projet.voted.votedBy == userConnect.username" (click)="voterContre(projet)">Je suis contre</button>
+                                <button class="btnPour px-2 fw-bold py-1 mx-2" [disabled]="projet.voted.isvoted ==true && projet.voted.votedBy == userConnect.username" (click)="voterPour(projet)">Je suis pour</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-lg-4">
-                    <img src="https://img.freepik.com/free-photo/real-estate-agent-customer-face-mask-looking-new-project_53876-97516.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
-                    <div class="cardProjet mx-5">
-                        <div class="cardProjetContainer">
-                            <h6 class="titreProjet fw-bold text-center">Un citoyen,  une maison</h6>
-                            <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
-                                bons produits, bio et de saison et faisons découvrir à tous les
-                               joies du jardinage.  <br>
-                               <span class="auteurProjet">Par Cisse Khadijatou</span>
-                            </p>
-                            <a href="#" class="voirPlus">Voir plus</a>
-                            <div class="vote text-center mt-3">
-                                <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
-                                <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <img src="https://img.freepik.com/premium-photo/african-couple-owner-fresh-gracery-organic-shop_53876-46115.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" alt="">
-                    <div class="cardProjet mx-5">
-                        <div class="cardProjetContainer">
-                            <h6 class="titreProjet fw-bold text-center">Epicerie associative</h6>
-                            <p>Et si on se lançait dans un jardin partagé ? Cultivons ensemble de
-                                bons produits, bio et de saison et faisons découvrir à tous les
-                               joies du jardinage.  <br>
-                               <span class="auteurProjet">Par Soly Fatou Diop</span>
-                            </p>
-                            <a href="#" class="voirPlus">Voir plus</a>
-                            <div class="vote text-center mt-3">
-                                <button class="btnContre px-2 fw-bold py-1 mx-2 mb-2">Je suis contre</button>
-                                <button class="btnPour px-2 fw-bold py-1 mx-2">Je valide</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                
             </div>
             <div class="explorer text-center">
-                <a href="#" routerLink="/projets" class="btn btnExplorer explorerProjet px-4 fw-bold fs-5">Explorer plus de projets</a>
+                <button class="btn plusProjet px-4 fw-bold fs-5" (click)="plusProjet()">Explorer plus de projet de projets</button>
+                <!-- <button class="btn btnExplorer explorerProjet " (click)="plusProjet()">Explorer plus de projets</button> -->
             </div>
         </div>
     
@@ -285,34 +220,27 @@
                     <form action="" class="px-4 pt-5">
                         <div class="mb-3">
                             <label for="titreProjet" class="form-label">Titre du projet</label>
-                            <input type="text" name="titreProjet" class="form-control" id="titreProjet" [(ngModel)]="projet.titre">
+                            <input type="text" name="titreProjet" class="form-control" id="titreProjet" [(ngModel)]="titre">
                         </div>
                         <div class="mb-3">
                             <label for="descriptionProjet" class="form-label">Description</label>
-                            <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet" [(ngModel)]="projet.description">
+                            <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet" [(ngModel)]="description">
                         </div>
                         <div class="mb-3">
                             <label for="coutProjet" class="form-label">Coût</label>
-                            <input type="number" name="coutProjet" class="form-control" id="coutProjet" [(ngModel)]="projet.cout">
+                            <input type="number" name="coutProjet" class="form-control" id="coutProjet" [(ngModel)]="cout">
                         </div>
                         <div class="mb-3">
                             <label for="delaiProjet" class="form-label">Délai</label>
-                            <input type="date" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="projet.delai">
+                            <input type="date" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="delai">
                         </div>
                         <div class="mb-3">
                             <label for="imageProjet" class="form-label">Url image</label>
-                            <input type="text" name="imageProjet" class="form-control" id="imageProjet" [(ngModel)]="projet.image">
+                            <input type="text" name="imageProjet" class="form-control" id="imageProjet" [(ngModel)]="image">
                         </div>
-                        <!-- <div class="mb-3">
-                            <label for="inputImage" class="form-label">Url de l'image</label>
-                            <input type="text" name="imageProjet" id="inputImage" [(ngModel)]="projet.image">
-                        </div> -->
-                        <!-- <div class="mb-3">
-                            <label for="fileInput" class="form-label">ImageTest</label>
-                            <input type="file" name="imageProjet" id="fileInput" accept="image/*" (change)="onFileSelected($event)">
-                        </div> -->
+                        
                         <div class="mb-3 text-end">
-                            <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3">Annuler</button>
+                            <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3" (click)="viderChampsProjet()">Annuler</button>
                             <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3" (click)="soumettreProjet()">Soumettre</button>
                         </div>
                         
@@ -399,6 +327,30 @@
           <button type="button" class="btn btnSoumettre" data-bs-dismiss="modal" style="color: white;" (click)="deconnexion()">Se déconnecter</button>
           <button type="button" class="btn btnAnnuler" style="color: white;">Editer</button>
         </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal détail projet  -->
+<div class="modal fade" id="modalDetailProjet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="text-center">
+                <h4 class="fw-bold info text-center">{{projet.titre}}</h4>
+                <!-- <i class="bi bi-person-circle fs-5"></i> -->
+            </div>
+            <div class="infoProjet">
+                <img [src]="projet.image" alt="">
+                <p class="fw-bold"><span class="info">Description: </span> {{projet.description}}</p>
+                <p class="fw-bold"><span class="info">Délai: </span> {{projet.delai}}</p>
+                <p class="fw-bold"><span class="info">Cout: </span> {{projet.cout}}</p>
+                <p class="fw-bold"><span class="info">Créé par: </span> {{projet.createdBy}}</p>
+                <p class="fw-bold"><span class="info">Le: </span> {{projet.createdAt}}</p>
+            </div>
+            
+        </div>
+        
       </div>
     </div>
 </div>

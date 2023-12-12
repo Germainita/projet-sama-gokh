@@ -22,7 +22,11 @@ import Swal from 'sweetalert2';
 })
 export class AccueilComponent implements OnInit{
   // Déclaration des variables
- 
+  titre: string = "";
+  description: string = "";
+  image: string = "";
+  delai: any;
+  cout!: number ;
   // un objet de type projet 
   projet =  new Projet;
 
@@ -46,11 +50,11 @@ export class AccueilComponent implements OnInit{
 
   tabTypeProjet: TypeProjet[] = [];
   // Projets municipaux
-  idProjotM: number = 0;
+  idMunicipal: number = 0;
   tabProjetM: Projet[] = [];
 
   // Projets citoyens
-  idProjotC: number = 0;
+  idCitoyen: number = 0;
   tabProjetC: Projet[] = [];
 
   // Pour les votes 
@@ -93,11 +97,15 @@ export class AccueilComponent implements OnInit{
     
     // Liste de tous les votes 
     this.listeVotes();
+  }
 
-    // Je récupère les votes des projets
-    // Je parcours le tableaux des votes 
-     
-    // let voteProjet = this.tabProjet.filter((elemnt:any) => )
+  // Vider les champs du formulaire 
+  viderChamps(){
+    this.titre = "";
+    this.description = "";
+    this.image = "";
+    this.delai = "";
+    this.cout = 0 ;
   }
 
   // Methode pour uploader le fichier image 
@@ -137,46 +145,46 @@ export class AccueilComponent implements OnInit{
     // console.log(typeof(delai));
     // console.log(this.projet)
     // On vérifie s les informations ne sont pas vides 
-    if(!this.projet.titre){
+    if(!this.titre){
       this.verifierChamps("Impossible!", "Le titre est obligatoire", "Erreur")
     }
-    else if(!this.projet.description){
+    else if(!this.description){
       this.verifierChamps("Impossible!", "Donnez une déscription", "Erreur")
     }
-    else if(!this.projet.cout){
+    else if(!this.cout){
       this.verifierChamps("Impossible!", "Donnez le cout du projet", "Erreur")
     }
-    else if(!this.projet.delai){
+    else if(!this.delai){
       this.verifierChamps("Impossible!", "Le délai est obligatoire", "Erreur")
     }
-    else if(!this.projet.image){
+    else if(!this.image){
       this.verifierChamps("Impossible!", "L'image est obligatoire'", "Erreur")
     }
 
     else {
-      let objetProjet = new Projet
-      objetProjet.titre= this.projet.titre,
-      objetProjet.description= this.projet.description,
-      objetProjet.image= this.projet.image
-      objetProjet.cout= this.projet.cout,
-      objetProjet.delai= new Date(this.projet.delai),
-      objetProjet.etat= true,
-      objetProjet.idEtatProjet= this.idEtatEncours,
-      objetProjet.idTypeProjet= 1,
-      objetProjet.idUser= this.userConnect.id,
-      objetProjet.createdAt= new Date(),
-      objetProjet.createdBy= this.userConnect.username,
-      objetProjet.updatedAt= new Date(),
-      objetProjet.updatedBy= this.userConnect.username,
+      let objetProjet = new Projet;
+      objetProjet.titre= this.titre;
+      objetProjet.description= this.description;
+      objetProjet.image= this.image
+      objetProjet.cout= this.cout;
+      objetProjet.delai= new Date (this.delai);
+      objetProjet.etat= true;
+      objetProjet.idEtatProjet= this.idEtatEncours;
+      objetProjet.idTypeProjet= 1;
+      objetProjet.idUser= this.userConnect.id;
+      objetProjet.createdAt= new Date();
+      objetProjet.createdBy= this.userConnect.username;
+      objetProjet.updatedAt= new Date();
+      objetProjet.updatedBy= this.userConnect.username;
+      objetProjet.voted = {isvoted: false, votedBy:""}
       // this.projet.votes= []
-
-      
 
       this.projetService.add(objetProjet).subscribe(data =>{
         console.log(data);
         console.log("Ajouter")
         this.verifierChamps("Felicitation!", "Projet ajouté avec success", "success");
         this.listeProjets();
+        this.viderChamps();
       })
     }
         
@@ -230,8 +238,17 @@ export class AccueilComponent implements OnInit{
       // L'identifiant de l'etat municipal
       let municipal = this.tabTypeProjet.find((element:any)=> element.nom == "municipal");
       if(municipal){
-        this.idProjotM = municipal.id
-        console.log(this.idProjotM)
+        this.idMunicipal = municipal.id
+        console.log("municipal")
+        console.log(this.idMunicipal)
+      }
+
+      // L'identifiant de l'etat citoyen
+      let citoyen = this.tabTypeProjet.find((element:any)=> element.nom == "citoyen");
+      if(citoyen){
+        this.idCitoyen = citoyen.id
+        console.log("citoyen")
+        console.log(this.idCitoyen)
       }
     })
   }
@@ -286,6 +303,11 @@ export class AccueilComponent implements OnInit{
     })
   }
 
+  // Methode plus de projets 
+  plusProjet(){
+    this.router.navigate(['/projets']);
+  }
+
   // Methode pour la déconnection 
   deconnexion(){
     this.router.navigate(['/visiteur']);
@@ -338,14 +360,18 @@ export class AccueilComponent implements OnInit{
           this.verifierChamps("Vote enregistré", "", "success");
 
           // On change l'attribut voted en donnant la personne qui
-          // a voté et le vote
-          projet.voted = {isVoted:true, votebBy: this.userConnect.id};
+          projet.voted.isvoted = true;
+          projet.voted.votedBy = this.userConnect.username;
+          console.log(projet.voted.isvoted);
+          console.log(projet.voted.votedBy);
+          console.log(projet);
+          // On met à jour les projets 
+          this.projetService.edit(projet.id, projet).subscribe(data =>{
+            console.log(data);
+            this.listeProjets();
+          })
         });
-        console.log(projet.idEtatProjet);
-        console.log(this.idEtatTermine)
-        projet.idEtatProjet = this.idEtatTermine;
-        console.log(projet)
-        this.listeProjets();
+        
       }
         
     });
@@ -375,6 +401,19 @@ export class AccueilComponent implements OnInit{
         this.vote.add(this.voteChoice).subscribe(data=>{
           this.listeVotes();
           this.verifierChamps("Vote enregistré", "", "success");
+
+          // On change l'attribut voted en donnant la personne qui
+          projet.voted.isvoted = true;
+          projet.voted.votedBy = this.userConnect.username;
+          console.log(projet.voted.isvoted);
+          console.log(projet.voted.votedBy);
+          console.log(projet);
+          // On met à jour les projets 
+          this.projetService.edit(projet.id, projet).subscribe(data =>{
+            console.log(data);
+            this.listeProjets();
+          })
+          
         })
         
       }
@@ -383,8 +422,8 @@ export class AccueilComponent implements OnInit{
 
   }
 
-  // Vider les champs
-  // vider
-
+  detailsProjet(projet:any){
+    this.projet = projet;
+  }
   
 }
