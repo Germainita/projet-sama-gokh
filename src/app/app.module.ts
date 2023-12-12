@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { DetailsAnnonceComponent } from './composants/adminCommune/details-annon
 import { FooterComponent } from './composants/citoyen/footer/footer.component';
 import { ConditionComponent } from './composants/citoyen/condition/condition.component';
 import { PolitiqueComponent } from './composants/citoyen/politique/politique.component';
+import {ProjetCommuneComponent} from "./composants/adminCommune/projet-commune/projet-commune.component";
 
 
 @NgModule({
@@ -40,14 +42,16 @@ import { PolitiqueComponent } from './composants/citoyen/politique/politique.com
     ConditionComponent,
     PolitiqueComponent,
     AproposComponent,
-    
+    ProjetCommuneComponent
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

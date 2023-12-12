@@ -2,46 +2,48 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-         <!-- Sidebar -->
-         <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
-            <div class="nav-item  ">  <img class="mt-3 "  src="assets/Fichier 1.png" alt=""></div>
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active ">
-                <a class="nav-link" href="#"  routerLink="/sideBar">
-                    <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
-                    <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
-                </a>
-            </li>
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#"  routerLink="/projetMunicipal"  data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
-                    <span style="font-size: 30px; font-weight: 700;" class="text-success" >Utilisateur</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
-                    <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
-                </a> 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
-                    <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Déconnexion
-                </a>
-            </li>
-        </ul>
-        <!-- End of Sidebar -->
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
+        <div class="nav-item  ">
+          <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
+        </div>
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active ">
+          <a class="nav-link" href="#"  routerLink="/sideBar">
+            <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
+            <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
+          </a>
+        </li>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#"  routerLink="/projetMunicipal"  data-target="#collapseTwo"
+             aria-expanded="true" aria-controls="collapseTwo">
+            <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
+            <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
+             aria-expanded="true" aria-controls="collapseTwo">
+            <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
+            <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
+             aria-expanded="true" aria-controls="collapseTwo">
+            <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
+            <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Déconnexion
+          </a>
+        </li>
+      </ul>
+      <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -243,7 +245,7 @@
                     <div class="container-fluid">
                         <!-- Content Row -->
                         <div class="row " style="margin: 0 auto">
-    
+
                             <!-- card projet réalisés -->
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
@@ -314,7 +316,7 @@
                             </div>
                         </div>
                             <!-- forulaire de recherche -->
-                            
+
                            <!-- Button trigger modal -->
                                 <div class="navbouton d-flex gap-3 mb-5 mt-5">
                                     <!-- Button trigger modal -->
@@ -328,42 +330,42 @@
                                     Ajouter un projet
                                 </button>
                                 </div>
-                                    
+
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un projet dans la commune </h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <button id="btn-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
-                                                    <div class="mb-3">
-                                                      <label for="recipient-name" class="col-form-label">Titre</label>
-                                                      <input type="text" class="form-control" id="recipient-name">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                      <label for="message-text" class="col-form-label">Description</label>
-                                                      <textarea class="form-control" id="message-text"></textarea>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="recipient-name" class="col-form-label">Cout</label>
-                                                        <input type="number" class="form-control" id="recipient-name">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="recipient-name" class="col-form-label">Durée</label>
-                                                        <input type="date" class="form-control" id="recipient-name">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="formFile" class="form-label">Image du projet</label>
-                                                        <input class="form-control" type="file" id="formFile">
-                                                    </div>
-                                                  </form>
+                                              <form action="" class="">
+                                                <div class=" w-100">
+                                                  <label for="titreProjet" class="form-label">Titre du projet</label>
+                                                  <input type="text" name="titreProjet" class="form-control w-100" id="titreProjet"  [(ngModel)]="projet.titre">
+                                                </div>
+                                                <div class="w-100">
+                                                  <label for="descriptionProjet" class="form-label">Description</label>
+                                                  <input type="text" name="descriptionProjet" class="form-control w-100" id="descriptionProjet" [(ngModel)]="projet.description" >
+                                                </div>
+                                                <div class="w-100">
+                                                  <label for="coutProjet" class="form-label">Coût</label>
+                                                  <input type="number" name="coutProjet" class="form-control w-100" id="coutProjet" [(ngModel)]="projet.cout" >
+                                                </div>
+                                                <div >
+                                                  <label for="delaiProjet" class="form-label">Délai</label>
+                                                  <input type="date" name="delaiProjet" class="form-control w-100" id="delaiProjet" [(ngModel)]="projet.delai" >
+                                                </div>
+                                                <div >
+                                                  <label for="imageProjet" class="form-label">Image</label>
+                                                  <input type="text"  class="form-control w-100" name="imageProjet" id="imageProjet" [(ngModel)]="projet.image">
+                                                </div>
+                                              </form>
                                             </div>
                                             <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
-                                            <button type="button" class="btn ">Ajouter</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+                                            <button type="button" class="btn "  (click)=" ajouterProjet()">Ajouter</button>
                                             </div>
                                         </div>
                                         </div>
@@ -372,133 +374,44 @@
                         <div class="row">
                                  <!-- Area Chart -->
                             <div class="">
-                                <div class="card  mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    
-                                    <!-- tableau accueil admin comune-->
-                                    
-                                    <table class="table teble-responsive  table-sm p-3 table table-with-padding">
-                                        <thead style="font-size: 20px; ">
-                                            <tr style="color: white; ">
-                                            <th scope="col" style="background-color: #007A64; color: white;">image</th>
-                                            <th scope="col" style="background-color: #007A64; color: white;">Titre</th>
-                                            <th scope="col" style="background-color: #007A64; color: white;">Cout</th>
-                                            <th scope="col" style="background-color: #007A64; color: white;">Durée </th>
-                                            <th scope="col" style="background-color: #007A64; color: white;">Statut </th>
-                                            <th scope="col" style="background-color: #007A64; color: white;">Action </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="table-group-divider">
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>200 350 000 FCFA</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  fw-bolder" style="border:2px solid #F09E4D ; color:#F09E4D; width:100px; border-radius: 20px;" >Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-eye-fill " style="font-size: 20px;color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " style="font-size: 20px; color: #007A64;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-archive " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/maisons-plage-proximite-plage-du-phare-paphos-chypre_759575-1641.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>200 350 000 FCFA</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  fw-bolder" style="border:2px solid #F09E4D ; color:#F09E4D; width:100px; border-radius: 20px;" >Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-eye-fill " style="font-size: 20px;color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " style="font-size: 20px; color: #007A64;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-archive " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/groupe-volontaires-africains-heureux-plantant-arbre-dans-parc-afrique-benevolat-personnes-caritatives-concept-ecologie_627829-318.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>200 350 000 FCFA</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  fw-bolder" style="border:2px solid #F09E4D ; color:#F09E4D; width:100px; border-radius: 20px;" >Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-eye-fill " style="font-size: 20px;color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " style="font-size: 20px; color: #007A64;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-archive " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/rue-fois-photo-recadree-equipe-collecte-ordures-au-travail_590464-10917.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>200 350 000 FCFA</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  fw-bolder" style="border:2px solid #F09E4D ; color:#F09E4D; width:100px; border-radius: 20px;" >Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-eye-fill " style="font-size: 20px;color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " style="font-size: 20px; color: #007A64;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-archive " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/jeune-femme-ayant-mode-vie-durable_23-2148999379.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>200 350 000 FCFA</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  fw-bolder" style="border:2px solid #F09E4D ; color:#F09E4D; width:100px; border-radius: 20px;" >Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-eye-fill " style="font-size: 20px;color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " style="font-size: 20px; color: #007A64;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-archive " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-gratuite/medecin-aide-humanitaire-afrique-prenant-soin-patient_23-2149117843.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>200 350 000 FCFA</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  fw-bolder" style="border:2px solid #F09E4D ; color:#F09E4D; width:100px; border-radius: 20px;" >Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-eye-fill " style="font-size: 20px;color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " style="font-size: 20px; color: #007A64;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-archive " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                        
-                                            <tr>
-                                                <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                                                <td>Auto-suffisance</td>
-                                                <td>200 350 000 FCFA</td>
-                                                <td>2 ans</td>
-                                                <td><div class="btn  fw-bolder" style="border:2px solid #F09E4D ; color:#F09E4D; width:100px; border-radius: 20px;" >Validé</div></td>
-                                                <td>
-                                                    <i class="bi bi-eye-fill " style="font-size: 20px;color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-pencil-square " style="font-size: 20px; color: #007A64;"></i> &nbsp;
-                                                    <i class="bi bi-archive-fill " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                    <i class="bi bi-archive " style="font-size: 20px; color: #007A64;"></i>&nbsp;
-                                                </td>
-                                            </tr>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
+                              <div class="card  mb-4">
+                                <h5 class="m-2">Listes des projets </h5>
+                                <!-- tableau accueil admin comune-->
+                                <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding" id="myTable">
+                                  <thead >
+                                  <tr >
+                                    <th scope="col" >image</th>
+                                    <th scope="col" >Titre</th>
+                                    <th scope="col" >Description</th>
+                                    <th scope="col" >Cout</th>
+                                    <th scope="col" >Délai </th>
+                                    <th scope="col" >Etat </th>
+                                    <th scope="col" >Action </th>
+                                  </tr>
+                                  </thead>
+                                  <tbody class="">
+                                  <tr *ngFor="let newProjet of tabProjet ">
+                                    <th><img style="width: 50px; height: 50px; border-radius: 50px" src="{{ newProjet.image }}" alt=""></th>
+                                    <td>{{ newProjet.titre }}</td>
+                                    <td>{{ newProjet.description }}</td>
+                                    <td>{{ newProjet.cout }}</td>
+                                    <td>{{ newProjet.delai }}</td>
+                                    <td><div class="btn btnStatut fw-bolder">{{ newProjet.etat }}</div></td>
+                                    <td id="iconAction">
+                                      <i class="bi bi-eye-fill"></i>&nbsp;
+                                      <i class="bi bi-pencil-square"></i>&nbsp;
+                                      <i class="bi bi-archive-fill"></i>&nbsp;
+                                      <i class="bi bi-archive"></i>&nbsp;
+                                    </td>
+                                  </tr>
+
+                                  </tbody>
+                                </table>
+
+                              </div>
                             </div>
                                     <!-- fin tableau -->
-    
+
                             <!-- Pie Chart -->
                             <div class="col-xl-4 col-lg-5">
                                 <div class="card shadow mb-4">
@@ -511,7 +424,7 @@
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                             </a>
-                                            
+
                                         </div>
                                     </div>
                                     <!-- Card Body -->
@@ -531,17 +444,17 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <!-- Content Row -->
                         <div class="row">
-    
+
                             <!-- Content Column -->
                             <div class="col-lg-6 mb-4">
                             </div>
-    
-                           
+
+
                         </div>
-    
+
                     </div>
                   </div>
             </div>
@@ -576,7 +489,11 @@
         </div>
     </div>
 
- 
+    <script>
+      $(document).ready( function () {
+        $('#myTable').DataTable();
+      } );
+    </script>
 
 </body>
 
