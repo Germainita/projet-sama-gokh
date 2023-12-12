@@ -77,7 +77,7 @@ export class GestionProjetMunicipalComponent {
   // ...
 
 
-  // Methode pour soumettre un projet
+  // Methode pour ajouter  un projet
   ajouterProjet(){
     console.log(typeof(this.projet.delai))
     let delai = new Date(this.projet.delai)

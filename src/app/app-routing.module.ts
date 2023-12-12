@@ -7,7 +7,6 @@ import { AnnonceComponent } from './composants/citoyen/annonce/annonce.component
 import { MesProjetsComponent } from './composants/citoyen/mes-projets/mes-projets.component';
 import { GestionAnnoncesComponent } from './composants/adminCommune/gestion-annonces/gestion-annonces.component';
 import { GestionProjetMunicipalComponent } from './composants/adminCommune/gestion-projet-municipal/gestion-projet-municipal.component';
-import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
 import { DetailsAnnonceComponent } from './composants/adminCommune/details-annonce/details-annonce.component';
 import { LoginComponent } from './composants/auth/login/login.component';
 import { SignupComponent } from './composants/auth/signup/signup.component';
