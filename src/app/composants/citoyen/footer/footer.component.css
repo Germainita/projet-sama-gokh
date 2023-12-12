@@ -1,0 +1,53 @@
+/* Footer  */
+.footer{
+    margin-top: 15vh;
+    border-top: 3px solid #007A64;
+}
+.logoReseaux{
+    width: 35%;
+    margin: 0 auto;
+}
+
+.logoReseaux img{
+    width: 100%;
+}
+
+.logoReseaux .colLogo{
+    border-right: 2px solid #007A64;
+}
+
+.logoReseaux .reseaux h6{
+    color: #F09E4D;
+}
+
+.logoReseaux .reseaux .iconeReseau{
+    padding: 1.5vh;
+    border-radius: 100%;
+    border: 1px solid #007A64;
+    color: #007A64;
+    font-size: 2.5vh;
+    /* background-color: #F09E4D; */
+}
+
+.ling{
+   margin: 0 auto;
+}
+
+.ling a{
+    color: #007A64;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright{
+    background-color: #F09E4D;
+    color: white;
+    padding: 1vh 0;
+}
+
+@media screen and (max-width:1000px){
+    .logoReseaux .colLogo{
+        border-right: none;
+        border-bottom: 2px solid #007A64;
+    }
+}

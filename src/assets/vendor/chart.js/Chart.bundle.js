@@ -1532,7 +1532,7 @@ function getAlpha(string) {
 // generators
 function hexString(rgba, a) {
    var a = (a !== undefined && rgba.length === 3) ? a : rgba[3];
-   return "#" + hexDouble(rgba[0]) 
+   return "#" + hexDouble(rgba[0])
               + hexDouble(rgba[1])
               + hexDouble(rgba[2])
               + (
@@ -14252,7 +14252,7 @@ function generate(scale, min, max, capacity) {
 		throw min + ' and ' + max + ' are too far apart with stepSize of ' + stepSize + ' ' + minor;
 	}
 
-	for (time = first; time < max; time = +adapter.add(time, stepSize, minor)) {
+	for (time = first; time < max; time = +adapter.add(time)) {
 		ticks.push(time);
 	}
 
@@ -14298,7 +14298,7 @@ function setMajorTicks(scale, ticks, map, majorUnit) {
 	var last = ticks[ticks.length - 1].value;
 	var major, index;
 
-	for (major = first; major <= last; major = +adapter.add(major, 1, majorUnit)) {
+	for (major = first; major <= last; major = +adapter.add(major)) {
 		index = map[major];
 		if (index >= 0) {
 			ticks[index].major = true;
@@ -15996,12 +15996,12 @@ var moment = createCommonjsModule(function (module, exports) {
 
     function getSetWeek (input) {
         var week = this.localeData().week(this);
-        return input == null ? week : this.add((input - week) * 7, 'd');
+        return input == null ? week : this.add((input - week) * 7);
     }
 
     function getSetISOWeek (input) {
         var week = weekOfYear(this, 1, 4).week;
-        return input == null ? week : this.add((input - week) * 7, 'd');
+        return input == null ? week : this.add((input - week) * 7);
     }
 
     // FORMATTING
@@ -16227,7 +16227,7 @@ var moment = createCommonjsModule(function (module, exports) {
         var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
         if (input != null) {
             input = parseWeekday(input, this.localeData());
-            return this.add(input - day, 'd');
+            return this.add(input - day);
         } else {
             return day;
         }
@@ -16238,7 +16238,7 @@ var moment = createCommonjsModule(function (module, exports) {
             return input != null ? this : NaN;
         }
         var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
-        return input == null ? weekday : this.add(input - weekday, 'd');
+        return input == null ? weekday : this.add(input - weekday);
     }
 
     function getSetISODayOfWeek (input) {
@@ -17613,7 +17613,7 @@ var moment = createCommonjsModule(function (module, exports) {
             this._offset = input;
             this._isUTC = true;
             if (localAdjust != null) {
-                this.add(localAdjust, 'm');
+                this.add(localAdjust);
             }
             if (offset !== input) {
                 if (!keepLocalTime || this._changeInProgress) {
@@ -17810,11 +17810,11 @@ var moment = createCommonjsModule(function (module, exports) {
 
         res.months = other.month() - base.month() +
             (other.year() - base.year()) * 12;
-        if (base.clone().add(res.months, 'M').isAfter(other)) {
+        if (base.clone().add(res.months).isAfter(other)) {
             --res.months;
         }
 
-        res.milliseconds = +other - +(base.clone().add(res.months, 'M'));
+        res.milliseconds = +other - +(base.clone().add(res.months));
 
         return res;
     }
@@ -18008,15 +18008,15 @@ var moment = createCommonjsModule(function (module, exports) {
         // difference in months
         var wholeMonthDiff = ((b.year() - a.year()) * 12) + (b.month() - a.month()),
             // b is in (anchor - 1 month, anchor + 1 month)
-            anchor = a.clone().add(wholeMonthDiff, 'months'),
+            anchor = a.clone().add(wholeMonthDiff),
             anchor2, adjust;
 
         if (b - anchor < 0) {
-            anchor2 = a.clone().add(wholeMonthDiff - 1, 'months');
+            anchor2 = a.clone().add(wholeMonthDiff - 1);
             // linear across the month
             adjust = (b - anchor) / (anchor - anchor2);
         } else {
-            anchor2 = a.clone().add(wholeMonthDiff + 1, 'months');
+            anchor2 = a.clone().add(wholeMonthDiff + 1);
             // linear across the month
             adjust = (b - anchor) / (anchor2 - anchor);
         }
@@ -18505,7 +18505,7 @@ var moment = createCommonjsModule(function (module, exports) {
 
     function getSetDayOfYear (input) {
         var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
-        return input == null ? dayOfYear : this.add((input - dayOfYear), 'd');
+        return input == null ? dayOfYear : this.add((input - dayOfYear));
     }
 
     // FORMATTING
@@ -19344,7 +19344,7 @@ core_adapters._date.override(typeof moment === 'function' ? {
 	},
 
 	add: function(time, amount, unit) {
-		return moment(time).add(amount, unit).valueOf();
+		return moment(time).add(amount).valueOf();
 	},
 
 	diff: function(max, min, unit) {

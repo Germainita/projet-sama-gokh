@@ -15,6 +15,7 @@ import {ProjetCommuneComponent} from "./composants/adminCommune/projet-commune/p
 import {DashboarMaireComponent} from "./composants/maire/dashboar-maire/dashboar-maire.component";
 import {GestionAdminCommuneComponent} from "./composants/maire/gestion-admin-commune/gestion-admin-commune.component";
 import { AccueilAdminCommuneComponent } from './composants/adminCommune/accueil-admin-commune/accueil-admin-commune.component';
+import { VisiteurComponent } from './composants/visiteur/visiteur/visiteur.component';
 
 const routes: Routes = [
   {path: "accueil", component:AccueilComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path:"ProjetCommune ", component:ProjetCommuneComponent},
   {path:"acceuil-maire", component:DashboarMaireComponent},
   {path:"gestion-admin-commune", component:GestionAdminCommuneComponent},
-  {path:"accueilAdmin", component:AccueilAdminCommuneComponent}
+  {path:"accueilAdmin", component:AccueilAdminCommuneComponent},
+  {path:"visiteur", component:VisiteurComponent},
 
 ];
 

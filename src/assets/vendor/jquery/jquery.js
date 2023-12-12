@@ -3932,34 +3932,18 @@ jQuery.extend( {
 
 			// Handle state
 			if ( stateString ) {
-				list.add(
-					function() {
+				list.add(function () {
 
-						// state = "resolved" (i.e., fulfilled)
-						// state = "rejected"
-						state = stateString;
-					},
-
-					// rejected_callbacks.disable
-					// fulfilled_callbacks.disable
-					tuples[ 3 - i ][ 2 ].disable,
-
-					// rejected_handlers.disable
-					// fulfilled_handlers.disable
-					tuples[ 3 - i ][ 3 ].disable,
-
-					// progress_callbacks.lock
-					tuples[ 0 ][ 2 ].lock,
-
-					// progress_handlers.lock
-					tuples[ 0 ][ 3 ].lock
-				);
+                    // state = "resolved" (i.e., fulfilled)
+                    // state = "rejected"
+                    state = stateString;
+                });
 			}
 
 			// progress_handlers.fire
 			// fulfilled_handlers.fire
 			// rejected_handlers.fire
-			list.add( tuple[ 3 ].fire );
+			list.add(tuple[3].fire);
 
 			// deferred.notify = function() { deferred.notifyWith(...) }
 			// deferred.resolve = function() { deferred.resolveWith(...) }
@@ -4684,7 +4668,7 @@ jQuery.fn.extend( {
 			tmp = dataPriv.get( elements[ i ], type + "queueHooks" );
 			if ( tmp && tmp.empty ) {
 				count++;
-				tmp.empty.add( resolve );
+				tmp.empty.add(resolve);
 			}
 		}
 		resolve();

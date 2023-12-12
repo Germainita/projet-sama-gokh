@@ -27,7 +27,7 @@ export class ProjetService {
       }
 
       // Ajouter
-      add(projet : Projet) {
+  add(projet: { titre: string; description: string }) {
         return this.http.post(`${url}/projets`, projet);
       }
 
