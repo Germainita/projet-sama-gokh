@@ -15,6 +15,10 @@ import {DashboarMaireComponent} from "./composants/maire/dashboar-maire/dashboar
 import {GestionAdminCommuneComponent} from "./composants/maire/gestion-admin-commune/gestion-admin-commune.component";
 import { AccueilAdminCommuneComponent } from './composants/adminCommune/accueil-admin-commune/accueil-admin-commune.component';
 import { VisiteurComponent } from './composants/visiteur/visiteur/visiteur.component';
+import {GestionUtilisateurComponent} from "./composants/adminCommune/gestion-utilisateur/gestion-utilisateur.component";
+import {
+  GestionProjetCitoyenComponent
+} from "./composants/adminCommune/gestion-projet-citoyen/gestion-projet-citoyen.component";
 
 const routes: Routes = [
   {path: "accueil", component:AccueilComponent},
@@ -31,7 +35,11 @@ const routes: Routes = [
   {path:"acceuil-maire", component:DashboarMaireComponent},
   {path:"gestion-admin-commune", component:GestionAdminCommuneComponent},
   {path:"accueilAdmin", component:AccueilAdminCommuneComponent},
-  {path: "visiteur", component:VisiteurComponent}
+  {path: "visiteur", component:VisiteurComponent},
+  {path: "gestionUtilisateur", component:GestionUtilisateurComponent},
+  {path: "projetCitoyen", component:GestionProjetCitoyenComponent},
+
+
 ];
 
 @NgModule({

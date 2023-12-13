@@ -1,49 +1,49 @@
 <body id="page-top">
 
 <!-- Page Wrapper -->
-<div id="wrapper">
-  <!-- Sidebar -->
-  <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
-    <div class="nav-item  ">
-      <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
-    </div>
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active ">
-      <a class="nav-link" href="#"  routerLink="/sideBar">
-        <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
-        <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
-      </a>
-    </li>
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#"  routerLink="/projetMunicipal"  data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
-        <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
-        <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
-        <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
-        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-        Déconnexion
-      </a>
-    </li>
-  </ul>
-  <!-- End of Sidebar -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
+      <div class="nav-item  ">
+        <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
+      </div>
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active ">
+        <a class="nav-link" href="#"  routerLink="/accueilAdmin">
+          <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
+          <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
+        </a>
+      </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#"  routerLink="/gestionUtilisateur"  data-target="#collapseTwo"
+           aria-expanded="true" aria-controls="collapseTwo">
+          <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
+          <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
+           aria-expanded="true" aria-controls="collapseTwo">
+          <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
+          <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
+           aria-expanded="true" aria-controls="collapseTwo">
+          <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
+          <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+          Déconnexion
+        </a>
+      </li>
+    </ul>
+    <!-- End of Sidebar -->
 
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
@@ -364,7 +364,7 @@
               </div>
             </div>
             <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal1" >
-              Ajouter une annonce
+              Ajouter un administrateur
             </button>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">

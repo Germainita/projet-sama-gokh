@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  standalone: true,
+  imports: [
+    NgIf
+  ],
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  implements OnInit  {

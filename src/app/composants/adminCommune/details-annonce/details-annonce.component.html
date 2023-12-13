@@ -2,47 +2,50 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-         <!-- Sidebar -->
-         <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
-            <div class="nav-item  ">  <img class="mt-3 "  src="assets/Fichier 1.png" alt=""></div>
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active ">
-                <a class="nav-link" href="#"  routerLink="/sideBar">
-                    <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
-                    <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
-                </a>
-            </li>
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#"  routerLink="/projetMunicipal"  data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
-                    <span style="font-size: 30px; font-weight: 700;" class="text-success" >Utilisateur</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
-                    <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
-                </a> 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
-                    <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Déconnexion
-                </a>
-            </li>
-        </ul>
-        <!-- End of Sidebar -->
-        <!-- Content Wrapper -->
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
+        <div class="nav-item  ">
+          <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
+        </div>
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active ">
+          <a class="nav-link" href="#"  routerLink="/accueilAdmin">
+            <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
+            <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
+          </a>
+        </li>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#"  routerLink="/gestionUtilisateur"  data-target="#collapseTwo"
+             aria-expanded="true" aria-controls="collapseTwo">
+            <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
+            <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
+             aria-expanded="true" aria-controls="collapseTwo">
+            <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
+            <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
+             aria-expanded="true" aria-controls="collapseTwo">
+            <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
+            <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Déconnexion
+          </a>
+        </li>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
@@ -243,7 +246,7 @@
                     <div class="container-fluid">
                         <!-- Content Row -->
                         <div class="row " style="margin: 0 auto">
-    
+
                             <!-- card projet réalisés -->
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-bottom-success shadow py-2 px-4" style="height:150px;">
@@ -314,7 +317,7 @@
                             </div>
                         </div>
                             <!-- forulaire de recherche -->
-                            
+
                            <!-- Button trigger modal -->
                                 <div class="navbouton d-flex gap-3 mb-5 mt-5">
                                     <!-- Button trigger modal -->
@@ -328,7 +331,7 @@
                                     Ajouter une annonce
                                 </button>
                                 </div>
-                                    
+
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -370,13 +373,13 @@
                                     </div>
                         <!-- carte annonce x -->
                             <div  class="row rowComment d-flex " >
-                               
-                                    <div class="col-lg-8  col-lg-3 com1"> 
+
+                                    <div class="col-lg-8  col-lg-3 com1">
                                          <img src="https://img.freepik.com/photos-gratuite/route-arbres-autour_1127-2249.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt="">
                                         </div>
                                    <div class="col-lg-4  col-lg-3 com" >
                                     <span class="d-flex justify-content-center ">
-                                        <input class="com" type="text" name="text" placeholder="+ Add a note" class="form-control addtxt"> 
+                                        <input class="com" type="text" name="text" placeholder="+ Add a note" class="form-control addtxt">
                                     </span> <div class="d-flex justify-content-center py-2">
                                         <div class="second py-2 px-2"> <span class="text1">Ecrivez ici votre commentaire </span>
                                             <div class="d-flex justify-content-between py-1 pt-2">
@@ -441,8 +444,8 @@
             </div>
         <!-- End of Content Wrapper -->
 
-                
-  
+
+
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -470,7 +473,7 @@
         </div>
     </div>
 
- 
+
 
 </body>
 

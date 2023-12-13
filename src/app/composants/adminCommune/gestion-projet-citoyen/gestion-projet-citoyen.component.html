@@ -1,4 +1,3 @@
-!
 <html>
 <head>
   <meta charset="UTF-8">
@@ -330,73 +329,35 @@
           <!-- Button trigger modal -->
           <div class="navbouton d-flex gap-3 mb-5 mt-5">
             <!-- Button trigger modal -->
-            <button type="button" class="btn " data-bs-toggle="modal">
-              Projet Citoyen
+            <button type="button" class="btn " data-bs-toggle="modal" routerLink="/projetMunicipal">
+                Projets municipaux
+
             </button>
-            <button type="button" class="btn " data-bs-toggle="modal" >
-              Projets municipaux
+            <button type="button" class="btn " data-bs-toggle="modal" routerLink="/gestionAnnonces"  >
+             Annonces
             </button>
-            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" >
-              Ajouter un projet
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" routerLink="commentaire" >
+                Coomentaires
             </button>
           </div>
 
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un projet dans la commune </h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="">
-                      <label for="recipient-name" class="col-form-label w-100">Titre</label>
-                      <input type="text" class="form-control w-100 mx-0 my-0" name="titreProjet" id="recipient-name" >
-                    </div>
-                    <div class="">
-                      <label for="message-text" class="col-form-label ">Description</label>
-                      <textarea class="form-control w-100" id="message-text"  name="titreDescription"></textarea>
-                    </div>
-                    <div class="">
-                      <label for="recipient-name" class="col-form-label ">Cout</label>
-                      <input type="number" class="form-control w-100"  name="coutProjet" id="recipient-name"  >
-                    </div>
-                    <div class="">
-                      <label for="recipient-name" class="col-form-label ">Délai</label>
-                      <input type="date" class="form-control w-100"  name="delaiProjet" id="recipient-name" >
-                    </div>
-                    <div class="">
-                      <label for="formFile" class="form-label ">Image du projet</label>
-                      <input class="form-control w-100" type="file" name="imageProjet" id="formFile" >
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
-                  <button type="button" class="btn btn-success" (click)=" ajouterProjet()">Ajouter</button>
-                </div>
-              </div>
-            </div>
-          </div>
           <!-- tableau gestion projet municipaux -->
           <div class="row">
             <!-- debut Tableau projet -->
-
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-12 col-lg-7">
               <div class="card  mb-4 px-2 py-2" >
-               <div class="d-flex my-2 mx-2">
-                 <h5 class="m-2 w-75">Listes des projets </h5>
-                 <input type="text"
-                        class="form-control search-filter w-25"
-                        id="search_filter"
-                        onkeyup="searchtable()"
-                        placeholder="Rechercher un produit."
-                        title="Type in a name">
-               </div>
+                <div class="d-flex my-2 mx-2">
+                  <h5 class="m-2 w-75">Listes des projets des citoyens </h5>
+                  <input type="text"
+                         class="form-control search-filter w-25 border-dark"
+                         style="border: 1px solid black;"
+                         id="search_filter"
+                         onkeyup="searchtable()"
+                         placeholder="Rechercher un produit."
+                         title="Type in a name">
+                </div>
                 <!-- tableau accueil admin comune-->
-                <table class="table table-responsive-md table1 table-sm px-5 py-5 table table-with-padding " id="table-list">
+                <table class="table table-responsive-md table1 table-sm px-5 py-5 table table-with-padding">
                   <thead >
                   <tr class="h-25 px-2 py-3">
                     <th scope="col" >image</th>
@@ -430,38 +391,7 @@
             </div>
 
             <div class=" col-xl-4 col-lg-5">
-              <div class="card  px-3  ">
-                <h5 class="m-2">Ajouter un projet pour la commune </h5>
-                <!-- tableau accueil admin comune-->
-                <form action="" class="">
-                  <div class=" w-100">
-                    <label for="titreProjet" class="form-label">Titre du projet</label>
-                    <input type="text" name="titreProjet" class="form-control w-100" id="titreProjet"  [(ngModel)]="projet.titre">
-                  </div>
-                  <div class="w-100">
-                    <label for="descriptionProjet" class="form-label">Description</label>
-                    <input type="text" name="descriptionProjet" class="form-control w-100" id="descriptionProjet" [(ngModel)]="projet.description" >
-                  </div>
-                  <div class="w-100">
-                    <label for="coutProjet" class="form-label">Coût</label>
-                    <input type="number" name="coutProjet" class="form-control w-100" id="coutProjet" [(ngModel)]="projet.cout" >
-                  </div>
-                  <div >
-                    <label for="delaiProjet" class="form-label">Délai</label>
-                    <input type="date" name="delaiProjet" class="form-control w-100" id="delaiProjet" [(ngModel)]="projet.delai" >
-                  </div>
-                  <div >
-                    <label for="imageProjet" class="form-label">Image</label>
-                    <input type="text"  class="form-control w-100" name="imageProjet" id="imageProjet" [(ngModel)]="projet.image">
-                  </div>
-                  <div class=" text-end">
-                    <button class="btn btnAnnuler fw-bold btn-secondary px-3 mx-2 mb-3">Annuler</button>
-                    <button class="btn btnSoumettre btn-success fw-bold px-3 mx-2 mb-3" (click)=" ajouterProjet()">Ajouter</button>
-                  </div>
-
-                </form>
-
-              </div>
+              <h5 class="m-2">Ajouter un projet pour la commune </h5>
             </div>
 
 
@@ -491,28 +421,22 @@
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-body">Clicker sur Déconnexion si vous voulez vraiment vous déconnecter</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+        <a class="btn btn-primary" href="login.html">Déconnexion</a>
       </div>
     </div>
   </div>
 </div>
 
-
-
 <!-- !-- Utilisation d'une icône et d'un lien simulé -->
 <script>
   // Ajoutez un gestionnaire d'événements au lien simulé pour déclencher le clic sur le champ d'entrée réel
-  document.querySelector('label[for="fileInput"]').addEventListener('click', function () {
+  document.querySelector('label[for="fileInput"]').addEventListener('click', function() {
     document.getElementById('fileInput').click();
 
   });
-
-
-
-
 </script>
 
 </body>

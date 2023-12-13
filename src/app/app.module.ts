@@ -23,6 +23,9 @@ import { ConditionComponent } from './composants/citoyen/condition/condition.com
 import { PolitiqueComponent } from './composants/citoyen/politique/politique.component';
 import {ProjetCommuneComponent} from "./composants/adminCommune/projet-commune/projet-commune.component";
 import {DashboarMaireComponent} from "./composants/maire/dashboar-maire/dashboar-maire.component";
+import {LoginComponent} from "./composants/auth/login/login.component";
+import { GestionProjetCitoyenComponent } from './composants/adminCommune/gestion-projet-citoyen/gestion-projet-citoyen.component';
+import { GestionUtilisateurComponent } from './composants/adminCommune/gestion-utilisateur/gestion-utilisateur.component';
 
 
 @NgModule({
@@ -45,16 +48,19 @@ import {DashboarMaireComponent} from "./composants/maire/dashboar-maire/dashboar
     AproposComponent,
     ProjetCommuneComponent,
     DashboarMaireComponent,
+    GestionProjetCitoyenComponent,
+    GestionUtilisateurComponent,
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    NgxPaginationModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        NgxPaginationModule,
+        LoginComponent
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
