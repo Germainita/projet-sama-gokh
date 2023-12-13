@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
-import { AccueilComponent } from './composants/superAdmin/accueil/accueil.component';
 import { UtilisateurComponent } from './composants/superAdmin/utilisateur/utilisateur.component';
 import { ProjetComponent } from './composants/superAdmin/projet/projet.component';
 import { AnnonceComponent } from './composants/superAdmin/annonce/annonce.component';
@@ -20,7 +19,6 @@ import { SuperAdminAccueilComponent } from './composants/superAdmin/super-admin-
   declarations: [
     AppComponent,
     DashboardComponent,
-    AccueilComponent,
     UtilisateurComponent,
     ProjetComponent,
     AnnonceComponent,

@@ -197,22 +197,23 @@
                      </div>
                                    <table class="table table-striped">
                                        <thead>
-                                           <tr class="">
+                                           <tr class="" >
                                              <th scope="col"  style="background-color: #007A64 !important; color: white; padding-left: 30px;">Nombre d'habitants</th>
                                              <th scope="col"  style="background-color: #007A64 !important; color: white;">Communes</th>
                                              <th scope="col"  style="background-color: #007A64 !important; color: white;">Actions</th>                      
                                            </tr>
                                          </thead>
                                          <tbody class="table-group-divider">
-                                           <tr>
+                                           <tr *ngFor="let commune of communes">
                                                <td class="" style="padding: 30px;"> 
-                                                1234455
+                                                {{ commune.nbreCitoyen}}
                                                </td>
-                                               <td>Yoff</td>
+                                               <td>{{ commune.nom}}</td>
                                                <td>
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
-                                           </tr>
+                                            </tr>
+                                           <!-- </tr>
                                            <tr>
                                             <td class="" style="padding: 30px;">
                                                 987657
@@ -239,7 +240,7 @@
                                                <td>
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
-                                           </tr>
+                                           </tr> -->
                                          </tbody>
                                    </table>
                                </div>

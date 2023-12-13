@@ -187,13 +187,13 @@
                                            </tr>
                                          </thead>
                                          <tbody class="table-group-divider">
-                                           <tr>
-                                               <td class="" style="padding-left: 40px !important;">Terminé</td>
+                                           <tr *ngFor="let etatProjet of etatProjets">
+                                               <td class="" style="padding-left: 40px !important;">{{etatProjet.nom}}</td>
                                                <td class="" style="padding-left: 40px !important;">
                                                 <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
                                            </tr>
-                                           <tr>
+                                           <!-- <tr>
                                                <td class="" style="padding-left: 40px !important;">En cours</td>
                                                <td class="" style="padding-left: 40px !important;">
                                                 <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
@@ -210,7 +210,7 @@
                                                <td class="" style="padding-left: 40px !important;">
                                                 <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
-                                           </tr>
+                                           </tr> -->
                                          </tbody>
                                    </table>
                                </div>
@@ -251,18 +251,18 @@
                                        </tr>
                                      </thead>
                                      <tbody class="table-group-divider">
-                                       <tr>
-                                           <td class="" style="padding-left: 40px !important;">Projet municipal</td>
+                                       <tr *ngFor="let typeProjet of typeProjets">
+                                           <td class="" style="padding-left: 40px !important;">{{ typeProjet.nom }}</td>
                                            <td class="" style="padding-left: 40px !important;">
                                             <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                            </td>
                                        </tr>
-                                       <tr>
+                                       <!-- <tr>
                                            <td class="" style="padding-left: 40px !important;">Projet citoyen</td>
                                            <td class="" style="padding-left: 40px !important;">
                                             <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                            </td>
-                                       </tr>
+                                       </tr> -->
                                      </tbody>
                                </table>
                            </div>

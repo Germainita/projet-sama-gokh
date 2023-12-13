@@ -153,34 +153,38 @@
                     <div class="left col-md-7">
                             <div class="col-xl-8 col-lg-7 container mt-3" style="width: 500px !important;">
                                 <div class="card shadow mb-4" style="">
-                                    <!-- tableau accueil admin comune-->
-                                    <h4 class="ps-4 text-center mt-4 mb-4" style="color: #F09E4D;">Ajouter un rôle</h4>
-                                    <form #roleForm="ngForm">
-                                        <div class="mb-3">
-                                            <div class="col-sm-10" style="margin: 0 auto;">
-                                                <input type="text" name="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
+                                    <div class="" *ngIf="!showEditForm">
+                                        <!-- tableau accueil admin comune-->
+                                        <h4 class="ps-4 text-center mt-4 mb-4" style="color: #F09E4D;">Ajouter un rôle</h4>
+                                        <form #addRoleForm="ngForm">
+                                            <div class="mb-3">
+                                                <div class="col-sm-10" style="margin: 0 auto;">
+                                                    <input type="text" name="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
+                                                </div>
+                                    
+                                                <input type="text" name="role" [(ngModel)]="newRoleName" required class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
+                                                <div class="col-auto d-flex justify-content-between mx-5 p-4">
+                                                    <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
+                                                    <button type="submit" class="btn btn-primary mb-3 fw-bold" (click)="add(addRoleForm)" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
+                                                </div>
                                             </div>
-                                
-                                            <input *ngIf="!inEdition" type="text" name="role" [(ngModel)]="newRoleName" required class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
-                                            <div class="col-auto d-flex justify-content-between mx-5 p-4">
-                                                <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
-                                                <button *ngIf="!inEdition" type="submit" class="btn btn-primary mb-3 fw-bold" (click)="add(roleForm)" style="background-color: #007A64; color: white; border: none;">Ajouter</button>
+                                        </form>
+                                    </div>
+                                    <div class="" *ngIf="showEditForm">
+                                        <h4 class="ps-4 text-center mt-4 mb-4" style="color: #F09E4D;">Modifier un rôle</h4>
+                                        <form #editRoleForm="ngForm">
+                                            <div class="mb-3">
+                                                <div class="col-sm-10" style="margin: 0 auto;">
+                                                    <input type="text" name="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
+                                                </div>
+                                                <input type="text" name="role" [(ngModel)]="selectedRole.nom" required class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
+                                                <div class="col-auto d-flex justify-content-between mx-5 p-4">
+                                                    <button type="submit" class="btn btn-primary mb-3 fw-bold" (click)="cancelEdition()" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
+                                                    <button type="submit" class="btn btn-primary mb-3 fw-bold" (click)="editRole()" style="background-color: #007A64; color: white; border: none;">Modifier</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
-                                    <!-- <h4 class="ps-4 text-center mt-4 mb-4" style="color: #F09E4D;">Modifier un rôle</h4>
-                                    <form #roleForm="ngForm">
-                                        <div class="mb-3">
-                                            <div class="col-sm-10" style="margin: 0 auto;">
-                                                <input type="text" name="text" readonly class="fw-bold fs-5 form-control-plaintext" id="staticName" value="Nom:*">
-                                            </div>
-                                            <input *ngIf="!inEdition" type="text" name="role" [(ngModel)]="newRoleName" required class="input-border form-control w-75" style="margin: 0 auto;" id="exampleInputName" aria-describedby="nameHelp">
-                                            <div class="col-auto d-flex justify-content-between mx-5 p-4">
-                                                <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #F09E4D; color: white; border: none;">Annuler</button>
-                                                <button type="submit" class="btn btn-primary mb-3 fw-bold" style="background-color: #007A64; color: white; border: none;">Modifier</button>
-                                            </div>
-                                        </div>
-                                    </form> -->
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Area Chart -->
@@ -202,7 +206,7 @@
                                                <td class="" style="padding-left: 40px !important;">{{ role.id }}</td>
                                                <td class="" style="padding-left: 40px !important;">{{ role.nom }}</td>
                                                <td>
-                                                   <!-- <i class="bi bi-pencil-square text-success" (click)="editRole(role.id!, updatedRoleDetails)" style="cursor: pointer; font-size: 25px;"></i> &nbsp; -->
+                                                   <i class="bi bi-pencil-square text-success" (click)="displayEditForm(role)"  style="cursor: pointer; font-size: 25px;"></i> &nbsp;
                                                    <i class="bi bi-trash3-fill text-success" style="font-size: 25px; cursor: pointer;" (click)="deleteRole(role.id!)"></i>
                                                </td>
                                            </tr>
@@ -231,6 +235,7 @@
 
                                </div>
                            </div>
+                          
                     </div>
                     <div class="right col-md-5 mt-4 ">
                         <h6 class="text-success fw-bold">Chiffres clées sur l'évolution de la plateforme SAMA GOKH</h6>

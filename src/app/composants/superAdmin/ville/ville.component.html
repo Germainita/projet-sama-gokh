@@ -198,13 +198,13 @@
                                            </tr>
                                          </thead>
                                          <tbody class="table-group-divider">
-                                           <tr>
-                                               <td class="" style="padding-left: 40px !important;">DAKAR</td>
+                                           <tr *ngFor="let ville of villes">
+                                               <td class="" style="padding-left: 40px !important;">{{ ville.nom }}</td>
                                                <td class="" style="padding-left: 40px !important;">
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
                                            </tr>
-                                           <tr>
+                                           <!-- <tr>
                                                <td class="" style="padding-left: 40px !important;">Kaolack</td>
                                                <td class="" style="padding-left: 40px !important;">
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
@@ -221,7 +221,7 @@
                                                <td class="" style="padding-left: 40px !important;">
                                                    <i class="bi bi-pencil-square text-success" style="font-size: 25px;"></i> &nbsp;
                                                </td>
-                                           </tr>
+                                           </tr> -->
                                          </tbody>
                                    </table>
                                </div>
