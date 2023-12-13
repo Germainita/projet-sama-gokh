@@ -91,7 +91,7 @@
     <div class="recherche d-flex justify-content-end">
         <div class="col-5">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Rechercher un projet..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="text" class="form-control" placeholder="Rechercher un projet..." aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="inputSerach" (input)="onSearch()">
                 <button class="btn" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
             </div>
         </div>
@@ -103,274 +103,123 @@
         <button class="btn fw-bold px-3" *ngIf="!isSoumis" (click)="showSoumis()">Soumis</button>
         
         <button class="btn filtreActive fw-bold px-3" *ngIf="isValide">Valider</button>
-        <button class="btn fw-bold px-3" *ngIf="!isValide" (click)="showValide()">Valider</button>
+        <button class="btn fw-bold px-3" *ngIf="!isValide" (click)="showValide()">Validé</button>
         
         <button class="btn filtreActive fw-bold px-3" *ngIf="isInvalide">Invalider</button>
-        <button class="btn fw-bold px-3" *ngIf="!isInvalide" (click)="showInvalide()">Invalider</button>
+        <button class="btn fw-bold px-3" *ngIf="!isInvalide" (click)="showInvalide()">Invalidé</button>
     </div>
 
     <!-- Liste de tous les projets  -->
     <div class="listeProjet mb-5" *ngIf="isSoumis">
         <div class="row">
             <!-- Ligne 1 -->
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3" *ngFor="let projet of getProjetsPage()">
                 <div class="card">
-                    <img src="https://img.freepik.com/free-photo/group-happy-african-volunteers-planting-tree-park-africa-volunteering-charity-people-ecology-concept_627829-320.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <img [src]="projet.image" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Jardin partagé</h5>
-                            <p class="date">03/12/2023</p>
+                            <h5 class="card-title titre">{{projet.titre}}</h5>
+                            <p class="date">{{projet.createdAt }}</p>
                         </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>En cours de vote</p>
+                        <p><span class="titre">Coût: </span>{{projet.cout}}</p>
+                        <p><span class="titre">Délai: </span>{{projet.delai}}</p>
+                        <p *ngIf="projet.idEtatProjet == encourId"><span class="titre">Etat: </span>En cours de vote</p>
+                        <p *ngIf="projet.idEtatProjet == termineId"><span class="titre">Etat: </span>Terminé</p>
+                        <p *ngIf="projet.idEtatProjet == valideId"><span class="titre">Etat: </span>Validé</p>
+                        <p *ngIf="projet.idEtatProjet == invalideId"><span class="titre">Etat: </span>Invalidé</p>
                         <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone iconeInactive"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
+                            <button><i class="bi bi-eye-fill icone" (click)="detailsProjet(projet)" data-bs-toggle="modal" data-bs-target="#modalDetailProjet"></i></button>
+                            <button><i class="bi bi-pencil-square icone" (click)="chargerInfos(projet)" data-bs-toggle="modal" data-bs-target="#modalModifierProjet"></i></button>                                                      
+                            <button [disabled]="projet.idEtatProjet === encourId"><i class="bi bi-archive-fill icone" ></i></button>
+                            <button [disabled]="projet.idEtatProjet == encourId"> <i class="bi bi-archive icone"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/premium-photo/thai-white-rice-jasmine-rice_45583-1033.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Autosuffisance</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>6.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>Voté</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/free-vector/vector-ripe-yellow-orange-red-whole-mango-leaves-hanging-branch-isolated-with-green-blur-background_1284-45466.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Mangue séché</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>En cours de vote</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ligne 2  -->
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/premium-photo/who-can-jump-highest-full-length-shot-young-couple-bonding-with-their-son-garden_590464-58322.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Une famille, une maison</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>En cours de vote</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone iconeInactive"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/premium-photo/feeling-positive-today-shot-young-businessman-working-computer-office_590464-31402.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Un jeune, un travail</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>Vote</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone iconeInactive"></i>
-                            <i class="bi bi-archive icone"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/free-photo/building_1127-3120.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Ville propre</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>Voté</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
     <!-- Liste des projets valider  -->
     <div class="listeProjet projetValide mb-5" *ngIf="isValide">
-        <div class="row">
-            <div class="col-md-4 mb-3">
+        <h1 *ngIf="!tabProjetUserValide.length">Aucun projet validé pour l'instant</h1>
+        <div class="row" *ngIf="tabProjetUserValide.length">
+            <div class="col-md-4 mb-3" *ngFor="let projet of tabProjetUserValide">
                 <div class="card">
-                    <img src="https://img.freepik.com/premium-photo/thai-white-rice-jasmine-rice_45583-1033.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
+                    <img [src]="projet.image" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Autosuffisance</h5>
-                            <p class="date">03/12/2023</p>
+                            <h5 class="card-title titre">{{projet.titre}}</h5>
+                            <p class="date">{{projet.createdAt }}</p>
                         </div>
-                        <p><span class="titre">Coût: </span>6.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>Voté</p>
+                        <p><span class="titre">Coût: </span>{{projet.cout}}</p>
+                        <p><span class="titre">Délai: </span>{{projet.delai}}</p>
+                        <p *ngIf="projet.idEtatProjet == encourId"><span class="titre">Etat: </span>En cours de vote</p>
+                        <p *ngIf="projet.idEtatProjet == termineId"><span class="titre">Etat: </span>Terminé</p>
+                        <p *ngIf="projet.idEtatProjet == valideId"><span class="titre">Etat: </span>Validé</p>
+                        <p *ngIf="projet.idEtatProjet == invalideId"><span class="titre">Etat: </span>Invalidé</p>
                         <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
+                            <button><i class="bi bi-eye-fill icone" (click)="detailsProjet(projet)" data-bs-toggle="modal" data-bs-target="#modalDetailProjet"></i></button>
+                            <button><i class="bi bi-pencil-square icone" (click)="chargerInfos(projet)" data-bs-toggle="modal" data-bs-target="#modalModifierProjet"></i></button>                                                      
+                            <button [disabled]="projet.idEtatProjet == encourId"><i class="bi bi-archive-fill icone" ></i></button>
+                            <button [disabled]="projet.idEtatProjet == encourId"> <i class="bi bi-archive icone"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/free-vector/vector-ripe-yellow-orange-red-whole-mango-leaves-hanging-branch-isolated-with-green-blur-background_1284-45466.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Mangue séché</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>En cours de vote</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/premium-photo/feeling-positive-today-shot-young-businessman-working-computer-office_590464-31402.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Un jeune, un travail</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>Vote</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone iconeInactive"></i>
-                            <i class="bi bi-archive icone"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
     <!-- Liste des projets invalidés  -->
     <div class="listeProjet projetInvalide mb-5" *ngIf="isInvalide">
         <div class="row">
-            <!-- Ligne 1 -->
-            <div class="col-md-4 mb-3">
+            <h1 *ngIf="!tabProjetUserInvalide.length">Aucun projet invalidé pour l'instant</h1>
+        <div class="row" *ngIf="tabProjetUserInvalide.length">
+            <div class="col-md-4 mb-3" *ngFor="let projet of tabProjetUserInvalide">
                 <div class="card">
-                    <img src="https://img.freepik.com/premium-photo/feeling-positive-today-shot-young-businessman-working-computer-office_590464-31402.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
+                    <img [src]="projet.image" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Un jeune, un travail</h5>
-                            <p class="date">03/12/2023</p>
+                            <h5 class="card-title titre">{{projet.titre}}</h5>
+                            <p class="date">{{projet.createdAt }}</p>
                         </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>Vote</p>
+                        <p><span class="titre">Coût: </span>{{projet.cout}}</p>
+                        <p><span class="titre">Délai: </span>{{projet.delai}}</p>
+                        <p *ngIf="projet.idEtatProjet == encourId"><span class="titre">Etat: </span>En cours de vote</p>
+                        <p *ngIf="projet.idEtatProjet == termineId"><span class="titre">Etat: </span>Terminé</p>
+                        <p *ngIf="projet.idEtatProjet == valideId"><span class="titre">Etat: </span>Validé</p>
+                        <p *ngIf="projet.idEtatProjet == invalideId"><span class="titre">Etat: </span>Invalidé</p>
                         <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone iconeInactive"></i>
-                            <i class="bi bi-archive icone"></i>
+                            <button><i class="bi bi-eye-fill icone" (click)="detailsProjet(projet)" data-bs-toggle="modal" data-bs-target="#modalDetailProjet"></i></button>
+                            <button><i class="bi bi-pencil-square icone" (click)="chargerInfos(projet)" data-bs-toggle="modal" data-bs-target="#modalModifierProjet"></i></button>                                                      
+                            <button [disabled]="projet.idEtatProjet == encourId"><i class="bi bi-archive-fill icone" ></i></button>
+                            <button [disabled]="projet.idEtatProjet == encourId"> <i class="bi bi-archive icone"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/free-photo/building_1127-3120.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=ais" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Ville propre</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>Voté</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="https://img.freepik.com/free-vector/vector-ripe-yellow-orange-red-whole-mango-leaves-hanging-branch-isolated-with-green-blur-background_1284-45466.jpg?size=626&ext=jpg&ga=GA1.1.59389668.1692912989&semt=sph" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title titre">Mangue séché</h5>
-                            <p class="date">03/12/2023</p>
-                        </div>
-                        <p><span class="titre">Coût: </span>12.000.000</p>
-                        <p><span class="titre">Délai: </span>3 mois</p>
-                        <p><span class="titre">Etat: </span>En cours de vote</p>
-                        <div class="action text-center d-flex justify-content-between px-5">  
-                            <i class="bi bi-eye-fill icone"></i> 
-                            <i class="bi bi-pencil-square icone"></i>                                                      
-                            <i class="bi bi-archive-fill icone"></i>
-                            <i class="bi bi-archive icone iconeInactive"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+        </div>
         </div>
     </div>
 
+    <!-- Pagination  -->
+    <div *ngIf="getProjetsPage().length">
+        <div class="d-flex justify-content-center my-5">
+        <button class="btn btnColor  me-2" [disabled]="pageActuelle === 1" (click)="pageActuelle = pageActuelle - 1">
+            <i class="bi bi-chevron-double-left"></i>
+        </button>
+        <button class="btn ms-2" *ngFor="let page of pages" (click)="pageActuelle = page">
+            <span class="pageActuelle" *ngIf="page===pageActuelle">{{page}}</span>
+            <span  *ngIf="page != pageActuelle">{{page}}</span>
+            <!-- {{ page }} -->
+        </button>
+        <button class="btn btnColor ms-2" [disabled]="pageActuelle === totalPages" (click)="pageActuelle = pageActuelle + 1">
+            <i class="bi bi-chevron-double-right"></i>
+        </button>
+        </div>
+    </div>
 
     <!-- Formulaire de soumission d'un projet  -->
     <div class="soumettreProjet">
@@ -380,29 +229,28 @@
                 <form action="" class="px-4 pt-5">
                     <div class="mb-3">
                         <label for="titreProjet" class="form-label">Titre du projet</label>
-                        <input type="text" name="titreProjet" class="form-control" id="titreProjet">
+                        <input type="text" name="titreProjet" class="form-control" id="titreProjet" [(ngModel)]="titre">
                     </div>
                     <div class="mb-3">
                         <label for="descriptionProjet" class="form-label">Description</label>
-                        <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet">
+                        <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet" [(ngModel)]="description">
                     </div>
                     <div class="mb-3">
                         <label for="coutProjet" class="form-label">Coût</label>
-                        <input type="text" name="coutProjet" class="form-control" id="coutProjet">
+                        <input type="number" name="coutProjet" class="form-control" id="coutProjet" [(ngModel)]="cout">
                     </div>
                     <div class="mb-3">
                         <label for="delaiProjet" class="form-label">Délai</label>
-                        <input type="text" name="delaiProjet" class="form-control" id="delaiProjet">
+                        <input type="date" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="delai">
                     </div>
                     <div class="mb-3">
-                        <label for="fileInput" class="form-label">Image
-                            <i class="bi bi-image-fill d-block imageProjet mt-3"></i>
-                        </label>
-                        <input type="file" name="imageProjet" id="fileInput" style="display: none;" />
+                        <label for="imageProjet" class="form-label">Url image</label>
+                        <input type="text" name="imageProjet" class="form-control" id="imageProjet" [(ngModel)]="image">
                     </div>
+                    
                     <div class="mb-3 text-end">
-                        <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3">Annuler</button>
-                        <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3">Soumettre</button>
+                        <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3" (click)="viderChamps()">Annuler</button>
+                        <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3" (click)="soumettreProjet()">Soumettre</button>
                     </div>
                     
                 </form>
@@ -414,7 +262,7 @@
             </div>
         </div>
         
-    </div>
+    </div>    
 
 </div>
 
@@ -454,3 +302,71 @@
     </div>
 </div>
 <!-- Fin footer  -->
+
+<!-- Modal détail projet  -->
+<div class="modal fade" id="modalDetailProjet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="text-center">
+                <h4 class="fw-bold info text-center">{{projet.titre}}</h4>
+                <!-- <i class="bi bi-person-circle fs-5"></i> -->
+            </div>
+            <div class="infoProjet">
+                <img [src]="projet.image" alt="">
+                <p class="fw-bold"><span class="info">Description: </span> {{projet.description}}</p>
+                <p class="fw-bold"><span class="info">Délai: </span> {{projet.delai}}</p>
+                <p class="fw-bold"><span class="info">Cout: </span> {{projet.cout}}</p>
+                <p class="fw-bold"><span class="info">Créé par: </span> {{projet.createdBy}}</p>
+                <p class="fw-bold"><span class="info">Le: </span> {{projet.createdAt}}</p>
+            </div>
+            
+        </div>
+        
+      </div>
+    </div>
+</div>
+
+<!-- Modal modifié un projet  -->
+<div class="modal fade" id="modalModifierProjet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="text-center">
+                <h4 class="fw-bold info text-center">Modifier ce projet</h4>
+                <!-- <i class="bi bi-person-circle fs-5"></i> -->
+            </div>
+            <form action="" class="px-4 pt-5">
+                <div class="mb-3">
+                    <label for="titreProjet" class="form-label">Titre du projet</label>
+                    <input type="text" name="titreProjet" class="form-control" id="titreProjet" [(ngModel)]="titre">
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionProjet" class="form-label">Description</label>
+                    <input type="text" name="descriptionProjet" class="form-control" id="descriptionProjet" [(ngModel)]="description">
+                </div>
+                <div class="mb-3">
+                    <label for="coutProjet" class="form-label">Coût</label>
+                    <input type="number" name="coutProjet" class="form-control" id="coutProjet" [(ngModel)]="cout">
+                </div>
+                <div class="mb-3">
+                    <label for="delaiProjet" class="form-label">Délai</label>
+                    <input type="date" name="delaiProjet" class="form-control" id="delaiProjet" [(ngModel)]="delai">
+                </div>
+                <div class="mb-3">
+                    <label for="imageProjet" class="form-label">Url image</label>
+                    <input type="text" name="imageProjet" class="form-control" id="imageProjet" [(ngModel)]="image">
+                </div>
+                
+                <div class="mb-3 text-end">
+                    <button class="btn btnAnnuler fw-bold px-3 mx-2 mb-3" data-bs-dismiss="modal" (click)="viderChamps()">Annuler</button>
+                    <button class="btn btnSoumettre fw-bold px-3 mx-2 mb-3" (click)="modifier()">Modifier</button>
+                </div>
+                
+            </form>
+            
+        </div>
+        
+      </div>
+    </div>
+</div>

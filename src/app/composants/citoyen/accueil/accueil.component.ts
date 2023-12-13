@@ -140,6 +140,8 @@ export class AccueilComponent implements OnInit{
 
   // Methode pour soumettre un projet 
   soumettreProjet(){
+    console.log(this.idEtatEncours);
+    console.log(this.idCitoyen);
     // console.log(typeof(this.projet.delai))
     // let delai = new Date(this.projet.delai)
     // console.log(typeof(delai));
@@ -170,7 +172,7 @@ export class AccueilComponent implements OnInit{
       objetProjet.delai= new Date (this.delai);
       objetProjet.etat= true;
       objetProjet.idEtatProjet= this.idEtatEncours;
-      objetProjet.idTypeProjet= 1;
+      objetProjet.idTypeProjet= this.idCitoyen;
       objetProjet.idUser= this.userConnect.id;
       objetProjet.createdAt= new Date();
       objetProjet.createdBy= this.userConnect.username;
@@ -209,6 +211,8 @@ export class AccueilComponent implements OnInit{
       let etatEncours = this.tabEtatProjet.find((element:any)=> element.statut == "EnCours");
       if(etatEncours){
         this.idEtatEncours = etatEncours.id
+        console.log("id etat en cours");
+        console.log(this.idEtatEncours);
       }
       // L'identifiant de l'etat termine 
       let etatTermine = this.tabEtatProjet.find((element:any)=> element.statut == "Termine");
@@ -222,7 +226,7 @@ export class AccueilComponent implements OnInit{
         this.idEtatValide = etatValide.id
       }
       // L'identifiant de l'etat en cours 
-      let etatInvalide = this.tabEtatProjet.find((element:any)=> element.statut == "Invalider");
+      let etatInvalide = this.tabEtatProjet.find((element:any)=> element.statut == "Invalide");
       if(etatInvalide){
         this.idEtatInvalide = etatInvalide.id
       }
