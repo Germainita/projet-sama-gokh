@@ -193,6 +193,18 @@ input{
     padding: 1vh 0;
 }
 
+/* pagination  */
+.pageActuelle{
+    color: #F09E4D;
+    font-weight: bold;
+    border-bottom: 1px solid #007A64;
+}
+
+.btnColor{
+    background-color: #007A64;
+    color: #F09E4D;
+}
+
 /* Média queries  */
 @media screen and (max-width:760px){
     .banierre .containerText h1 {
