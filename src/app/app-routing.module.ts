@@ -56,7 +56,9 @@ const routes: Routes = [
   {path:"acceuil-maire", component:DashboarMaireComponent},
   {path:"gestion-admin-commune", component:GestionAdminCommuneComponent},
   {path:"accueilAdmin", component:AccueilAdminCommuneComponent},
-//   {path:"visiteur", component:VisiteurComponent},
+  {path: "visiteur", component:VisiteurComponent},
+  {path: "gestionUtilisateur", component:GestionUtilisateurComponent},
+  {path: "projetCitoyen", component:GestionProjetCitoyenComponent},
 
   
   // Visiteur 

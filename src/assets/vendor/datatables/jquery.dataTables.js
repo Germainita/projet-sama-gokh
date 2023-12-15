@@ -3450,10 +3450,13 @@
 
 			oSettings.iInitDisplayStart = -1;
 		}
+<<<<<<< HEAD
 
+		var iDisplayStart = oSettings._iDisplayStart;
+=======
 	
 		var iDisplayStart = oSettings.idisplayStart;
-
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 		var iDisplayEnd = oSettings.fnDisplayEnd();
 
 		/* Server-side processing draw intercept */
@@ -4836,10 +4839,13 @@
 	function _fnLengthChange ( settings, val )
 	{
 		var len = parseInt( val, 10 );
+<<<<<<< HEAD
+		settings._iDisplayLength = len;
 
+=======
 		settings.idisplayLength = len;
 	
-
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 		_fnLengthOverflow( settings );
 
 		// Fire length change event
@@ -5030,12 +5036,17 @@
 		{
 			_fnLog( settings, 0, "Unknown paging action: "+action, 5 );
 		}
+<<<<<<< HEAD
 
+		var changed = settings._iDisplayStart !== start;
+		settings._iDisplayStart = start;
+
+=======
 	
 		var changed = settings.idisplayStart !== start;
 		settings.idisplayStart = start;
 	
-
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 		if ( changed ) {
 			_fnCallbackFire( settings, null, 'page', [settings] );
 
@@ -5942,11 +5953,15 @@
 			{
 				iCol = aDataSort[k];
 				sType = aoColumns[ iCol ].sType || 'string';
+<<<<<<< HEAD
 
+				if ( nestedSort[i]._idx === undefined ) {
+					nestedSort[i]._idx = $.inArray( nestedSort[i][1], aoColumns[iCol].asSorting );
+=======
 	
 				if ( nestedSort[i].idx === undefined ) {
 					nestedSort[i].idx = $.inArray( nestedSort[i][1], aoColumns[iCol].asSorting );
-
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 				}
 
 				aSort.push( {
@@ -6708,9 +6723,13 @@
 		var
 			start = settings.idisplayStart,
 			end = settings.fnDisplayEnd(),
+<<<<<<< HEAD
+			len = settings._iDisplayLength;
 
+=======
 			len = settings.idisplayLength;
-
+	
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 		/* If we have space to show extra rows (backing up from the end point - then do so */
 		if ( start >= end )
 		{
@@ -6724,10 +6743,13 @@
 		{
 			start = 0;
 		}
+<<<<<<< HEAD
 
+		settings._iDisplayStart = start;
+=======
 	
 		settings.idisplayStart = start;
-
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 	}
 
 
@@ -13726,19 +13748,25 @@
 		 *  @type int
 		 *  @default 10
 		 */
+<<<<<<< HEAD
+		"_iDisplayLength": 10,
 
+=======
 		"idisplayLength": 10,
 	
-
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 		/**
 		 * Paging start point - aiDisplay index
 		 *  @type int
 		 *  @default 0
 		 */
+<<<<<<< HEAD
+		"_iDisplayStart": 0,
 
+=======
 		"idisplayStart": 0,
 	
-
+>>>>>>> e6dd4c13011e4b3af99b78697304bbdc0645b22b
 		/**
 		 * Server-side processing - number of records in the result set
 		 * (i.e. before filtering), Use fnRecordsTotal rather than

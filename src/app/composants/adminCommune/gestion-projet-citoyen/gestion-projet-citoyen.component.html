@@ -1,49 +1,57 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
 <body id="page-top">
 
 <!-- Page Wrapper -->
-  <div id="wrapper">
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
-      <div class="nav-item  ">
-        <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
-      </div>
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active ">
-        <a class="nav-link" href="#"  routerLink="/accueilAdmin">
-          <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
-          <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
-        </a>
-      </li>
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#"  routerLink="/gestionUtilisateur"  data-target="#collapseTwo"
-           aria-expanded="true" aria-controls="collapseTwo">
-          <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
-          <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
-           aria-expanded="true" aria-controls="collapseTwo">
-          <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
-          <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
-           aria-expanded="true" aria-controls="collapseTwo">
-          <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
-          <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
-          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-          Déconnexion
-        </a>
-      </li>
-    </ul>
-    <!-- End of Sidebar -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-white sidebar sidebar-dark accordion" id="accordionSidebar">
+    <div class="nav-item  ">
+      <img class="ms-4 my-3" id=" logoSg"  src="assets/Fichier 1.png" alt="">
+    </div>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active ">
+      <a class="nav-link" href="#"  routerLink="/accueilAdmin">
+        <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
+        <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
+      </a>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#"  routerLink="/gestionUtilisateur"  data-target="#collapseTwo"
+         aria-expanded="true" aria-controls="collapseTwo">
+        <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
+        <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" routerLink="/projetMunicipal"   data-target="#collapseTwo"
+         aria-expanded="true" aria-controls="collapseTwo">
+        <i class="bi bi-kanban-fill text-success " style="font-size: 25px; "></i>
+        <span style="font-size: 30px; font-weight: 700;"  class="text-success">Projets </span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" routerLink="/gestionAnnonces"   data-target="#collapseTwo"
+         aria-expanded="true" aria-controls="collapseTwo">
+        <i class="bi bi-megaphone-fill text-success " style="font-size: 25px;"></i>
+        <span style="font-size: 30px; font-weight: 700;"  class="text-success">Annonces</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="dropdown-item" href="#" routerLink="/connexion"  data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Déconnexion
+      </a>
+    </li>
+  </ul>
+  <!-- End of Sidebar -->
 
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
@@ -210,7 +218,7 @@
           <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Amadem Fall</span>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
               <img class="img-profile rounded-circle"
                    src="assets/img/undraw_profile.svg">
             </a>
@@ -272,7 +280,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
                         <h1>238</h1></div>
-                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5> Annonces</h5> </div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Projets validés</h5> </div>
                     </div>
                     <div class="col-auto">
                       <i class="bi bi-megaphone-fill text-success " style="font-size: 50px; "></i>
@@ -289,7 +297,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold   text-uppercase mb-1" style="color:#F09E4D;">
                         <h1>10200</h1></div>
-                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Administrateurs</h5> </div>
+                      <div class="h5 mb-0 font-weight-bold text-black-800"> <h5>Propjets encours de vote</h5> </div>
                     </div>
                     <div class="col-auto">
                       <i class="bi bi-chat-dots " style="font-size: 50px; "></i>
@@ -321,100 +329,37 @@
           <!-- Button trigger modal -->
           <div class="navbouton d-flex gap-3 mb-5 mt-5">
             <!-- Button trigger modal -->
-            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal2" >
-              Ajouter un projet
+            <button type="button" class="btn " data-bs-toggle="modal" routerLink="/projetMunicipal">
+                Projets municipaux
+
             </button>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Ajouter un projet dans la commune </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="">
-                        <label for="recipient-name" class="col-form-label w-100">Titre</label>
-                        <input type="text" class="form-control w-100 mx-0 my-0" id="recipient-name">
-                      </div>
-                      <div class="">
-                        <label for="message-text" class="col-form-label ">Description</label>
-                        <textarea class="form-control w-100" id="message-text"></textarea>
-                      </div>
-                      <div class="">
-                        <label for="recipient-name" class="col-form-label ">Cout</label>
-                        <input type="number" class="form-control w-100" id="recipient-name">
-                      </div>
-                      <div class="">
-                        <label for="recipient-name" class="col-form-label ">Durée</label>
-                        <input type="date" class="form-control w-100" id="recipient-name">
-                      </div>
-                      <div class="">
-                        <label for="formFile" class="form-label ">Image du projet</label>
-                        <input class="form-control w-100" type="file" id="formFile">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
-                    <button type="button" class="btn btn-success">Ajouter</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal1" >
-              Ajouter un administrateur
+            <button type="button" class="btn " data-bs-toggle="modal" routerLink="/gestionAnnonces"  >
+             Annonces
             </button>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel1">Ajouter administrateur </h1>
-                    <button type="button" id="close-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="">
-                        <label for="recipient-name" class="col-form-label w-100" [(ngModel)]="user.nom">Nom</label>
-                        <input type="text" class="form-control w-100 mx-0 my-0" name="nomUser" id="recipient-name">
-                      </div>
-                      <div class="">
-                        <label for="message-text" class="col-form-label ">Prénom</label>
-                        <textarea class="form-control w-100"  name="prenomUser" [(ngModel)]="user.prenom"></textarea>
-                      </div>
-                      <div class="">
-                        <label for="formFile" class="form-label ">Téléphone</label>
-                        <input class="form-control w-100" type="text"  name="telephoneUser" [(ngModel)]="user.telephone">
-                      </div>
-                      <div class="">
-                        <label for="formFile" class="form-label ">Adresse email</label>
-                        <input class="form-control w-100" type="text"  name="emailUser" [(ngModel)]="user.email">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">annuler</button>
-                    <button type="button" class="btn btn-success"  (click)="ajouterUser()">Ajouter</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" >
-              Projets municipaux
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal" routerLink="commentaire" >
+                Coomentaires
             </button>
           </div>
+
           <!-- tableau gestion projet municipaux -->
           <div class="row">
             <!-- debut Tableau projet -->
-            <div class="col-lg-12 col-lg-5">
-              <div class="card  mb-4">
-                <h5 class="m-2">Listes des projets </h5>
+            <div class="col-xl-12 col-lg-7">
+              <div class="card  mb-4 px-2 py-2" >
+                <div class="d-flex my-2 mx-2">
+                  <h5 class="m-2 w-75">Listes des projets des citoyens </h5>
+                  <input type="text"
+                         class="form-control search-filter w-25 border-dark"
+                         style="border: 1px solid black;"
+                         id="search_filter"
+                         onkeyup="searchtable()"
+                         placeholder="Rechercher un produit."
+                         title="Type in a name">
+                </div>
                 <!-- tableau accueil admin comune-->
-                <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
+                <table class="table table-responsive-md table1 table-sm px-5 py-5 table table-with-padding">
                   <thead >
-                  <tr >
+                  <tr class="h-25 px-2 py-3">
                     <th scope="col" >image</th>
                     <th scope="col" >Titre</th>
                     <th scope="col" >Description</th>
@@ -425,7 +370,7 @@
                   </tr>
                   </thead>
                   <tbody class="table-group-divider">
-                  <tr *ngFor="let newProjet of tabProjet ">
+                  <tr *ngFor="let newProjet of tabProjet">
                     <th><img style="width: 50px; height: 50px; border-radius: 50px" src="{{ newProjet.image }}" alt=""></th>
                     <td>{{ newProjet.titre }}</td>
                     <td>{{ newProjet.description }}</td>
@@ -439,134 +384,17 @@
                       <i class="bi bi-archive"></i>&nbsp;
                     </td>
                   </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class=" col-lg-12 col-lg-5">
-              <div class="card  mb-4">
-                <h5 class="m-2">Listes des Administrateurs </h5>
-                <!-- tableau accueil admin comune-->
-                <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
-                  <thead >
-                  <tr >
-                    <th scope="col" >Nom</th>
-                    <th scope="col" >Prenom </th>
-                    <th scope="col" >Telephone </th>
-                    <th scope="col" >Adresse email</th>
-                    <th scope="col" >Action </th>
-                  </tr>
-                  </thead>
-                  <tbody class="table-group-divider">
-                  <tr *ngFor="let newUser of tabUser ">
-                    <td  >{{ newUser.nom }}</td>
-                    <td  >{{newUser.prenom}} </td>
-                    <td  >{{newUser.telephone}} </td>
-                    <td  >{{newUser.email}} </td>
-                    <td  id="iconAction">
-                      <i class="bi bi-eye-fill " ></i>&nbsp;
-                      <i class="bi bi-pencil-square " ></i> &nbsp;
-                      <i class="bi bi-archive-fill " ></i>&nbsp;
-                      <i class="bi bi-archive " ></i>&nbsp;
-                    </td>
 
                   </tbody>
                 </table>
               </div>
             </div>
 
-            <div class=" col-lg-12 col-lg-5">
-              <div class="card  mb-4">
-                <h5 class="m-2">Listes des projets </h5>
-                <!-- tableau accueil admin comune-->
-                <table class="table table-responsive-md table1 table-sm p-3 table table-with-padding">
-                  <thead >
-                  <tr>
-                    <th scope="col" >image</th>
-                    <th scope="col" >Titre</th>
-                    <th scope="col" >Description</th>
-                     <th scope="col" >Cout</th>
-                    <th scope="col" >Durée </th>
-                    <th scope="col" >Statut </th>
-                    <th scope="col" >Action </th>
-                  </tr>
-                  </thead>
-                  <tbody class="table-group-divider">
-                  <tr>
-                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                    <td>Auto-suffisance</td>
-                    <td>le plus intéressant</td>
-                    <td>200 000 000 FCFA</td>
-                    <td>2 ans</td>
-                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                    <td  id="iconAction">
-                      <i class="bi bi-eye-fill " ></i>&nbsp;
-                      <i class="bi bi-pencil-square " ></i> &nbsp;
-                      <i class="bi bi-archive-fill " ></i>&nbsp;
-                      <i class="bi bi-archive " ></i>&nbsp;
-                    </td>
-                  </tr>
-                  <tr>
-                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                    <td>Auto-suffisance</td>
-                    <td>le plus intéressant</td>
-                    <td>200 000 000 FCFA</td>
-                    <td>2 ans</td>
-                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                    <td  id="iconAction">
-                      <i class="bi bi-eye-fill " ></i>&nbsp;
-                      <i class="bi bi-pencil-square " ></i> &nbsp;
-                      <i class="bi bi-archive-fill " ></i>&nbsp;
-                      <i class="bi bi-archive " ></i>&nbsp;
-                    </td>
-                  </tr>
-                  <tr>
-                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                    <td>Auto-suffisance</td>
-                    <td>le plus intéressant</td>
-                    <td>200 000 000 FCFA</td>
-                    <td>2 ans</td>
-                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                    <td  id="iconAction">
-                      <i class="bi bi-eye-fill " ></i>&nbsp;
-                      <i class="bi bi-pencil-square " ></i> &nbsp;
-                      <i class="bi bi-archive-fill " ></i>&nbsp;
-                      <i class="bi bi-archive " ></i>&nbsp;
-                    </td>
-                  </tr>
-                  <tr>
-                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                    <td>Auto-suffisance</td>
-                    <td>le plus intéressant</td>
-                    <td>200 000 000 FCFA</td>
-                    <td>2 ans</td>
-                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                    <td  id="iconAction">
-                      <i class="bi bi-eye-fill " ></i>&nbsp;
-                      <i class="bi bi-pencil-square " ></i> &nbsp;
-                      <i class="bi bi-archive-fill " ></i>&nbsp;
-                      <i class="bi bi-archive " ></i>&nbsp;
-                    </td>
-                  </tr>
-                  <tr>
-                    <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>
-                    <td>Auto-suffisance</td>
-                    <td>le plus intéressant</td>
-                    <td>200 000 000 FCFA</td>
-                    <td>2 ans</td>
-                    <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>
-                    <td  id="iconAction">
-                      <i class="bi bi-eye-fill " ></i>&nbsp;
-                      <i class="bi bi-pencil-square " ></i> &nbsp;
-                      <i class="bi bi-archive-fill " ></i>&nbsp;
-                      <i class="bi bi-archive " ></i>&nbsp;
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
+            <div class=" col-xl-4 col-lg-5">
+              <h5 class="m-2">Ajouter un projet pour la commune </h5>
             </div>
+
+
           </div>
         </div>
       </div>
@@ -583,26 +411,34 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
      aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Ready to Leave?</h5>
         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-body">Clicker sur Déconnexion si vous voulez vraiment vous déconnecter</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+        <a class="btn btn-primary" href="login.html">Déconnexion</a>
       </div>
     </div>
   </div>
 </div>
 
+<!-- !-- Utilisation d'une icône et d'un lien simulé -->
+<script>
+  // Ajoutez un gestionnaire d'événements au lien simulé pour déclencher le clic sur le champ d'entrée réel
+  document.querySelector('label[for="fileInput"]').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
 
+  });
+</script>
 
 </body>
+</html>
 

@@ -17,14 +17,14 @@
     </div>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active ">
-      <a class="nav-link" href="#"  routerLink="/sideBar">
+      <a class="nav-link" href="#"  routerLink="/accueilAdmin">
         <i class="bi bi-grid-1x2-fill " style="font-size: 25px; color: #F09E4D;"></i>
         <span style="font-size: 30px; font-weight: 700; color: #F09E4D;" id="dash1" >Dashboard</span>
       </a>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#"  routerLink="/projetMunicipal"  data-target="#collapseTwo"
+      <a class="nav-link collapsed" href="#"  routerLink="/gestionUtilisateur"  data-target="#collapseTwo"
          aria-expanded="true" aria-controls="collapseTwo">
         <i class="bi bi-people-fill text-success" style="font-size: 25px; "></i>
         <span style="font-size: 30px; font-weight: 700;"  class="text-success" >Utilisateur</span>
@@ -218,7 +218,7 @@
           <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Amadem Fall</span>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
               <img class="img-profile rounded-circle"
                    src="assets/img/undraw_profile.svg">
             </a>
@@ -382,11 +382,20 @@
           <!-- tableau gestion projet municipaux -->
           <div class="row">
             <!-- debut Tableau projet -->
+
             <div class="col-xl-8 col-lg-7">
               <div class="card  mb-4 px-2 py-2" >
-                <h5 class="m-2">Listes des projets </h5>
+               <div class="d-flex my-2 mx-2">
+                 <h5 class="m-2 w-75">Listes des projets </h5>
+                 <input type="text"
+                        class="form-control search-filter w-25"
+                        id="search_filter"
+                        onkeyup="searchtable()"
+                        placeholder="Rechercher un produit."
+                        title="Type in a name">
+               </div>
                 <!-- tableau accueil admin comune-->
-                <table class="table table-responsive-md table1 table-sm px-5 py-5 table table-with-padding">
+                <table class="table table-responsive-md table1 table-sm px-5 py-5 table table-with-padding " id="table-list">
                   <thead >
                   <tr class="h-25 px-2 py-3">
                     <th scope="col" >image</th>
@@ -490,27 +499,21 @@
   </div>
 </div>
 
+
+
 <!-- !-- Utilisation d'une icône et d'un lien simulé -->
 <script>
   // Ajoutez un gestionnaire d'événements au lien simulé pour déclencher le clic sur le champ d'entrée réel
-  document.querySelector('label[for="fileInput"]').addEventListener('click', function() {
+  document.querySelector('label[for="fileInput"]').addEventListener('click', function () {
     document.getElementById('fileInput').click();
 
   });
+
+
+
+
 </script>
-<!--    <tr>-->
-<!--      <th> <img style="width: 50px; height: 50px; border-radius: 50px;" src="https://img.freepik.com/photos-premium/riz-au-marche-luang-prabang-au-laos_40565-23.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=ais" alt=""></th>-->
-<!--      <td>Auto-suffisance</td>-->
-<!--      <td>2 ans</td>-->
-<!--      <td><div class="btn  btnStatut  fw-bolder" >Validé</div></td>-->
-<!--      <td  id="iconAction">-->
-<!--        <i class="bi bi-eye-fill " ></i>&nbsp;-->
-<!--        <i class="bi bi-pencil-square " ></i> &nbsp;-->
-<!--        <i class="bi bi-archive-fill " ></i>&nbsp;-->
-<!--        <i class="bi bi-archive " ></i>&nbsp;-->
-<!--      </td>-->
-<!--    </tr>-->
-<!--    <tr>-->
+
 </body>
 </html>
 

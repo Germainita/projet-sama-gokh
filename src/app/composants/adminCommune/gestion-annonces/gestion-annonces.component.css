@@ -10,7 +10,7 @@
     color: white;
     font-size: 18px;
     font-weight: 500;
-   
+
 }
 #accordionSidebar{
     /* position: fixed; */
@@ -27,14 +27,14 @@ tr{
 .modal-footer button:nth-child(1) {
     background-color: #F09E4D;
     border: 0;
-    
+
 }
 .modal-footer button:nth-child(2) {
     background-color: #007A64;
     color: white;
     border: 0;
 
-    
+
 }
 .navbouton button:hover{
 cursor: pointer;
@@ -56,7 +56,7 @@ color: #007A64;
     color: #007A64;
 }
 .contentIcone span:nth-child(4){
-   
+
     color: #85b3aa6b;
 }
 

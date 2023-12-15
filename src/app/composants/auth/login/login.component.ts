@@ -11,6 +11,10 @@ import { UserService } from 'src/app/services/user-service';
   imports: [
     NgIf
   ],
+  standalone: true,
+  imports: [
+    NgIf
+  ],
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  implements OnInit  {
