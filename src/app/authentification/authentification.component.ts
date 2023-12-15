@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
-import {NgIf} from "@angular/common";
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user-service';
+import Swal from 'sweetalert2';
+import { UserService } from '../services/user-service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  standalone: true,
-  imports: [
-    NgIf
-  ],
-  styleUrls: ['./login.component.css']
+  selector: 'app-authentification',
+  templateUrl: './authentification.component.html',
+  styleUrls: ['./authentification.component.css']
 })
-export class LoginComponent  implements OnInit  {
-  ngOnInit(): void {
-
-
-  }
+export class AuthentificationComponent implements OnInit{
 
   constructor(private route: Router, private user: UserService){}
 
@@ -25,6 +16,9 @@ export class LoginComponent  implements OnInit  {
   imageUrl='../../assets/img-connexion/femme-affaires-attrayant-bras-croises_13339-12510.avif'
   // email=true
 
+  ngOnInit(): void {
+    
+  }
 
   //méthodes
   afficherBloc1: boolean = true;
@@ -54,22 +48,22 @@ export class LoginComponent  implements OnInit  {
         this.showMessage("error","Sorry",'Le password doit être > ou = à 8 caractère');
       }
       else {
-        if (this.email == "soly@gmail.com" && this.pass == "passer"){
+        if (this.email == "soly@gmail.com" && this.pass == "passer123&"){
           this.route.navigate(['/superAdmin']);
           this.showMessage('success','Thanks','Connexion faite avec succès');
         }
 
-        else if (this.email == "germaine@gmail.com" && this.pass == "passer"){
+        else if (this.email == "germaine@gmail.com" && this.pass == "passer123&"){
           this.route.navigate(['/acceuil-maire']);
           this.showMessage('success','Thanks','Connexion faite avec succès');
         }
 
-        else if (this.email == "khady@gmail.com" && this.pass == "passer"){
+        else if (this.email == "khady@gmail.com" && this.pass == "passer123&"){
           this.route.navigate(['/accueilAdmin']);
           this.showMessage('success','Thanks','Connexion faite avec succès');
         }
 
-        else if (this.email == "gege@gmail.com" && this.pass == "passer"){
+        else if (this.email == "gege@gmail.com" && this.pass == "passer123&"){
           this.route.navigate(['/accueil']);
           this.showMessage('success','Thanks','Connexion faite avec succès');
         }
@@ -123,6 +117,4 @@ export class LoginComponent  implements OnInit  {
     this.email="";
     this.pass="";
   }
-
-
 }

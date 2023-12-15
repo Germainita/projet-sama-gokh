@@ -32,6 +32,7 @@ import { VilleComponent } from './composants/superAdmin/ville/ville.component';
 import { CommuneComponent } from './composants/superAdmin/commune/commune.component';
 import { GestionProjetComponent } from './composants/superAdmin/gestion-projet/gestion-projet.component';
 import { SuperAdminAccueilComponent } from './composants/superAdmin/super-admin-accueil/super-admin-accueil.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { SuperAdminAccueilComponent } from './composants/superAdmin/super-admin-
     VilleComponent,
     CommuneComponent,
     GestionProjetComponent,
-    SuperAdminAccueilComponent
+    SuperAdminAccueilComponent,
+    AuthentificationComponent
   ],
   imports: [
     BrowserModule,

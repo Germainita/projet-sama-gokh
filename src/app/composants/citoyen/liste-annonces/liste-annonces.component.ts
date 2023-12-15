@@ -19,6 +19,8 @@ export class ListeAnnoncesComponent implements OnInit{
   tabAnnonces: Annonce[]  = [];
   tabAnnoncesPub: Annonce[]  = [];
 
+  annonceObjet = new Annonce;
+
   // Attribut pour la pagination
   annoncesParPage = 6; // Nombre d'annonces par page
   pageActuelle = 1; // Page actuelle
@@ -45,6 +47,11 @@ export class ListeAnnoncesComponent implements OnInit{
   // Voir les commentaires d'une annonce 
   showCommentaires(){
     this.isAnnonces = !this.isAnnonces
+  }
+
+  // annonce = new Annonce
+  infosCommentaire(annonce:any){
+
   }
 
   // Pagination 

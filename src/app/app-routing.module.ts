@@ -36,6 +36,7 @@ import { RolesComponent } from './composants/superAdmin/roles/roles.component';
 import { VilleComponent } from './composants/superAdmin/ville/ville.component';
 import { GestionProjetComponent } from './composants/superAdmin/gestion-projet/gestion-projet.component';
 import { SuperAdminAccueilComponent } from './composants/superAdmin/super-admin-accueil/super-admin-accueil.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
 // import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
 
 
@@ -49,7 +50,7 @@ const routes: Routes = [
   {path: "gestionAnnonces", component:GestionAnnoncesComponent},
   {path:"projetMunicipal", component:GestionProjetMunicipalComponent  },
   {path:"commentaire", component:DetailsAnnonceComponent},
-  {path:"connexion", component:LoginComponent},
+  {path:"connexion", component:AuthentificationComponent},
   {path:"inscription", component:SignupComponent},
   {path:"ProjetCommune ", component:ProjetCommuneComponent},
   {path:"acceuil-maire", component:DashboarMaireComponent},

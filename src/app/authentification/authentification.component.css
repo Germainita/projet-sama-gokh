@@ -1,0 +1,116 @@
+#mainForm{
+    height: 100vh;
+  }
+  
+  #imageForm{
+    background-image: url("src/assets/imgLogin.png");
+    background-repeat: no-repeat;
+    background-size: cover ;  
+  }
+  #row{
+    height: 95%;
+  
+  }
+  
+  
+  #img-contain img{
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 3px solid #007A64;
+  }
+  .first-form{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+  
+  }
+  
+  
+  form input{
+    width: 50%;
+    border-bottom: 3px solid #007A64;
+    border-radius: 0;
+  
+  }
+  select{
+    border-bottom: 3px solid #007A64;
+    border-radius: 0;
+    /*width: 50%;*/
+  }
+  
+  
+  form,#description{
+    color: #007A64;
+  }
+  #seconde-part-contain{
+    border: 1px solid maroon;
+  
+  }
+  label{
+    font-weight: 700;
+  }
+  #description{
+    text-align: center;
+  
+  }
+  #form-seconde{
+    width: 25%;
+    height: 500px;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    top: -500px;
+    left: 12.5%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  
+  }
+  #inscription{
+    margin-right: 40%;
+  }
+  #btn-btn{
+    color: #007A64;
+  }
+  
+  .btn-submit{
+    background-color:#007A64 ;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 0 ;
+    border: none;
+  }
+
+  img {
+    height: 100%;
+  }
+  
+  @media screen and (max-width: 1238px) {
+    .first-form{
+      display: flex;
+      flex-direction: column;
+    }
+    #form-seconde {
+      width: 100%;
+      left: 0;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  
+  }
+  
+  input:focus, select:focus{
+    box-shadow: none !important;
+    border: 1px solid gray !important;
+    border-bottom:  3px solid #007A64 !important;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+  }
+  label{
+    color: black !important; ;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+  
+  }
