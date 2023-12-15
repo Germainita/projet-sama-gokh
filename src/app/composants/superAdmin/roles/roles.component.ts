@@ -14,13 +14,11 @@ import Swal from 'sweetalert2';
 export class RolesComponent implements OnInit {
   roles: Role[] = [];
   nom: string = '';
-  newRoleName: string= '' ; // Variable pour stocker le nom du nouveau
+  newRoleName: string ='';
   updatedRoleDetails: any;
   roleAModifier : any;
-  inEdition : any = false;
-
-
-  
+  showEditForm : boolean = false;
+  selectedRole : Role = new Role();
 
   constructor(private roleService: RoleService) {}
 
@@ -31,6 +29,7 @@ export class RolesComponent implements OnInit {
   getAlls() {
    this.roleService.getAlls().subscribe( data=>{
     this.roles = data; // Assignez les données reçues à la variable 'roles'
+    console.log(this.roles);
     });
   }
 
@@ -115,10 +114,24 @@ deleteRole(roleId: number) {
     }
   });
 }
-  
+
+
+// afficher le  formulaire suite action du  clique  sur l'icone modifier
+displayEditForm(role: Role){
+  this.showEditForm = !this.showEditForm;
+  this.selectedRole = role ;
+}
+
+cancelEdition(){
+  this.showEditForm = false;
+}
+
+
+
 
 // Méthode de modification des roles
-editRole(roleId: number, updatedRole: Role) {
+editRole() {
+  console.log('role', this.selectedRole);
   Swal.fire({
     title: 'Êtes-vous sûr?',
     text: 'Voulez-vous vraiment modifier ce rôle?',
@@ -131,23 +144,26 @@ editRole(roleId: number, updatedRole: Role) {
   }).then((result) => {
     if (result.isConfirmed) {
       // Appel de la méthode de modification du service
-      this.roleService.edit(roleId, updatedRole).subscribe(() => {
-        // Mettre à jour la liste des rôles après la modification
-        this.getAlls();
+      this.roleService.edit(this.selectedRole.id!, this.selectedRole).subscribe(() => {
         Swal.fire(
           'Modifié!',
           'Le rôle a été modifié avec succès.',
           'success'
-        );
+          );
+          
       });
     } else {
+      this.cancelEdition();
       // Si l'utilisateur annule, affichez un message
       Swal.fire(
         'Annulé',
         'La modification du rôle a été annulée.',
         'error'
       );
-    }
+    } 
+    // Mettre à jour la liste des rôles après la modification
+    this.showEditForm = !this.showEditForm;
+    this.getAlls();
   });
 }
 
