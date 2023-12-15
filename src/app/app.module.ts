@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { SideBarComponent } from './composants/side-bar/side-bar.component';
-import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
+// import { DashboardComponent } from './composants/adminCommune/dashboard/dashboard.component';
 
 import { AccueilComponent } from './composants/citoyen/accueil/accueil.component';
 import { ProjetsComponent } from './composants/citoyen/projets/projets.component';
@@ -39,7 +39,7 @@ import { AuthentificationComponent } from './authentification/authentification.c
   declarations: [
     AppComponent,
     // SideBarComponent,
-    DashboardComponent,
+    // DashboardComponent,
     GestionProjetMunicipalComponent,
     GestionAnnoncesComponent,
     DetailsAnnonceComponent,
