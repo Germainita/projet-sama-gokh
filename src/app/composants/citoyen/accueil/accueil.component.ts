@@ -22,8 +22,8 @@ import Swal from 'sweetalert2';
 })
 export class AccueilComponent implements OnInit{
   // Déclaration des variables
-
-  // un objet de type projet
+ 
+  // un objet de type projet 
   projet =  new Projet;
 
   tabProjet: Projet[]  = [];
@@ -53,7 +53,7 @@ export class AccueilComponent implements OnInit{
   idProjotC: number = 0;
   tabProjetC: Projet[] = [];
 
-  // Pour les votes
+  // Pour les votes 
   tabVotes: Vote [] = [];
   tabVotesProjet : Vote [] = [];
 
@@ -61,14 +61,14 @@ export class AccueilComponent implements OnInit{
 
   disabledForUserAlredyVoted : any;
 
-  // Projets vu par l'utilisateur
+  // Projets vu par l'utilisateur 
+  
 
-
-  // Appel du constructur
+  // Appel du constructur 
   constructor(
-    private projetService: ProjetService,
-    private annonce:AnnonceService,
-    private user: UserService,
+    private projetService: ProjetService, 
+    private annonce:AnnonceService, 
+    private user: UserService, 
     private router: Router,
     private etatProjet: EtatProjetService,
     private typeProjet: TypeProjetService,
@@ -79,28 +79,28 @@ export class AccueilComponent implements OnInit{
     // liste des etatProjet
     this.listEtatProjet();
 
-    // Liste type projet
+    // Liste type projet 
     this.listeTypeProjet()
 
-    // liste des projets
+    // liste des projets 
     this.listeProjets();
 
-    // Liste des utilisateurs
+    // Liste des utilisateurs 
     this.listeUsers();
 
     // liste des annonces
-    this.listeAnnonces();
-
-    // Liste de tous les votes
+    this.listeAnnonces();  
+    
+    // Liste de tous les votes 
     this.listeVotes();
 
     // Je récupère les votes des projets
-    // Je parcours le tableaux des votes
-
+    // Je parcours le tableaux des votes 
+     
     // let voteProjet = this.tabProjet.filter((elemnt:any) => )
   }
 
-  // Methode pour uploader le fichier image
+  // Methode pour uploader le fichier image 
   uploadFile(event: Event) {
     const element = event.currentTarget as HTMLInputElement;
     let fileList: FileList | null = element.files;
@@ -112,7 +112,7 @@ export class AccueilComponent implements OnInit{
         if (selectedFile.type.match('image.*')) {
             this.projet.image = (URL.createObjectURL(selectedFile));
             console.log(this.projet);
-        }
+        } 
       }
     }
   }
@@ -130,65 +130,57 @@ export class AccueilComponent implements OnInit{
     this.projet.titre = "";
   }
 
-  // Methode pour soumettre un projet
+  // Methode pour soumettre un projet 
   soumettreProjet(){
     // console.log(typeof(this.projet.delai))
     // let delai = new Date(this.projet.delai)
     // console.log(typeof(delai));
     // console.log(this.projet)
-    // On vérifie s les informations ne sont pas vides
-    let objetTest;
-    if (!this.projet.titre) {
+    // On vérifie s les informations ne sont pas vides 
+    if(!this.projet.titre){
       this.verifierChamps("Impossible!", "Le titre est obligatoire", "Erreur")
-    } else if (!this.projet.description) {
+    }
+    else if(!this.projet.description){
       this.verifierChamps("Impossible!", "Donnez une déscription", "Erreur")
-    } else if (!this.projet.cout) {
+    }
+    else if(!this.projet.cout){
       this.verifierChamps("Impossible!", "Donnez le cout du projet", "Erreur")
-    } else if (!this.projet.delai) {
+    }
+    else if(!this.projet.delai){
       this.verifierChamps("Impossible!", "Le délai est obligatoire", "Erreur")
-    } else if (!this.projet.image) {
+    }
+    else if(!this.projet.image){
       this.verifierChamps("Impossible!", "L'image est obligatoire'", "Erreur")
-    } else {
-      let objetProjet = new Projet
-      objetProjet.titre = this.projet.titre,
-        objetProjet.description = this.projet.description,
-        objetProjet.image = this.projet.image
-      objetProjet.cout = this.projet.cout,
-        objetProjet.delai = new Date(this.projet.delai),
-        objetProjet.etat = true,
-        objetProjet.idEtatProjet = this.idEtatEncours,
-        objetProjet.idTypeProjet = 1,
-        objetProjet.idUser = this.userConnect.id,
-        objetProjet.createdAt = new Date(),
-        objetProjet.createdBy = this.userConnect.username,
-        objetProjet.updatedAt = new Date(),
-        objetProjet.updatedBy = this.userConnect.username,
-        // this.projet.votes= []
+    }
 
-      //   let objetTest = {
-      //   titre: this.projet.titre,
-      //   description: this.projet.description,
-      //   image: this.projet.image,
-      //   cout: this.projet.cout,
-      //   delai: new Date(this.projet.delai),
-      //   etat: true,
-      //   idEtatProjet: 1,
-      //   idTypeProjet: 1,
-      //   idUser: 1,
-      //   createdAt: new Date(),
-      //   createdBy: "gdgdggd",
-      //   updatedAt: new Date(),
-      //   updatedBy: "gdgdgdg",
-      //
-      // }
-      this.projetService.add(objetProjet).subscribe(data => {
+    else {
+
+      let objetProjet = new Projet
+      objetProjet.titre= this.projet.titre,
+      objetProjet.description= this.projet.description,
+      objetProjet.image= this.projet.image
+      objetProjet.cout= this.projet.cout,
+      objetProjet.delai= new Date(this.projet.delai),
+      objetProjet.etat= true,
+      objetProjet.idEtatProjet= this.idEtatEncours,
+      objetProjet.idTypeProjet= 1,
+      objetProjet.idUser= this.userConnect.id,
+      objetProjet.createdAt= new Date(),
+      objetProjet.createdBy= this.userConnect.username,
+      objetProjet.updatedAt= new Date(),
+      objetProjet.updatedBy= this.userConnect.username,
+      // this.projet.votes= []
+
+      
+
+      this.projetService.add(objetProjet).subscribe(data =>{
         console.log(data);
         console.log("Ajouter")
         this.verifierChamps("Felicitation!", "Projet ajouté avec success", "success");
         this.listeProjets();
       })
     }
-
+        
   }
 
   // Méthode pour afficher un sweetalert2 apres vérification
@@ -200,29 +192,29 @@ export class AccueilComponent implements OnInit{
     });
   }
 
-  // Liste des états d'un projet
+  // Liste des états d'un projet 
   listEtatProjet(){
     this.etatProjet.getAlls().subscribe(data=>{
       this.tabEtatProjet = data;
       console.log(this.tabEtatProjet)
-
-      // L'identifiant de l'etat en cours
+      
+      // L'identifiant de l'etat en cours 
       let etatEncours = this.tabEtatProjet.find((element:any)=> element.statut == "EnCours");
       if(etatEncours){
         this.idEtatEncours = etatEncours.id
       }
-      // L'identifiant de l'etat termine
+      // L'identifiant de l'etat termine 
       let etatTermine = this.tabEtatProjet.find((element:any)=> element.statut == "Termine");
       if(etatTermine){
         this.idEtatTermine = etatTermine.id
         console.log(this.idEtatTermine)
       }
-      // L'identifiant de l'etat en cours
+      // L'identifiant de l'etat en cours 
       let etatValide = this.tabEtatProjet.find((element:any)=> element.statut == "Valide");
       if(etatValide){
         this.idEtatValide = etatValide.id
       }
-      // L'identifiant de l'etat en cours
+      // L'identifiant de l'etat en cours 
       let etatInvalide = this.tabEtatProjet.find((element:any)=> element.statut == "Invalider");
       if(etatInvalide){
         this.idEtatInvalide = etatInvalide.id
@@ -230,12 +222,12 @@ export class AccueilComponent implements OnInit{
     })
   }
 
-  // Liste des projets municipaux
+  // Liste des projets municipaux 
   listeTypeProjet(){
     this.typeProjet.getAlls().subscribe(data=>{
       this.tabTypeProjet = data;
       // console.log(this.tabTypeProjet)
-
+      
       // L'identifiant de l'etat municipal
       let municipal = this.tabTypeProjet.find((element:any)=> element.nom == "municipal");
       if(municipal){
@@ -245,7 +237,7 @@ export class AccueilComponent implements OnInit{
     })
   }
 
-  // Methode pour lister les projets
+  // Methode pour lister les projets 
   listeProjets(){
     this.projetService.getAlls().subscribe(data =>{
       // console.log(data);
@@ -253,7 +245,7 @@ export class AccueilComponent implements OnInit{
 
       console.log(this.tabProjet);
 
-      // Les projets en cours de vote
+      // Les projets en cours de vote 
       this.tabProjetEncour = this.tabProjet.reverse().filter((element:any)=> element.idEtatProjet == this.idEtatEncours);
       console.log(this.tabProjetEncour);
 
@@ -269,8 +261,8 @@ export class AccueilComponent implements OnInit{
     })
   }
 
-
-  // Liste des utilisateurs
+  
+  // Liste des utilisateurs 
   listeUsers(){
     this.user.getAlls().subscribe(data =>{
       this.tabUsers =  data;
@@ -280,7 +272,7 @@ export class AccueilComponent implements OnInit{
     })
   }
 
-  // liste des annonces
+  // liste des annonces 
   listeAnnonces(){
     this.annonce.getAlls().subscribe(data =>{
       this.tabAnnonces = data;
@@ -295,17 +287,17 @@ export class AccueilComponent implements OnInit{
     })
   }
 
-  // Methode pour la déconnection
+  // Methode pour la déconnection 
   deconnexion(){
     this.router.navigate(['/visiteur']);
   }
 
-  // Liste des votes
+  // Liste des votes 
   listeVotes(){
     this.vote.getAlls().subscribe(data =>{
       this.tabVotes = data;
       console.log(this.tabVotes);
-
+      
       this.tabVotes.forEach(vote => {
         if (vote.idUser == this.userConnect.id) {
           this.disabledForUserAlredyVoted = true;
@@ -319,9 +311,9 @@ export class AccueilComponent implements OnInit{
   }
 
   // Gestion des votes
-  // Voter Pour
+  // Voter Pour  
   voterPour(projet:any){
-    // On demande une confirmation de vote
+    // On demande une confirmation de vote 
     Swal.fire({
       title: "Etes-vous sur???",
       text: "Vous allez voter pour ce projet",
@@ -338,9 +330,9 @@ export class AccueilComponent implements OnInit{
         this.voteChoice.idProjet= projet.id;
         this.voteChoice.createdAt= new Date();
         this.voteChoice.createdBy= this.userConnect.username;
-
+    
         // console.log(projet);
-        // // On ajoute le vote dans tableau des votes
+        // // On ajoute le vote dans tableau des votes 
         this.vote.add(this.voteChoice).subscribe(data=>{
           // projet.votes.push(this.voteChoice)
           this.listeVotes();
@@ -356,11 +348,11 @@ export class AccueilComponent implements OnInit{
         console.log(projet)
         this.listeProjets();
       }
-
+        
     });
   }
 
-  // Voter contre
+  // Voter contre 
   voterContre(projet:any){
     Swal.fire({
       title: "Etes-vous sur???",
@@ -378,16 +370,16 @@ export class AccueilComponent implements OnInit{
         this.voteChoice.idProjet= projet.id;
         this.voteChoice.createdAt= new Date();
         this.voteChoice.createdBy= this.userConnect.username;
-
+        
         console.log(this.voteChoice);
-        // On ajoute le vote dans tableau des votes
+        // On ajoute le vote dans tableau des votes 
         this.vote.add(this.voteChoice).subscribe(data=>{
           this.listeVotes();
           this.verifierChamps("Vote enregistré", "", "success");
         })
-
+        
       }
-
+        
     });
 
   }
@@ -395,5 +387,5 @@ export class AccueilComponent implements OnInit{
   // Vider les champs
   // vider
 
-
+  
 }

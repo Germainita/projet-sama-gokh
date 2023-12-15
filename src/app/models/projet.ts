@@ -1,6 +1,5 @@
 import { Vote } from "./vote";
 
-// @ts-ignore
 export class Projet {
     id!: number;
     titre!: string;
@@ -16,5 +15,7 @@ export class Projet {
     createdBy!:string;
     updatedAt!:Date;
     updatedBy!:string;
-    voted! : string;
+
+    voted!: {};
+
 }
